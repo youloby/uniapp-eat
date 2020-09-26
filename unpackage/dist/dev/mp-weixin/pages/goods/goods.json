@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "side-bar-content": "/components/side-bar-content"
+  }
+}
