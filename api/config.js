@@ -1,7 +1,7 @@
 // const axios = require('axios');
 import Request from 'luch-request'
 const http = new Request({
-  baseURL: 'http://127.0.0.1:7000/api/',
+  baseURL: 'http://47.112.149.215:7001/api/',
   timeout: 1000
 });
 

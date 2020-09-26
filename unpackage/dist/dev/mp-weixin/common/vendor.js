@@ -8957,7 +8957,7 @@ getAllGoods(_x4) {return _getAllGoods.apply(this, arguments);}function _getAllGo
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 var _luchRequest = _interopRequireDefault(__webpack_require__(/*! luch-request */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // const axios = require('axios');
 var http = new _luchRequest.default({
-  baseURL: 'http://127.0.0.1:7000/api/',
+  baseURL: 'http://47.112.149.215:7001/api/',
   timeout: 1000 });
 
 
