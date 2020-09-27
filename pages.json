@@ -25,6 +25,9 @@
         ,{
             "path" : "pages/user/user",
             "style" : {}
+        },{
+            "path" : "pages/goodsphere/goodsphere",
+            "style" : {"navigationBarTitleText":"好物圈"}
         }
     ],
 	"tabBar":{

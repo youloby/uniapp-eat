@@ -50,9 +50,15 @@
 
 		<van-cell-group class="van_cell">
 			<van-cell icon="shopping-cart-o" title="购物车" is-link link-type="switchTab" />
+			<!-- #ifdef H5 -->
+			<van-cell icon="user-o" title="吃货分销员中心" is-link link-type="switchTab" />
+			<!-- #endif -->
 			<van-cell icon="chat-o" title="客服聊天" is-link link-type="navigateTo" />
-
 		</van-cell-group>
+		
+		<!-- #ifdef H5 -->
+		<van-cell icon="like-o" title="心愿单" is-link />
+		<!-- #endif -->
 		
 		<!-- 用户 -->
 		<van-cell-group class="address">
@@ -60,12 +66,36 @@
 			<van-cell icon="user-o" title="个人信息" is-link />
 			<van-cell icon="setting-o" title="账号设置" is-link />
 		</van-cell-group>
+		
+		
+		<!-- #ifdef H5 -->
+		<view class="img">
+			<image src="../../static/user/卖家.webp" mode=""></image>
+			
+		</view>
+		<van-cell icon="shop-o" title="吃货研究所店铺" is-link link-type="switchTab" url="/pages/home/home" />
+		<divider title="更多精选商品"></divider>
+		<view class="goodslist">
+			<view v-for="item in goodsData" :key="item.id" class="book_item">
+				<view class="img">
+					<image :src="item.image_url" mode=""></image>
+				</view>
+				<view class="book_title">
+					<view class="title_name">{{ item.title}}</view>
+					<span class="price">￥{{item.price}}</span>
+				</view>
+			</view>
+		</view>
+		<!-- #endif -->
+		
 		<logo class="logo" />
 	</view>
 </template>
 
 <script>
 	import logo from "../../components/logo.vue"
+	import divider from "../../components/divider.vue"
+	import { getAllGoods } from "../../api/index.js"
 	export default {
 		data() {
 			return {
@@ -112,11 +142,26 @@
 						icon: "/static/user/我的-订单状态-退换货.png",
 						name: "退款/售后"
 					},
-				]
+				],
+				goodsData: {}
 			};
 		},
+		
+		methods:{
+			async getGoodsList(){
+				var {status, data}  = await getAllGoods("http://localhost:3000/recommend");
+				this.goodsData = data
+				console.log(data)
+				
+			}
+		},
+		
+		created(){
+			this.getGoodsList();
+		},
 		components:{
-			logo
+			logo,
+			divider
 		}
 	}
 </script>
@@ -143,7 +188,13 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			/* #ifdef H5 */
 			background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)), url(../../static/user/背景图.png);
+			/* #endif */
+			/* #ifdef MP-WEIXIN */
+			background-image: url(../../static/user/背景图.png);
+			/* #endif */
+			
 			background-size: 100% 100%;
 			height: 375rpx;
 
@@ -289,5 +340,63 @@
 		.logo{
 			margin-bottom: 100rpx;
 		}
+	
+		/* #ifdef H5 */
+			.img{
+				width: 800rpx;
+				height: 300rpx;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.goodslist {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				width: 100%;
+				
+				margin-top: 20rpx;
+				.book_item {
+					// display: flex;
+					width: 47%;
+					margin-bottom: 20rpx;
+					background: #fff;
+					padding: 10rpx;
+					overflow: hidden;
+					border-radius: 60rpx;
+					.img {
+						width: 354rpx;
+						height: 360rpx;
+						// overflow: hidden;
+						image {
+							width: 100%;
+							height: 100%;
+						}
+			
+						
+					}
+					.book_title {
+						padding: 20rpx;
+						
+						.title_name{
+							font-weight: 700;
+							font-size: 12px;
+							margin-bottom: 10rpx;
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							-webkit-line-clamp: 2; /* 指定显示文本的行数 */
+							overflow: hidden; /* 超出隐藏 */
+							text-overflow: ellipsis; /* 超出部分显示省略号 */
+						}
+						.price{
+							color: #FF4444;
+							font-size: 12px;
+						}
+						
+					}
+				}
+			}
+		/* #endif */
 	}
 </style>

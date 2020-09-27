@@ -904,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1935,10 +1935,10 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 145:
-/*!***************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/components/uni-icons/icons.js ***!
-  \***************************************************************************/
+/***/ 160:
+/*!***********************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/components/uni-icons/icons.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8392,7 +8392,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8413,14 +8413,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8505,7 +8505,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8913,9 +8913,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!**********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/index.js ***!
-  \**********************************************************/
+/*!******************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/api/index.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8947,9 +8947,9 @@ getAllGoods(_x4) {return _getAllGoods.apply(this, arguments);}function _getAllGo
 /***/ }),
 
 /***/ 21:
-/*!***********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/config.js ***!
-  \***********************************************************/
+/*!*******************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/api/config.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8984,9 +8984,9 @@ http;exports.default = _default;
 /***/ }),
 
 /***/ 22:
-/*!***********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/luch-request.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/luch-request.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8997,9 +8997,9 @@ _Request.default;exports.default = _default;
 /***/ }),
 
 /***/ 23:
-/*!***********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/Request.js ***!
-  \***********************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/Request.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9207,9 +9207,9 @@ Request = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 24:
-/*!*******************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
-  \*******************************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9224,9 +9224,9 @@ function _default(config) {
 /***/ }),
 
 /***/ 25:
-/*!*************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/adapters/index.js ***!
-  \*************************************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/adapters/index.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9324,9 +9324,9 @@ function _default(config) {
 /***/ }),
 
 /***/ 26:
-/*!***************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
-  \***************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9404,9 +9404,9 @@ function buildURL(url, params) {
 /***/ }),
 
 /***/ 27:
-/*!****************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/utils.js ***!
-  \****************************************************************************************/
+/*!************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/utils.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9546,9 +9546,9 @@ function deepMerge() /* obj1, obj2, obj3, ... */{
 /***/ }),
 
 /***/ 28:
-/*!*****************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
-  \*****************************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9577,9 +9577,9 @@ function buildFullPath(baseURL, requestedURL) {
 /***/ }),
 
 /***/ 29:
-/*!********************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
-  \********************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9633,9 +9633,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 30:
-/*!******************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
-  \******************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9658,9 +9658,9 @@ function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ 31:
-/*!**********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/settle.js ***!
-  \**********************************************************************************************/
+/*!******************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/settle.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9685,9 +9685,9 @@ function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ 32:
-/*!**********************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
-  \**********************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9747,9 +9747,9 @@ InterceptorManager;exports.default = _default;
 /***/ }),
 
 /***/ 33:
-/*!***************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
-  \***************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9847,9 +9847,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 /***/ }),
 
 /***/ 34:
-/*!************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/defaults.js ***!
-  \************************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/defaults.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9887,9 +9887,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/pages.json ***!
-  \********************************************************/
+/*!****************************************************!*\
+  !*** C:/Users/Administrator/uniapp-eat/pages.json ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

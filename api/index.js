@@ -22,3 +22,5 @@ export async function getSpecialImg(type){
 export async function getAllGoods(url){
 	return await instance.get(`/getAllGoods?url=${url}`);
 }
+
+
