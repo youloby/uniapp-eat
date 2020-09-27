@@ -1,9 +1,9 @@
 <template>
 	<view class="side-bar-content">
 		<view class="class-title">
-			{{ title }}
+			{{ data.title }}
 		</view>
-		<view class="goods-list">
+		<view class="goods-list" v-if="isShow()">
 			<view class="goods" v-for="item in goodsList" :key="item.id">
 				<view class="goods-img">
 					<easy-loadimage :image-src="item.imageUrl" :scroll-top="scrollTop"
@@ -26,6 +26,9 @@
 				</view>
 			</view>
 		</view>
+		<view class="loading" v-else>
+			加载中...
+		</view>
 	</view>
 </template>
 
@@ -33,18 +36,25 @@
 	import { getAllGoods } from '../api/index.js';
 	import easyLoadimage from './easy-loadimage/easy-loadimage.vue';
 	export default {
-		props:['title', 'url', 'scrollTop'],
+		props:['data', 'scrollTop', 'active'],
 		data() {
 			return {
+				isInitialize: false,
 				goodsList: []
 			};
 		},
 		methods:{
 			async getGoodsData(){
-				let { status, data } = await getAllGoods(this.url);
+				let { status, data } = await getAllGoods(this.data.url);
 				if(!status){
 					this.goodsList = data;
 				}
+			},
+			isShow(){
+				if(!this.isInitialize && this.data.index >= this.active-1 && this.data.index <= this.active+1){
+					this.isInitialize = true;
+				}
+				return this.isInitialize || this.data.index === this.active;
 			}
 		},
 		created(){
@@ -58,6 +68,7 @@
 
 <style lang="scss">
 	.side-bar-content {
+		overflow: hidden;
 		.class-title {
 			height: 60rpx;
 			line-height: 60rpx;
@@ -119,6 +130,14 @@
 					}
 				}
 			}
+		}
+		.loading {
+			height: 100rpx;
+			line-height: 100rpx;
+			margin-bottom: 340rpx;
+			text-align: center;
+			color: #969799;
+			font-size: 28rpx;
 		}
 	}
 </style>

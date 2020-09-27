@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 160:
-/*!***********************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/components/uni-icons/icons.js ***!
-  \***********************************************************************/
+/*!***************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/components/uni-icons/icons.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8913,9 +8913,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!******************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/api/index.js ***!
-  \******************************************************/
+/*!**********************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/index.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8947,9 +8947,9 @@ getAllGoods(_x4) {return _getAllGoods.apply(this, arguments);}function _getAllGo
 /***/ }),
 
 /***/ 21:
-/*!*******************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/api/config.js ***!
-  \*******************************************************/
+/*!***********************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/config.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8984,9 +8984,9 @@ http;exports.default = _default;
 /***/ }),
 
 /***/ 22:
-/*!*******************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/luch-request.js ***!
-  \*******************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/luch-request.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8997,9 +8997,9 @@ _Request.default;exports.default = _default;
 /***/ }),
 
 /***/ 23:
-/*!*******************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/Request.js ***!
-  \*******************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/Request.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9207,9 +9207,9 @@ Request = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 24:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
-  \***************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9224,9 +9224,9 @@ function _default(config) {
 /***/ }),
 
 /***/ 25:
-/*!*********************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/adapters/index.js ***!
-  \*********************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/adapters/index.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9324,9 +9324,9 @@ function _default(config) {
 /***/ }),
 
 /***/ 26:
-/*!***********************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
-  \***********************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9404,9 +9404,9 @@ function buildURL(url, params) {
 /***/ }),
 
 /***/ 27:
-/*!************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/utils.js ***!
-  \************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/utils.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9546,9 +9546,9 @@ function deepMerge() /* obj1, obj2, obj3, ... */{
 /***/ }),
 
 /***/ 28:
-/*!*************************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
-  \*************************************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9577,9 +9577,9 @@ function buildFullPath(baseURL, requestedURL) {
 /***/ }),
 
 /***/ 29:
-/*!****************************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
-  \****************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9633,9 +9633,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 30:
-/*!**************************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
-  \**************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9658,9 +9658,9 @@ function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ 31:
-/*!******************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/settle.js ***!
-  \******************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/settle.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9685,9 +9685,9 @@ function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ 32:
-/*!******************************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
-  \******************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9747,9 +9747,9 @@ InterceptorManager;exports.default = _default;
 /***/ }),
 
 /***/ 33:
-/*!***********************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
-  \***********************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9847,9 +9847,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 /***/ }),
 
 /***/ 34:
-/*!********************************************************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/node_modules/luch-request/src/lib/core/defaults.js ***!
-  \********************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/defaults.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9887,9 +9887,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!****************************************************!*\
-  !*** C:/Users/Administrator/uniapp-eat/pages.json ***!
-  \****************************************************/
+/*!********************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/pages.json ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
