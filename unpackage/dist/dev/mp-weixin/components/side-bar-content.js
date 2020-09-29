@@ -86,17 +86,18 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   var m0 = _vm.isShow()
-  var l0 = m0
-    ? _vm.__map(_vm.goodsList, function(item, __i0__) {
-        var $orig = _vm.__get_orig(item)
+  var l0 =
+    !m0 && !(_vm.goodsList.length == 0)
+      ? _vm.__map(_vm.goodsList, function(item, __i0__) {
+          var $orig = _vm.__get_orig(item)
 
-        var m1 = Number(item.price)
-        return {
-          $orig: $orig,
-          m1: m1
-        }
-      })
-    : null
+          var m1 = Number(item.price)
+          return {
+            $orig: $orig,
+            m1: m1
+          }
+        })
+      : null
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -174,6 +175,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
 var _index = __webpack_require__(/*! ../api/index.js */ 20);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var easyLoadimage = function easyLoadimage() {__webpack_require__.e(/*! require.ensure | components/easy-loadimage/easy-loadimage */ "components/easy-loadimage/easy-loadimage").then((function () {return resolve(__webpack_require__(/*! ./easy-loadimage/easy-loadimage.vue */ 106));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 {
@@ -195,7 +199,7 @@ var _index = __webpack_require__(/*! ../api/index.js */ 20);function _interopReq
       if (!this.isInitialize && this.data.index >= this.active - 1 && this.data.index <= this.active + 1) {
         this.isInitialize = true;
       }
-      return this.isInitialize || this.data.index === this.active;
+      return !(this.isInitialize || this.data.index === this.active);
     } },
 
   created: function created() {

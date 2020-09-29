@@ -108,4 +108,12 @@
   color: #969799;
   font-size: 28rpx;
 }
+.side-bar-content .empty {
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-bottom: 140rpx;
+  text-align: center;
+  color: #969799;
+  font-size: 28rpx;
+}
 

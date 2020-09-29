@@ -24,12 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.goods-container.data-v-5566b618 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
+.goods-container .goods-content.data-v-5566b618 {
+  position: relative;
 }
-.goods-container .side-bar.data-v-5566b618 {
+.goods-container .goods-content .flex-bar.data-v-5566b618 {
   position: fixed;
   left: 0;
   top: 0;
@@ -38,22 +36,25 @@
   border-right: 2rpx solid #F7F8FA;
   background-color: #F7F8FA;
 }
-.goods-container .side-bar .title-item.data-v-5566b618 {
+.goods-container .goods-content .flex-bar .title-item.data-v-5566b618 {
   padding: 28rpx 26rpx;
 }
-.goods-container .side-bar .title-item .text.data-v-5566b618 {
+.goods-container .goods-content .flex-bar .title-item .text.data-v-5566b618 {
   color: #323233;
   font-size: 28rpx;
 }
-.goods-container .side-bar .selected.data-v-5566b618 {
+.goods-container .goods-content .flex-bar .selected.data-v-5566b618 {
   position: relative;
   background-color: #fff;
   border-left: 8rpx solid #ee0a24;
 }
-.goods-container .content.data-v-5566b618 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+.goods-container .goods-content .abs-bar.data-v-5566b618 {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+.goods-container .goods-content .content.data-v-5566b618 {
+  width: 69%;
   padding: 0 30rpx 0 206rpx;
   background-color: #fff;
 }

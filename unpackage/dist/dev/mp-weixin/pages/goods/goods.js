@@ -130,7 +130,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var sideBarContent = function sideBarContent() {Promise.all(/*! require.ensure | components/side-bar-content */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/side-bar-content")]).then((function () {return resolve(__webpack_require__(/*! ../../components/side-bar-content.vue */ 148));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var sideBarContent = function sideBarContent() {Promise.all(/*! require.ensure | components/side-bar-content */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/side-bar-content")]).then((function () {return resolve(__webpack_require__(/*! ../../components/side-bar-content.vue */ 148));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../components/shop-info.vue */ 127));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/logo.vue */ 134));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
 
 
 
@@ -154,11 +161,11 @@ __webpack_require__.r(__webpack_exports__);
 {
   data: function data() {
     return {
-      isCut: true,
       scrollTop: 0,
       active: 0,
+      side: "",
       classTops: [],
-      titleList: [
+      classList: [
       { title: '店铺热销', url: 'http://localhost:3000/hot', index: 0 },
       { title: '网红咸蛋黄', url: 'http://localhost:3000/egg', index: 1 },
       { title: '榴莲控', url: 'http://localhost:3000/durian', index: 2 },
@@ -178,48 +185,53 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     selectedClass: function selectedClass(index) {var _this = this;
-      this.isCut = false;
       this.active = index;
-
-      var query = uni.createSelectorQuery().in(this);
-      query.select("#sel".concat(index)).boundingClientRect(function (data) {
+      this.getOperateByTop("#sel".concat(index), function (data) {
         uni.pageScrollTo({
           scrollTop: _this.scrollTop + data.top,
           duration: 0 });
 
-
-      }).exec(function () {
-        _this.isCut = true;
       });
 
+    },
+    getOperateByTop: function getOperateByTop(id, fun) {
+      var query = uni.createSelectorQuery().in(this);
+      query.select(id).boundingClientRect(function (data) {
+        fun(data);
+      }).exec();
     } },
 
   onPageScroll: function onPageScroll(_ref) {var _this2 = this;var scrollTop = _ref.scrollTop;
     // 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
     this.scrollTop = scrollTop;
 
-    if (!this.isCut) {
+    this.getOperateByTop('#bottom', function (data) {
+      if (data.top < 600) {
+        _this2.side = "abs-bar";
+      } else {
+        _this2.side = "";
+      }
+    });
+
+    this.getOperateByTop("#sel".concat(this.active), function (data) {
+      if (data.top > 0) {
+        _this2.active--;
+      }
+    });
+
+    if (this.active === this.classList.length - 1) {
       return;
     }
-    var query = uni.createSelectorQuery().in(this);
-    query.select("#sel".concat(this.active)).boundingClientRect(function (data) {
-      console.log(data.top);
-      if (data.top > 0 && _this2.active >= 0) {
-        _this2.active--;
-        return;
-      }
-    }).exec();
-
-    var query2 = uni.createSelectorQuery().in(this);
-    query2.select("#sel".concat(this.active + 1)).boundingClientRect(function (data) {
-      console.log('down', data.top);
+    this.getOperateByTop("#sel".concat(this.active + 1), function (data) {
       if (data.top < 600) {
         _this2.active++;
       }
-    }).exec();
+    });
   },
   components: {
-    sideBarContent: sideBarContent } };exports.default = _default;
+    sideBarContent: sideBarContent,
+    shopInfo: shopInfo,
+    logo: logo } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -3,7 +3,13 @@
 		<view class="class-title">
 			{{ data.title }}
 		</view>
-		<view class="goods-list" v-if="isShow()">
+		<view class="loading" v-if="isShow()">
+			加载中...
+		</view>
+		<view class="empty" v-else-if="goodsList.length == 0">
+			暂时还没有商品
+		</view>
+		<view class="goods-list" v-else>
 			<view class="goods" v-for="item in goodsList" :key="item.id">
 				<view class="goods-img">
 					<easy-loadimage :image-src="item.imageUrl" :scroll-top="scrollTop"
@@ -25,9 +31,6 @@
 					</view>
 				</view>
 			</view>
-		</view>
-		<view class="loading" v-else>
-			加载中...
 		</view>
 	</view>
 </template>
@@ -54,7 +57,7 @@
 				if(!this.isInitialize && this.data.index >= this.active-1 && this.data.index <= this.active+1){
 					this.isInitialize = true;
 				}
-				return this.isInitialize || this.data.index === this.active;
+				return !(this.isInitialize || this.data.index === this.active);
 			}
 		},
 		created(){
@@ -135,6 +138,15 @@
 			height: 100rpx;
 			line-height: 100rpx;
 			margin-bottom: 340rpx;
+			text-align: center;
+			color: #969799;
+			font-size: 28rpx;
+		}
+		
+		.empty {
+			height: 100rpx;
+			line-height: 100rpx;
+			margin-bottom: 140rpx;
 			text-align: center;
 			color: #969799;
 			font-size: 28rpx;

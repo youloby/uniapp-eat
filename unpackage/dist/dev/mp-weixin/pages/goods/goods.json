@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "side-bar-content": "/components/side-bar-content"
+    "side-bar-content": "/components/side-bar-content",
+    "shop-info": "/components/shop-info",
+    "logo": "/components/logo"
   }
 }
