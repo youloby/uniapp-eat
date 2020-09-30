@@ -207,7 +207,8 @@
 					display: flex;
 					align-items: center;
 					margin-left: 50rpx;
-
+					width: 100rpx;
+					height: 100rpx;
 					image {
 						width: 100rpx;
 						height: 100rpx;
@@ -215,10 +216,6 @@
 
 				}
 				.name {
-					margin-left: 20rpx;
-				
-					display: flex;
-					flex-direction: column;
 				
 					.info_name {
 						font-weight: 700;
@@ -244,7 +241,7 @@
 		.integral {
 			display: flex;
 			margin: auto;
-			align-content: center;
+			// align-content: center;
 			background: #fff;
 			width: 98%;
 			height: 120rpx;
