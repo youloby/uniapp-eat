@@ -32,6 +32,7 @@
 				scrollTop: 0,
 				active: 0,
 				side: "",
+				lastTime: 0,
 				classTops: [],
 				classList: [
 					{title:'店铺热销', url:'http://localhost:3000/hot', index:0},
@@ -54,12 +55,21 @@
 		methods: {
 			selectedClass(index){
 				this.active = index;
+				// #ifdef H5
 				this.getOperateByTop(`#sel${index}`, (data) => {
 					uni.pageScrollTo({
 						scrollTop: this.scrollTop+data.top,
 						duration: 0
 					});
-				})
+				});
+				// #endif
+				
+				// #ifdef MP-WEIXIN
+				uni.pageScrollTo({
+					selector: `#sel${index}`,
+					duration: 0
+				});
+				// #endif
 				
 			},
 			getOperateByTop(id, fun){
@@ -67,34 +77,44 @@
 				query.select(id).boundingClientRect(data => {
 					fun(data);
 				}).exec();
+			},
+			control(){
+				this.getOperateByTop('#bottom', (data) => {
+					console.log(data.top);
+					if(data.top < 700){
+						this.side = "abs-bar"
+					}else {
+						this.side = ""
+					}
+				});
+				
+				this.getOperateByTop(`#sel${this.active}`, (data) => {
+					if(data.top > 50){
+						this.active --;
+					}
+				});
+				
+				if(this.active === this.classList.length-1){
+					return;
+				}
+				this.getOperateByTop(`#sel${this.active+1}`, (data) => {
+					if(data.top < 600){
+						this.active ++;
+					}
+				});
 			}
 		},
 		onPageScroll({scrollTop}) {
-			// 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
-			this.scrollTop = scrollTop;
-			
-			this.getOperateByTop('#bottom', (data) => {
-				if(data.top < 600){
-					this.side = "abs-bar"
-				}else {
-					this.side = ""
-				}
-			});
-			
-			this.getOperateByTop(`#sel${this.active}`, (data) => {
-				if(data.top > 0){
-					this.active --;
-				}
-			});
-			
-			if(this.active === this.classList.length-1){
-				return;
+
+			// 记录当前函数触发的时间
+			var nowTime = Date.now();
+			if (nowTime - this.lastTime > 600) {
+				// 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
+				this.scrollTop = scrollTop;
+				
+				this.control();
+				this.lastTime = nowTime;
 			}
-			this.getOperateByTop(`#sel${this.active+1}`, (data) => {
-				if(data.top < 600){
-					this.active ++;
-				}
-			});
 		},
 		components: {
 			sideBarContent,

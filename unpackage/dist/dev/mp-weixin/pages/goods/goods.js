@@ -164,6 +164,7 @@ __webpack_require__.r(__webpack_exports__);
       scrollTop: 0,
       active: 0,
       side: "",
+      lastTime: 0,
       classTops: [],
       classList: [
       { title: '店铺热销', url: 'http://localhost:3000/hot', index: 0 },
@@ -184,14 +185,23 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   methods: {
-    selectedClass: function selectedClass(index) {var _this = this;
+    selectedClass: function selectedClass(index) {
       this.active = index;
-      this.getOperateByTop("#sel".concat(index), function (data) {
-        uni.pageScrollTo({
-          scrollTop: _this.scrollTop + data.top,
-          duration: 0 });
 
-      });
+
+
+
+
+
+
+
+
+
+      uni.pageScrollTo({
+        selector: "#sel".concat(index),
+        duration: 0 });
+
+
 
     },
     getOperateByTop: function getOperateByTop(id, fun) {
@@ -199,34 +209,44 @@ __webpack_require__.r(__webpack_exports__);
       query.select(id).boundingClientRect(function (data) {
         fun(data);
       }).exec();
+    },
+    control: function control() {var _this = this;
+      this.getOperateByTop('#bottom', function (data) {
+        console.log(data.top);
+        if (data.top < 700) {
+          _this.side = "abs-bar";
+        } else {
+          _this.side = "";
+        }
+      });
+
+      this.getOperateByTop("#sel".concat(this.active), function (data) {
+        if (data.top > 50) {
+          _this.active--;
+        }
+      });
+
+      if (this.active === this.classList.length - 1) {
+        return;
+      }
+      this.getOperateByTop("#sel".concat(this.active + 1), function (data) {
+        if (data.top < 600) {
+          _this.active++;
+        }
+      });
     } },
 
-  onPageScroll: function onPageScroll(_ref) {var _this2 = this;var scrollTop = _ref.scrollTop;
-    // 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
-    this.scrollTop = scrollTop;
+  onPageScroll: function onPageScroll(_ref) {var scrollTop = _ref.scrollTop;
 
-    this.getOperateByTop('#bottom', function (data) {
-      if (data.top < 600) {
-        _this2.side = "abs-bar";
-      } else {
-        _this2.side = "";
-      }
-    });
+    // 记录当前函数触发的时间
+    var nowTime = Date.now();
+    if (nowTime - this.lastTime > 600) {
+      // 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
+      this.scrollTop = scrollTop;
 
-    this.getOperateByTop("#sel".concat(this.active), function (data) {
-      if (data.top > 0) {
-        _this2.active--;
-      }
-    });
-
-    if (this.active === this.classList.length - 1) {
-      return;
+      this.control();
+      this.lastTime = nowTime;
     }
-    this.getOperateByTop("#sel".concat(this.active + 1), function (data) {
-      if (data.top < 600) {
-        _this2.active++;
-      }
-    });
   },
   components: {
     sideBarContent: sideBarContent,

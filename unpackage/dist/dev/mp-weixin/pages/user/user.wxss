@@ -73,20 +73,12 @@
   -webkit-align-items: center;
           align-items: center;
   margin-left: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 .user-container .info .item .img image.data-v-80842834 {
   width: 100rpx;
   height: 100rpx;
-}
-.user-container .info .item .name.data-v-80842834 {
-  margin-left: 20rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
 }
 .user-container .info .item .name .info_name.data-v-80842834 {
   font-weight: 700;
@@ -104,8 +96,6 @@
   display: -webkit-flex;
   display: flex;
   margin: auto;
-  -webkit-align-content: center;
-          align-content: center;
   background: #fff;
   width: 98%;
   height: 120rpx;

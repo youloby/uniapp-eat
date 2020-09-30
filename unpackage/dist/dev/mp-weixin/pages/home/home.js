@@ -160,7 +160,28 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -270,8 +291,12 @@ var _index = __webpack_require__(/*! ../../api/index.js */ 20);function _interop
 
 
 {
+  name: "home",
   data: function data() {
     return {
+      isSearch: false,
+      hotSeatch: [],
+      recordSearch: [],
       swiperList: [],
       gridList: [],
       peddleList: [],
@@ -283,14 +308,25 @@ var _index = __webpack_require__(/*! ../../api/index.js */ 20);function _interop
 
   },
   methods: {
-    getHomeImg: function getHomeImg() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$_getHomeImg, status, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  (0, _index.getHomeImg)());case 2:_yield$_getHomeImg = _context.sent;status = _yield$_getHomeImg.status;data = _yield$_getHomeImg.data;
+    initialize: function initialize() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$getHomeImg, status, data, res, storageData;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  (0, _index.getHomeImg)());case 2:_yield$getHomeImg = _context.sent;status = _yield$getHomeImg.status;data = _yield$getHomeImg.data;
                 if (!status) {
                   _this.swiperList = data.swiper;
                   _this.gridList = data.grid;
                   _this.peddleList = data.peddle;
                   _this.goodsBars = data.goodsBar;
-                }case 6:case "end":return _context.stop();}}}, _callee);}))();
+                }_context.next = 8;return (
+                  (0, _index.getHotSearch)());case 8:res = _context.sent;
+                if (!res.status) {
+                  _this.hotSeatch = res.data;
+                }
+                storageData = uni.getStorage({
+                  key: "record",
+                  success: function success(res) {
+                    _this.recordSearch = res.data;
+                    console.log(_this.recordSearch);
+                  } });case 11:case "end":return _context.stop();}}}, _callee);}))();
+
     },
     getNewGoods: function getNewGoods() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$getGoods, status, data;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
                   (0, _index.getGoods)('1001'));case 2:_yield$getGoods = _context2.sent;status = _yield$getGoods.status;data = _yield$getGoods.data;
@@ -306,14 +342,40 @@ var _index = __webpack_require__(/*! ../../api/index.js */ 20);function _interop
     },
     isUrl: function isUrl() {
       return Object.keys(this.goodsBars).length !== 0;
+    },
+    confirm: function confirm(_ref) {var value = _ref.value;
+      if (this.recordSearch.includes(value.trim())) {
+        return;
+      }
+      this.recordSearch.push(value.trim());
+      uni.setStorage({ key: "record", data: this.recordSearch });
+    },
+    searchPage: function searchPage(value) {
+      this.isSearch = value;
+      if (value) {
+        uni.hideTabBar();
+      } else {
+        uni.showTabBar();
+      }
+    },
+    onSearch: function onSearch(value) {
+      this.$refs.reSearch.replaceSearch(value);
+      this.confirm({ value: value });
+    },
+    clearSearch: function clearSearch() {
+      this.recordSearch = [];
+      uni.setStorage({
+        key: "record",
+        data: [] });
+
     } },
 
-  onPageScroll: function onPageScroll(_ref) {var scrollTop = _ref.scrollTop;
+  onPageScroll: function onPageScroll(_ref2) {var scrollTop = _ref2.scrollTop;
     // 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
     this.scrollTop = scrollTop;
   },
   created: function created() {
-    this.getHomeImg();
+    this.initialize();
     this.getNewGoods();
     this.getNote();
   },
@@ -322,6 +384,7 @@ var _index = __webpack_require__(/*! ../../api/index.js */ 20);function _interop
     divider: divider,
     shopInfo: shopInfo,
     logo: logo } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

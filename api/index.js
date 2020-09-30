@@ -23,4 +23,9 @@ export async function getAllGoods(url){
 	return await instance.get(`/getAllGoods?url=${url}`);
 }
 
+//获取热门搜索
+export async function getHotSearch(){
+	return await instance.get('/searchHot');
+}
+
 
