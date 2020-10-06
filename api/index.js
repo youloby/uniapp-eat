@@ -27,5 +27,9 @@ export async function getAllGoods(url){
 export async function getHotSearch(){
 	return await instance.get('/searchHot');
 }
+//种草笔记
+export async function getShopNote(page,pageSize=5){
+	return await instance.get(`/getMoreNote?page=${page}&pageSize=${pageSize}`);
+}
 
 
