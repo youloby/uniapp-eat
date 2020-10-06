@@ -29,7 +29,7 @@
 			</view>
 			
 			<scroll-view scroll-x="true" class="new">
-				<view class="item" v-for="item in newGoods" :key="item.id">
+				<view class="item" v-for="item in newGoods" :key="item.id" @click="goGoodsDetails(item.goodsId)">
 					<image src="../../static/icon/New-Tag 2.png" mode="widthFix" class="new-tag"></image>
 					<view class="goods">
 						<easy-loadimage :image-src="item.img_url" :scroll-top="scrollTop"
@@ -155,8 +155,12 @@
 				uni.navigateTo({
 					url: "../shopnote/shopnote"
 				})
+			},
+			goGoodsDetails(goodsId){
+				uni.navigateTo({
+					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
+				})
 			}
-		
 		},
 		onPageScroll({scrollTop}) {
 			// 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件

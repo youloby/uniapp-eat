@@ -24,51 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.home-container.data-v-92bb8f34 .search .uni-searchbar__box {
-  -webkit-box-pack: initial;
-  -webkit-justify-content: initial;
-          justify-content: initial;
-}
-.home-container.data-v-92bb8f34 .search .uni-searchbar {
-  background-color: #f8f8f8;
-}
-.home-container .searchPage.data-v-92bb8f34 {
-  height: 92vh;
-  color: #666;
-  font-size: 24rpx;
-  background-color: #fff;
-}
-.home-container .searchPage .title.data-v-92bb8f34 {
-  padding: 30rpx;
-  color: #999;
-}
-.home-container .searchPage .content.data-v-92bb8f34 {
-  padding: 0 20rpx;
-}
-.home-container .searchPage .content .item.data-v-92bb8f34 {
-  display: inline-block;
-  padding: 0 20rpx;
-  height: 64rpx;
-  line-height: 64rpx;
-  margin: 0 20rpx 20rpx 0;
-  text-align: center;
-  background-color: #f6f6f6;
-}
-.home-container .searchPage .del.data-v-92bb8f34 {
-  width: 276rpx;
-  height: 60rpx;
-  line-height: 60rpx;
-  border: 2rpx solid #e5e5e5;
-  border-radius: 32rpx;
-  margin: 0 auto;
-  margin-top: 20rpx;
-  text-align: center;
-}
-.home-container .searchPage .del .del-icon.data-v-92bb8f34 {
-  vertical-align: middle;
-  width: 32rpx;
-  margin-right: 10rpx;
-}
 .home-container .swiper.data-v-92bb8f34 {
   height: 352rpx;
 }

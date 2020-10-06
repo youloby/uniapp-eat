@@ -33,6 +33,10 @@
             "path" : "pages/shopnote/shopnote",
             "style" : {}
         }
+        ,{
+            "path" : "pages/details/goodsDetails/goodsDetails",
+            "style" : {}
+        }
     ],
 	"tabBar":{
 		"color":"#8c8c8c",

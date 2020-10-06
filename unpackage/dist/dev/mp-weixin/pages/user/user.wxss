@@ -24,22 +24,22 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.user-container.data-v-80842834 {
+.user_container.data-v-80842834 {
   margin: auto;
   height: 100vh;
 }
-.user-container .signin.data-v-80842834 {
+.user_container .signin.data-v-80842834 {
   position: absolute;
   top: 40rpx;
   width: 120px;
   right: 0rpx;
 }
-.user-container .van_button.data-v-80842834 {
+.user_container .van_button.data-v-80842834 {
   position: absolute;
   top: 40rpx;
   right: 0rpx;
 }
-.user-container .info.data-v-80842834 {
+.user_container .info.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -53,7 +53,7 @@
   background-size: 100% 100%;
   height: 375rpx;
 }
-.user-container .info .item.data-v-80842834 {
+.user_container .info .item.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -65,7 +65,7 @@
   -webkit-flex-direction: column;
           flex-direction: column;
 }
-.user-container .info .item .img.data-v-80842834 {
+.user_container .info .item .img.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -76,14 +76,14 @@
   width: 100rpx;
   height: 100rpx;
 }
-.user-container .info .item .img image.data-v-80842834 {
+.user_container .info .item .img image.data-v-80842834 {
   width: 100rpx;
   height: 100rpx;
 }
-.user-container .info .item .name .info_name.data-v-80842834 {
+.user_container .info .item .name .info_name.data-v-80842834 {
   font-weight: 700;
 }
-.user-container .info .item .name .info_zhi.data-v-80842834 {
+.user_container .info .item .name .info_zhi.data-v-80842834 {
   font-size: 24rpx;
   border: 1px solid #000000;
   text-align: center;
@@ -91,7 +91,7 @@
   background: #000000;
   border-radius: 20rpx;
 }
-.user-container .integral.data-v-80842834 {
+.user_container .integral.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -102,7 +102,7 @@
   border-radius: 20rpx;
   margin-top: 20rpx;
 }
-.user-container .integral .item.data-v-80842834 {
+.user_container .integral .item.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -122,15 +122,15 @@
   -webkit-flex: 1;
           flex: 1;
 }
-.user-container .integral .item .data_number.data-v-80842834 {
+.user_container .integral .item .data_number.data-v-80842834 {
   font-weight: 700;
 }
-.user-container .integral .item .title_name.data-v-80842834 {
+.user_container .integral .item .title_name.data-v-80842834 {
   margin-top: 10rpx;
   font-size: 28rpx;
   color: #909193;
 }
-.user-container .integral .fees.data-v-80842834 {
+.user_container .integral .fees.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -147,12 +147,12 @@
   margin-left: 20rpx;
   margin-right: 20rpx;
 }
-.user-container .integral .fees text.data-v-80842834 {
+.user_container .integral .fees text.data-v-80842834 {
   margin-top: 5px;
   color: #909193;
   font-size: 28rpx;
 }
-.user-container .vipimg.data-v-80842834 {
+.user_container .vipimg.data-v-80842834 {
   position: relative;
   width: 690rpx;
   height: 200rpx;
@@ -162,11 +162,11 @@
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
-.user-container .vipimg image.data-v-80842834 {
+.user_container .vipimg image.data-v-80842834 {
   width: 100%;
   height: 100%;
 }
-.user-container .my_order.data-v-80842834 {
+.user_container .my_order.data-v-80842834 {
   margin: auto;
   width: 98%;
   height: 260rpx;
@@ -174,7 +174,7 @@
   border-radius: 20rpx;
   background: #fff;
 }
-.user-container .my_order .grid.data-v-80842834 {
+.user_container .my_order .grid.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -185,7 +185,7 @@
           justify-content: space-around;
   margin-top: 40rpx;
 }
-.user-container .my_order .grid .grid_item.data-v-80842834 {
+.user_container .my_order .grid .grid_item.data-v-80842834 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -198,16 +198,16 @@
           flex-direction: column;
   font-size: 28rpx;
 }
-.user-container .my_order .grid .grid_item text.data-v-80842834 {
+.user_container .my_order .grid .grid_item text.data-v-80842834 {
   margin-top: 10rpx;
 }
-.user-container .van_cell.data-v-80842834 {
+.user_container .van_cell.data-v-80842834 {
   padding: 20rpx;
 }
-.user-container .address.data-v-80842834 {
+.user_container .address.data-v-80842834 {
   padding: 20rpx;
 }
-.user-container .logo.data-v-80842834 {
+.user_container .logo.data-v-80842834 {
   margin-bottom: 100rpx;
 }
 

@@ -6,7 +6,9 @@
     "pages/cart/cart",
     "pages/group/group",
     "pages/user/user",
-    "pages/goodsphere/goodsphere"
+    "pages/goodsphere/goodsphere",
+    "pages/shopnote/shopnote",
+    "pages/details/goodsDetails/goodsDetails"
   ],
   "subPackages": [],
   "window": {
@@ -98,5 +100,5 @@
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index"
   },
-  "sitemapLocation": "sitemap82.json"
+  "sitemapLocation": "sitemap37.json"
 }

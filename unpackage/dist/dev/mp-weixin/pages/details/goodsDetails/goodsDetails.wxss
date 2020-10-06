@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.goods-container .scroll-img.data-v-fc39dd0e {
+  position: relative;
+}
+.goods-container .scroll-img .swiper.data-v-fc39dd0e {
+  height: 750rpx;
+}
+.goods-container .scroll-img .swiper .item .img.data-v-fc39dd0e {
+  width: 100%;
+}
+.goods-container .scroll-img .count.data-v-fc39dd0e {
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  padding: 4rpx 12rpx;
+  font-size: 24rpx;
+  border-radius: 999rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.36);
+}
+.goods-container .info.data-v-fc39dd0e {
+  padding: 16rpx 32rpx 20rpx 32rpx;
+  background-color: #fff;
+}
+.goods-container .info .price.data-v-fc39dd0e {
+  margin: 4rpx 0 16rpx 0;
+  color: #f44;
+  font-size: 44rpx;
+  font-weight: 700;
+}
+.goods-container .info .price .icon.data-v-fc39dd0e {
+  font-size: 32rpx;
+  margin-right: 4rpx;
+}
+.goods-container .info .svip.data-v-fc39dd0e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 18rpx 20rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  color: #6c3805;
+  background-image: -webkit-linear-gradient(316deg, #f9e1aa, #ffe8b4 52%, #e1c78e);
+  background-image: linear-gradient(134deg, #f9e1aa, #ffe8b4 52%, #e1c78e);
+}
+.goods-container .info .svip .icon.data-v-fc39dd0e {
+  display: inline-block;
+  width: 60rpx;
+  margin-right: 16rpx;
+  border-radius: 4rpx;
+  color: #f9e1aa;
+  font-size: 24rpx;
+  font-style: oblique;
+  font-weight: 500;
+  background-color: black;
+}
+.goods-container .info .svip .content.data-v-fc39dd0e {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding-right: 42rpx;
+}
+.goods-container .info .title.data-v-fc39dd0e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin-top: 16rpx;
+}
+.goods-container .info .title .content.data-v-fc39dd0e {
+  width: 576rpx;
+  margin-right: 44rpx;
+  color: #323233;
+  font-size: 32rpx;
+}
+.goods-container .info .title .share.data-v-fc39dd0e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  width: 48rpx;
+}
+.goods-container .info .title .share .icon.data-v-fc39dd0e {
+  width: 100%;
+  height: 56rpx;
+}
+.goods-container .info .title .share .text.data-v-fc39dd0e {
+  color: #969799;
+  font-size: 24rpx;
+}
+.goods-container .info .sell_point.data-v-fc39dd0e {
+  margin-top: 16rpx;
+  color: #969799;
+  font-size: 26rpx;
+}
+

@@ -3,7 +3,7 @@
 		<image :src="bar" mode="widthFix" class="bar"></image>
 		
 		<view class="goods-list">
-			<view class="goods" v-for="item in goodsList" :key="item.id">
+			<view class="goods" v-for="item in goodsList" :key="item.id" @click="goGoodsDetails(item.goodsId)">
 				<easy-loadimage :image-src="item.img_url" :scroll-top="scrollTop"
 				:view-height="1000" mode="widthFix" class="img"></easy-loadimage>
 				<view class="text">
@@ -39,6 +39,11 @@
 				if(!status){
 					this.goodsList = data;
 				}
+			},
+			goGoodsDetails(goodsId){
+				uni.navigateTo({
+					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
+				})
 			}
 		},
 		created() {

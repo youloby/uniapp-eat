@@ -11,7 +11,7 @@
 	        flex-direction: row;
 	position: relative;
 	padding: 8px;
-	background-color: #ffffff;
+	background-color: #f8f8f8;
 }
 .uni-searchbar__box.data-v-64ee3838 {
 
