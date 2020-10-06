@@ -79,7 +79,7 @@
 			<view class="note">
 				<view class="note-title">
 					<text class="title">种草笔记</text>
-					<view class="more">
+					<view class="more" @click="getShopnote()">
 						查看更多
 						<image src="../../static/icon/right2.png" mode="widthFix" class="right-icon"></image>
 					</view>
@@ -206,7 +206,14 @@
 					key: "record",
 					data: []
 				})
+			},
+				
+			getShopnote(){
+				uni.navigateTo({
+					url: "../shopnote/shopnote"
+				})
 			}
+		
 		},
 		onPageScroll({scrollTop}) {
 			// 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件

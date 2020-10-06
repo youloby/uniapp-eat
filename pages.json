@@ -29,6 +29,10 @@
             "path" : "pages/goodsphere/goodsphere",
             "style" : {"navigationBarTitleText":"好物圈"}
         }
+        ,{
+            "path" : "pages/shopnote/shopnote",
+            "style" : {}
+        }
     ],
 	"tabBar":{
 		"color":"#8c8c8c",

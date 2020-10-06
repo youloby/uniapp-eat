@@ -1,5 +1,5 @@
 <template>
-	<view class="user-container">
+	<view class="user_container">
 		<van-button class="signin" icon="/static/user/笔.png" size="mini" round color="rgba(20, 20, 20, 0.5)">签到</van-button>
 		
 		<!-- 二维码 -->
@@ -167,7 +167,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.user-container {
+	.user_container {
 		margin: auto;
 		height: 100vh;
 		// background: #000000;
