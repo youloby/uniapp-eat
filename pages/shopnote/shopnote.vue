@@ -14,7 +14,7 @@
 					</view>
 				</view>
 				
-				<view class="right">
+				<view class="right" @click="gethome()">
 					<view class="red">进店</view>
 				</view>
 			</view>
@@ -81,7 +81,11 @@
 			}
 		},
 		methods:{
-			
+			gethome(){
+				uni.switchTab({
+					url: "/pages/home/home",
+				})
+			},
 			formatNumber(n) {
 			  n = n.toString()
 			  return n[1] ? n : '0' + n
