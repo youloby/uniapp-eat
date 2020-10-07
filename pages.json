@@ -37,6 +37,10 @@
             "path" : "pages/details/goodsDetails/goodsDetails",
             "style" : {}
         }
+        ,{
+            "path" : "pages/grid/gift/gift",
+            "style" : {}
+        }
     ],
 	"tabBar":{
 		"color":"#8c8c8c",

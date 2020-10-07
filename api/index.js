@@ -44,8 +44,8 @@ export async function getGoodsDetails2(classify, goodsId){
 }
 
 //获取礼物列表
-export async function getGiftList(){
-	return await instance.get('/getGiftList');
+export async function getGiftList(page,pageSize=10){
+	return await instance.get(`/getGiftList?page=${page}&pageSize=${pageSize}`);
 }
 
 //获取分类信息

@@ -149,7 +149,7 @@
 		
 		methods:{
 			async getGoodsList(){
-				var {status, data}  = await getAllGoods("http://localhost:3000/recommend");
+				var {status, data}  = await getAllGoods("recommend");
 				this.goodsData = data
 				console.log(data)
 				

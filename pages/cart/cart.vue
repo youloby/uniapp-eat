@@ -65,7 +65,7 @@
 				})
 			},
 			async getGoodsList(){
-				var {status, data}  = await getAllGoods("http://localhost:3000/recommend");
+				var {status, data}  = await getAllGoods("recommend");
 				this.goodsData = data
 				console.log(data)
 				
@@ -108,6 +108,7 @@
 			.title2 {
 				margin: 38rpx 0;
 				color: #ccc;
+				font-size: 24rpx;
 			}
 	
 			.goodssphere {
