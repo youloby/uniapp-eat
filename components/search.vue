@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view>
-			<uni-search-bar class="search" placeholder="螺丝粉" cancelButton="auto" bgColor="#fff"
+			<uni-search-bar class="search" :placeholder="hotSeatch[0]" cancelButton="auto" bgColor="#fff"
 			 @confirm="confirm" @onFocus="searchPage(true)" @cancel="searchPage(false)" ref="reSearch"/>
 		</view>
 		<view class="searchPage" v-show="isSearch">
@@ -45,7 +45,6 @@
 					key: "record",
 					success: res => {
 						this.recordSearch = res.data
-						console.log(this.recordSearch);
 					}
 				});
 			},

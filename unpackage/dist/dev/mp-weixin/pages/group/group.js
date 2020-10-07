@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../components/shop-info.vue */ 134));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/logo.vue */ 141));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../components/shop-info.vue */ 136));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/logo.vue */ 143));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

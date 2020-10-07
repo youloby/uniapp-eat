@@ -9,19 +9,20 @@
 			</swiper>
 		</scroll-view>
 		
-		<!-- #ifdef H5 -->
-		<view class="info">
-			<text class="item">店铺主页</text>
-			<text class="item" @click="goUser()">个人中心</text>
-			<text class="item">关注我们</text>
-			<text class="item">店铺信息</text>
+		<view v-show="show !== 'none'">
+			<!-- #ifdef H5 -->
+			<view class="info">
+				<text class="item">店铺主页</text>
+				<text class="item" @click="goUser()">个人中心</text>
+				<text class="item">关注我们</text>
+				<text class="item">店铺信息</text>
+			</view>
+			<!-- #endif -->
+			
+			<!-- #ifdef MP-WEIXIN -->
+			<divider :title="'店铺信息'"></divider>
+			<!-- #endif -->
 		</view>
-		<!-- #endif -->
-		
-		<!-- #ifdef MP-WEIXIN -->
-		<divider :title="'店铺信息'"></divider>
-		<!-- #endif -->
-		
 	</view>
 </template>
 
@@ -29,6 +30,7 @@
 	import { getSpecialImg } from '../api/index.js';
 	import divider from './divider.vue';
 	export default {
+		props: ['show'],
 		data() {
 			return {
 				swiperList: []
