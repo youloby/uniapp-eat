@@ -19,7 +19,7 @@
 				</view>
 			</view>
 		</view>
-		<scroll-view scroll-y="true" @scroll={}>
+		
 		<view class="info" v-for="item in ShopnoteData" :key="item.noteId" >
 			<view class="day">
 				{{item.publishTime }}
@@ -31,15 +31,25 @@
 				#掌柜说#
 			</view>
 			<view class="imgList" >
-				<view class="img" v-for="img in item.coverPhotos" :key="img">
+				
+				<view v-if="item.coverPhotos.length !== 0" class="img" v-for="img in item.coverPhotos" :key="img">
 					<image :src="img" mode=""></image>
 				</view>
-				
+				<view v-if="item.coverPhotos.length === 0" class="img"  v-for="index in item.noteItemsBriefInfo" :key="index.imageUrl">
+					<image :src="index.imageUrl" mode=""></image>
+				</view>
 			</view>
-		
+			
 		</view>
-		</scroll-view>
-		
+		<view v-if="isEmpty" class="base">
+			·已经到底了·
+		</view>
+		<view v-else class="loading">
+			<view class="img">
+				<image src="../../static/easy-loadimage/loading.gif" mode=""></image>
+			</view>
+			正在加载
+		</view>
 		
 	</view>
 </template>
@@ -52,7 +62,8 @@
 			return {
 				isWxMenuFix: false,
 				page:1,
-				ShopnoteData:{}
+				ShopnoteData:{},
+				isEmpty:false 
 			};
 		},
 		onReady() {
@@ -112,12 +123,28 @@
 			
 		},
 		async onReachBottom() {
+			if(this.isEmpty === true){
+				return
+			}
 			this.page++;
 			var {status, data}  = await getShopNote(this.page);
-			this.ShopnoteData = this.ShopnoteData.concat(data);
-			this.ShopnoteData.map((item)=>{
+			var newData = {}
+			data.map((item)=>{
 				item.publishTime = this.formatTime(item.publishTime,"M月D日")
 			}) 
+			newData = this.ShopnoteData.concat(data);
+			
+			if(newData.length <= this.ShopnoteData.length){
+				console.log(newData.length)
+				console.log(this.ShopnoteData.length)
+				this.isEmpty = true
+			}else{
+				console.log(newData.length)
+				console.log(this.ShopnoteData.length)
+				this.isEmpty = false
+			}
+			this.ShopnoteData = newData
+			console.log(this.ShopnoteData)
 		}
 		
 		
@@ -170,12 +197,13 @@
 	
 	.info{
 		width: 700rpx;
-		height: 800rpx;
+		// height: 800rpx;
 		margin: 20rpx;
 		padding: 10rpx;
 		background-color: #fff;
 		font-size: 32rpx;
 		margin-top: 10rpx;
+		margin-bottom: 20rpx;
 		.day{
 			font-size: 24rpx;
 			color:#CCCCCC;
@@ -192,8 +220,9 @@
 		}
 		.imgList{
 			width: 800rpx;
+			display: flex;
+			flex-wrap: wrap;
 			.img{
-				float: left;
 				margin-bottom: 16rpx;
 				margin-right: 16rpx;
 				width: 220rpx;
@@ -207,7 +236,26 @@
 		
 	}
  }
- 
+ .base{
+	 text-align: center;
+	 color: #CCCCCC;
+	 font-size: 24rpx;
+ }
+ .loading{
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 font-size: 24rpx;
+	 .img{
+		 width: 30rpx;
+		 height: 30rpx;
+		 image{
+			 width: 100%;
+			 height: 100%;
+		 }
+	 }
+	 
+ }
  .wxMenuFix {
  		position: fixed;
 		width: 100%;
