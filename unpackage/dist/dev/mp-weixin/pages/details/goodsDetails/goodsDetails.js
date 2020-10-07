@@ -105,12 +105,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
+var components = {
+  uniGoodsNav: function() {
+    return __webpack_require__.e(/*! import() | components/uni-goods-nav/uni-goods-nav */ "components/uni-goods-nav/uni-goods-nav").then(__webpack_require__.bind(null, /*! @/components/uni-goods-nav/uni-goods-nav.vue */ 206))
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   var g0 = (_vm.details.price / 10).toFixed(2)
+
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.show = true
+    }
+
+    _vm.e1 = function($event) {
+      _vm.show = false
+    }
+
+    _vm.e2 = function($event) {
+      _vm.show = false
+    }
+  }
+
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -152,7 +171,32 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,7 +287,31 @@ var _index = __webpack_require__(/*! ../../../api/index.js */ 20);function _inte
     return {
       current: 1,
       details: {},
-      imgs: [] };
+      imgs: [],
+      show: false,
+      options: [{
+        icon: 'chat',
+        text: '在线客服' },
+      {
+        icon: 'shop',
+        text: '店铺',
+        infoColor: "red" },
+      {
+        icon: 'cart',
+        text: '购物车',
+        info: 2 }],
+
+      buttonGroup: [{
+        text: '加入购物车',
+        backgroundColor: '#FF8855',
+        color: '#fff' },
+
+      {
+        text: '立即购买',
+        backgroundColor: '#FF4444',
+        color: '#fff' }] };
+
+
 
   },
   methods: {
@@ -255,15 +323,41 @@ var _index = __webpack_require__(/*! ../../../api/index.js */ 20);function _inte
                   _this.imgs = data.imgs;
                 }case 6:case "end":return _context.stop();}}}, _callee);}))();
     },
+    getGoodsDetails2: function getGoodsDetails2(classify, goodsId) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$_getGoodsDetai2, status, data;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  (0, _index.getGoodsDetails2)(classify, goodsId));case 2:_yield$_getGoodsDetai2 = _context2.sent;status = _yield$_getGoodsDetai2.status;data = _yield$_getGoodsDetai2.data;
+                console.log(data);
+                if (!status) {
+                  _this2.details = data;
+                  _this2.details.price = Number(_this2.details.price).toFixed(2);
+                  _this2.imgs = data.picture;
+                }case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
     countDot: function countDot(e) {
       this.current = e.detail.current + 1;
+    },
+    onClick: function onClick(e) {
+      uni.showToast({
+        title: "\u70B9\u51FB".concat(e.content.text),
+        icon: 'none' });
+
+    },
+    buttonClick: function buttonClick(e) {
+      console.log(e);
+      this.options[2].info++;
     } },
 
-  onLoad: function onLoad(option) {
-    this.getGoodsDetails(option.goodsId);
+  onLoad: function onLoad(option) {var
+    classify = option.classify,goodsId = option.goodsId;
+    console.log(classify, goodsId);
+    if (!classify) {
+      this.getGoodsDetails(goodsId);
+    } else {
+      this.getGoodsDetails2(classify, goodsId);
+    }
   },
   components: {
     shopInfo: shopInfo } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

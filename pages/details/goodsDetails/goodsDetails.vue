@@ -5,7 +5,7 @@
 			:circular="true" class="swiper"
 			@change="countDot">
 				<swiper-item v-for="item in imgs" :key="item.id" class="item">
-					<image :src="item.img_url" class="img" mode="widthFix"></image>
+					<image :src="item.url" class="img" mode="widthFix"></image>
 				</swiper-item>
 			</swiper>
 			<view class="count">
@@ -52,8 +52,31 @@
 			<text>剩余 {{details.surplus_num}}</text>
 		</view>
 		<van-cell-group>
-			<van-cell title="服务" is-link value="收货后结算 - 快递发货" title-class="title" value-class="value" />
+			<van-cell title="服务" is-link value="收货后结算 - 快递发货" title-class="title" value-class="value" @click="show=true" />
 			<van-cell title="选择" is-link value="规格" title-class="title" value-class="value" />
+			<van-action-sheet :show="show" @click-overlay="show=false">
+				<view class="content">
+					<view class="serve">
+						<view class="item">
+							<view class="title">
+								收货后结算
+							</view>
+							<view class="text">
+								该店铺交易由有赞提供资金存管服务，当符合以下条件时，资金自动结算给商家：买家确认收货或到达约定的自动确认收货日期。交易资金未经有赞存管的情形（储值型、电子卡券等）不在本服务范围内。
+							</view>
+						</view>
+						<view class="item">
+							<view class="title">
+								快递发货
+							</view>
+							<view class="text">
+								支持快递发货，本商品免运费。
+							</view>
+						</view>
+					</view>
+					<view :class="['btn', !show ?'click-btn':'']" @click="show=false">我知道了</view>
+				</view>
+			</van-action-sheet>
 		</van-cell-group>
 		
 		<view class="shop">
@@ -77,19 +100,45 @@
 				</view>
 			</view>
 		</view>
-		<shop-info show="none"></shop-info>
+		<shop-info show="none" class="shop-info"></shop-info>
+		
+		<uni-goods-nav class="goods-nav" :fill="true"  :options="options" :buttonGroup="buttonGroup"  @click="onClick" @buttonClick="buttonClick" />
 	</view>
 </template>
 
 <script>
-	import { getGoodsDetails } from '../../../api/index.js';
+	import { getGoodsDetails, getGoodsDetails2 } from '../../../api/index.js';
 	import shopInfo from '../../../components/shop-info.vue';
 	export default {
 		data() {
 			return {
 				current: 1,
 				details: {},
-				imgs: []
+				imgs: [],
+				show: false,
+				options: [{
+					icon: 'chat',
+					text: '在线客服'
+				}, {
+					icon: 'shop',
+					text: '店铺',
+					infoColor:"red"
+				}, {
+					icon: 'cart',
+					text: '购物车',
+					info: 2
+				}],
+				buttonGroup: [{
+				  text: '加入购物车',
+				  backgroundColor: '#FF8855',
+				  color: '#fff'
+				},
+				{
+				  text: '立即购买',
+				  backgroundColor: '#FF4444',
+				  color: '#fff'
+				}
+				]
 			};
 		},
 		methods: {
@@ -101,12 +150,37 @@
 					this.imgs = data.imgs;
 				}
 			},
+			async getGoodsDetails2(classify, goodsId){
+				let { status, data } = await getGoodsDetails2(classify, goodsId);
+				console.log(data);
+				if(!status){
+					this.details = data;
+					this.details.price = Number(this.details.price).toFixed(2);
+					this.imgs = data.picture;
+				}
+			},
 			countDot(e){
 				this.current = e.detail.current+1;
+			},
+			onClick (e) {
+				uni.showToast({
+					title: `点击${e.content.text}`,
+					icon: 'none'
+				})
+			},
+			buttonClick (e) {
+				console.log(e)
+				this.options[2].info++
 			}
 		},
 		onLoad: function (option) {
-			this.getGoodsDetails(option.goodsId);
+			let { classify, goodsId } = option;
+			console.log(classify, goodsId);
+			if(!classify){
+				this.getGoodsDetails(goodsId);
+			}else {
+				this.getGoodsDetails2(classify, goodsId);
+			}
 		},
 		components: {
 			shopInfo
@@ -213,6 +287,7 @@
 			margin-top: 16rpx;
 			color: #969799;
 			font-size: 28rpx;
+			background-color: #fff;
 			.val {
 				flex: 1;
 				margin-left: 24rpx;
@@ -234,11 +309,45 @@
 					color: #323233;
 				}
 			}
+			.content {
+				.serve {
+					padding: 48rpx 32rpx 64rpx;
+					.item {
+						padding: 20rpx 0;
+						.title {
+							color: #323233;
+							font-size: 28rpx;
+							font-weight: 700;
+						}
+						.text {
+							margin-top: 16rpx;
+							color: #969799;
+							font-size: 26rpx;
+						}
+					}
+				}
+				.btn {
+					margin: 14rpx 32rpx;
+					height: 80rpx;
+					line-height: 80rpx;
+					text-align: center;
+					color: #fff;
+					font-size: 28rpx;
+					border-radius: 80rpx;
+					background-color: #f44;
+				}
+				.click-btn {
+					background-color: #E63D3D;
+				}
+			}
+			
 		}
 		
 		.shop {
 			display: flex;
 			padding: 32rpx;
+			margin-top: 16rpx;
+			background-color: #fff;
 			.logo {
 				width: 96rpx;
 			}
@@ -286,6 +395,17 @@
 					}
 				}
 			}
+		}
+		
+		.shop-info {
+			margin-top: 16rpx;
+			margin-bottom: 100rpx;
+		}
+		.goods-nav {
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
 		}
 	}
 </style>

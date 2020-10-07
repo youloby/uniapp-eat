@@ -7,20 +7,22 @@
 				<swiper :indicator-dots="true" :autoplay="true"
 				:circular="true" class="swiper" indicator-active-color="#FF4444">
 					<swiper-item v-for="item in swiperList" :key="item.id" class="item">
-						<image :src="item.url" class="img" mode="widthFix"></image>
+						<image :src="item.img_url" class="img" mode="widthFix"></image>
 					</swiper-item>
 				</swiper>
 			</scroll-view>
 			
 			<uni-grid :column="4" :show-border="false" class="grid">
 				<uni-grid-item v-for="item in gridList" :key="item.id">
-					<image :src="item.url" class="img" mode="widthFix"></image>
+					<navigator :url="item.url" :open-type="item.id === 8 ?'switchTab':'navigate'" hover-class="other-navigator-hover">
+						<image :src="item.img_url" class="img" mode="widthFix"></image>
+					</navigator>
 				</uni-grid-item>
 			</uni-grid>
 			
 			<uni-grid :column="2" :show-border="false" :square="false" class="peddle">
 				<uni-grid-item v-for="item in peddleList" :key="item.id" class="peddle-item">
-					<image :src="item.url" class="img" mode="widthFix"></image>
+					<image :src="item.img_url" class="img" mode="widthFix"></image>
 				</uni-grid-item>
 			</uni-grid>
 			
@@ -75,19 +77,19 @@
 			</view>
 			
 			<divider></divider>
-			<goods-block :bar="goodsBars['送Ta礼物'].url" code="1002" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
+			<goods-block :bar="goodsBars['送Ta礼物'].img_url" code="1002" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
 			
 			<divider></divider>
-			<goods-block :bar="goodsBars['各种零食'].url" code="1003" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
+			<goods-block :bar="goodsBars['各种零食'].img_url" code="1003" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
 			
 			<divider></divider>
-			<goods-block :bar="goodsBars['果蔬生鲜'].url" code="1004" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
+			<goods-block :bar="goodsBars['果蔬生鲜'].img_url" code="1004" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
 			
 			<divider></divider>
-			<goods-block :bar="goodsBars['咖啡茶饮'].url" code="1005" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
+			<goods-block :bar="goodsBars['咖啡茶饮'].img_url" code="1005" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
 			
 			<divider></divider>
-			<goods-block :bar="goodsBars['各种酒水'].url" code="1006" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
+			<goods-block :bar="goodsBars['各种酒水'].img_url" code="1006" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
 			
 			<divider></divider>
 			<view class="status">
@@ -159,7 +161,7 @@
 			goGoodsDetails(goodsId){
 				uni.navigateTo({
 					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
-				})
+				});
 			}
 		},
 		onPageScroll({scrollTop}) {

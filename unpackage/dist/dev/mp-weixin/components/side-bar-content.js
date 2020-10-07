@@ -140,7 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
 
 
 
@@ -190,7 +190,7 @@ var _index = __webpack_require__(/*! ../api/index.js */ 20);function _interopReq
   },
   methods: {
     getGoodsData: function getGoodsData() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$getAllGoods, status, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  (0, _index.getAllGoods)(_this.data.url));case 2:_yield$getAllGoods = _context.sent;status = _yield$getAllGoods.status;data = _yield$getAllGoods.data;
+                  (0, _index.getAllGoods)(_this.data.classify));case 2:_yield$getAllGoods = _context.sent;status = _yield$getAllGoods.status;data = _yield$getAllGoods.data;
                 if (!status) {
                   _this.goodsList = data;
                 }case 6:case "end":return _context.stop();}}}, _callee);}))();
@@ -200,6 +200,11 @@ var _index = __webpack_require__(/*! ../api/index.js */ 20);function _interopReq
         this.isInitialize = true;
       }
       return !(this.isInitialize || this.data.index === this.active);
+    },
+    goGoodsDetails: function goGoodsDetails(goodsId) {
+      uni.navigateTo({
+        url: "../details/goodsDetails/goodsDetails?classify=".concat(this.data.classify, "&goodsId=").concat(goodsId) });
+
     } },
 
   created: function created() {
@@ -207,6 +212,7 @@ var _index = __webpack_require__(/*! ../api/index.js */ 20);function _interopReq
   },
   components: {
     easyLoadimage: easyLoadimage } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "uni-goods-nav": "/components/uni-goods-nav/uni-goods-nav",
     "shop-info": "/components/shop-info"
   }
 }

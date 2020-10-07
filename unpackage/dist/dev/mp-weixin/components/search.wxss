@@ -24,11 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.data-v-039252a3 .search .uni-searchbar__box {
-  -webkit-box-pack: initial;
-  -webkit-justify-content: initial;
-          justify-content: initial;
-}
 .searchPage.data-v-039252a3 {
   height: 92vh;
   color: #666;

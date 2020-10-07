@@ -10,7 +10,7 @@
 			暂时还没有商品
 		</view>
 		<view class="goods-list" v-else>
-			<view class="goods" v-for="item in goodsList" :key="item.id">
+			<view class="goods" v-for="item in goodsList" :key="item.id" @click="goGoodsDetails(item.id)" >
 				<view class="goods-img">
 					<easy-loadimage :image-src="item.imageUrl" :scroll-top="scrollTop"
 					:view-height="1000" mode="widthFix" class="img"></easy-loadimage>
@@ -48,7 +48,7 @@
 		},
 		methods:{
 			async getGoodsData(){
-				let { status, data } = await getAllGoods(this.data.url);
+				let { status, data } = await getAllGoods(this.data.classify);
 				if(!status){
 					this.goodsList = data;
 				}
@@ -58,6 +58,11 @@
 					this.isInitialize = true;
 				}
 				return !(this.isInitialize || this.data.index === this.active);
+			},
+			goGoodsDetails(goodsId){
+				uni.navigateTo({
+					url: `../details/goodsDetails/goodsDetails?classify=${this.data.classify}&goodsId=${goodsId}`
+				})
 			}
 		},
 		created(){

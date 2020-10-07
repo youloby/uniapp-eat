@@ -83,12 +83,6 @@
 </script>
 
 <style lang="scss"  scoped>
-	/deep/.search {
-		.uni-searchbar__box {
-			justify-content: initial;
-		}
-	}
-	
 	.searchPage {
 		height: 92vh;
 		color: #666;

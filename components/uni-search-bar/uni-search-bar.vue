@@ -161,7 +161,7 @@
 		overflow: hidden;
 		position: relative;
 		flex: 1;
-		justify-content: center;
+		/* justify-content: center; */
 		flex-direction: row;
 		align-items: center;
 		height: 36px;

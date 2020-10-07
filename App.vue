@@ -14,7 +14,7 @@ export default {
 
 <style>
 	page{
-		background: ##f8f8f8;
+		background: #f8f8f8;
 	}
 	
 /* 解决头条小程序组件内引入字体不生效的问题 */

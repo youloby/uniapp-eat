@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "divider": "/components/divider"
+    "uni-icons": "/components/uni-icons/uni-icons"
   }
 }

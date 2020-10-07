@@ -137,6 +137,7 @@
   margin-top: 16rpx;
   color: #969799;
   font-size: 28rpx;
+  background-color: #fff;
 }
 .goods-container .postage .val.data-v-fc39dd0e {
   -webkit-box-flex: 1;
@@ -162,11 +163,42 @@
   text-align: left;
   color: #323233;
 }
+.goods-container.data-v-fc39dd0e .van-cell-group .content .serve {
+  padding: 48rpx 32rpx 64rpx;
+}
+.goods-container.data-v-fc39dd0e .van-cell-group .content .serve .item {
+  padding: 20rpx 0;
+}
+.goods-container.data-v-fc39dd0e .van-cell-group .content .serve .item .title {
+  color: #323233;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.goods-container.data-v-fc39dd0e .van-cell-group .content .serve .item .text {
+  margin-top: 16rpx;
+  color: #969799;
+  font-size: 26rpx;
+}
+.goods-container.data-v-fc39dd0e .van-cell-group .content .btn {
+  margin: 14rpx 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 80rpx;
+  background-color: #f44;
+}
+.goods-container.data-v-fc39dd0e .van-cell-group .content .click-btn {
+  background-color: #E63D3D;
+}
 .goods-container .shop.data-v-fc39dd0e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   padding: 32rpx;
+  margin-top: 16rpx;
+  background-color: #fff;
 }
 .goods-container .shop .logo.data-v-fc39dd0e {
   width: 96rpx;
@@ -231,5 +263,15 @@
 }
 .goods-container .shop .shop-content .shop-tags .old-shop.data-v-fc39dd0e {
   width: 152rpx;
+}
+.goods-container .shop-info.data-v-fc39dd0e {
+  margin-top: 16rpx;
+  margin-bottom: 100rpx;
+}
+.goods-container .goods-nav.data-v-fc39dd0e {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
