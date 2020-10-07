@@ -19,7 +19,7 @@
 				</view>
 			</view>
 		</view>
-		
+		<scroll-view scroll-y="true" @scroll={}>
 		<view class="info" v-for="item in ShopnoteData" :key="item.noteId" >
 			<view class="day">
 				{{item.publishTime }}
@@ -38,7 +38,8 @@
 			</view>
 		
 		</view>
-	
+		</scroll-view>
+		
 		
 	</view>
 </template>
@@ -104,12 +105,21 @@
 				console.log(this.ShopnoteData)
 				
 			},
+			
 		},
 		created() {
 			this.getShopnoteList()
 			
-		
 		},
+		async onReachBottom() {
+			this.page++;
+			var {status, data}  = await getShopNote(this.page);
+			this.ShopnoteData = this.ShopnoteData.concat(data);
+			this.ShopnoteData.map((item)=>{
+				item.publishTime = this.formatTime(item.publishTime,"M月D日")
+			}) 
+		}
+		
 		
 	}
 </script>
