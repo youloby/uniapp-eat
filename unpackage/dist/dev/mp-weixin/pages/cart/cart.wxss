@@ -55,6 +55,7 @@
 .cart-container .empty_goodscar .item .title2.data-v-0f00adf4 {
   margin: 38rpx 0;
   color: #ccc;
+  font-size: 24rpx;
 }
 .cart-container .empty_goodscar .item .goodssphere.data-v-0f00adf4 {
   display: -webkit-box;

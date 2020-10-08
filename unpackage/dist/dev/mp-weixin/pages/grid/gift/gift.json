@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "shop-info": "/components/shop-info",
+    "logo": "/components/logo"
+  }
+}

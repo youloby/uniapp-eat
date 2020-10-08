@@ -1,6 +1,6 @@
 <template>
 	<view class="home-container">
-		<search @updateIsSearch=updateIsSearch></search>
+		<search @updateIsSearch="updateIsSearch"></search>
 		<view class="container" v-show="!isSearch">
 			
 			<scroll-view>
@@ -13,8 +13,8 @@
 			</scroll-view>
 			
 			<uni-grid :column="4" :show-border="false" class="grid">
-				<uni-grid-item v-for="item in gridList" :key="item.id">
-					<navigator :url="item.url" :open-type="item.id === 8 ?'switchTab':'navigate'" hover-class="other-navigator-hover">
+				<uni-grid-item v-for="(item,index) in gridList" :key="item.id">
+					<navigator :url="item.url+'?index='+index" :open-type="item.id === 8 ?'switchTab':'navigate'" hover-class="other-navigator-hover">
 						<image :src="item.img_url" class="img" mode="widthFix"></image>
 					</navigator>
 				</uni-grid-item>
@@ -100,6 +100,7 @@
 			<shop-info></shop-info>
 			<logo></logo>
 		</view>
+		<tabbar></tabbar>
 	</view>
 </template>
 
@@ -110,6 +111,7 @@
 	import shopInfo from '../../components/shop-info.vue';
 	import logo from '../../components/logo.vue';
 	import search from '../../components/search.vue';
+	import tabbar from '../../components/tabbar/tabbar.vue';
 	export default {
 		name: "home",
 		data() {
@@ -178,7 +180,8 @@
 			divider,
 			shopInfo,
 			logo,
-			search
+			search,
+			tabbar
 		}
 	}
 </script>

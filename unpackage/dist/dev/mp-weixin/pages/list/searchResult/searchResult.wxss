@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.result-container .tab.data-v-2a2b5757 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  background-color: #fff;
+}
+.result-container .tab .option.data-v-2a2b5757 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #717171;
+  text-align: center;
+  font-size: 28rpx;
+}
+.result-container .tab .option .filter.data-v-2a2b5757 {
+  position: relative;
+  display: inline-block;
+}
+.result-container .tab .option .filter .rank.data-v-2a2b5757 {
+  position: absolute;
+  left: 10rpx;
+  width: 6rpx;
+  height: 6rpx;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.result-container .tab .option .filter .ascend.data-v-2a2b5757 {
+  top: -18rpx;
+  border-left: 2rpx solid #bbb;
+  border-top: 2rpx solid #bbb;
+}
+.result-container .tab .option .filter .descend.data-v-2a2b5757 {
+  bottom: 0rpx;
+  border-right: 2rpx solid #bbb;
+  border-bottom: 2rpx solid #bbb;
+}
+.result-container .tab .action.data-v-2a2b5757 {
+  color: #f44;
+}
+.result-container .list.data-v-2a2b5757 {
+  padding: 0 30rpx;
+}
+.result-container .list .goods.data-v-2a2b5757 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 20rpx 0;
+  background-color: #fff;
+}
+.result-container .list .goods .image.data-v-2a2b5757 {
+  width: 290rpx;
+  height: 290rpx;
+  margin-right: 20rpx;
+}
+.result-container .list .goods .image .img.data-v-2a2b5757 {
+  width: 100%;
+}
+.result-container .list .goods .info.data-v-2a2b5757 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding-right: 24rpx;
+}
+.result-container .list .goods .info .title.data-v-2a2b5757 {
+  margin: 24rpx 0 8rpx;
+  color: #323233;
+  font-size: 28rpx;
+}
+.result-container .list .goods .info .buy.data-v-2a2b5757 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  height: 88rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.result-container .list .goods .info .buy .price.data-v-2a2b5757 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #f44;
+  font-size: 36rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.result-container .list .goods .info .buy .price .icon.data-v-2a2b5757 {
+  margin-right: 4rpx;
+  font-size: 24rpx;
+}
+.result-container .list .goods .info .buy .cart-icon.data-v-2a2b5757 {
+  width: 48rpx;
+  height: 48rpx;
+}
+

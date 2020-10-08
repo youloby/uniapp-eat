@@ -1,10 +1,13 @@
 <template>
-	<view>
+	<view class="search-container">
 		<view>
 			<uni-search-bar class="search" :placeholder="hotSeatch[0]" cancelButton="auto" bgColor="#fff"
 			 @confirm="confirm" @onFocus="searchPage(true)" @cancel="searchPage(false)" ref="reSearch"/>
 		</view>
-		<view class="searchPage" v-show="isSearch">
+		
+		<search-result v-show="isResult"></search-result>
+		
+		<view class="searchPage" v-show="isSearch && !isResult">
 			<view class="title">热门搜索</view>
 			<view class="content">
 				<text v-for="(item, index) in hotSeatch" :key="index" class="item" @click="onSearch(item)">
@@ -26,11 +29,13 @@
 </template>
 
 <script>
-	import { getHotSearch } from '../api/index.js';
+	import { getHotSearch, getSearchData } from '../api/index.js';
+	import searchResult from './search-result.vue';
 	export default {
 		data() {
 			return {
 				isSearch: false,
+				isResult: false,
 				hotSeatch: [],
 				recordSearch: []
 			};
@@ -58,11 +63,14 @@
 				}
 			},
 			confirm({value}){
-				if(this.recordSearch.includes(value.trim())){
-					return;
+				if(!value.trim()){
+					value = this.hotSeatch[0];
+					this.$refs.reSearch.replaceSearch(value);
 				}
-				this.recordSearch.push(value.trim());
-				uni.setStorage({key: "record", data: this.recordSearch});
+				if(!this.recordSearch.includes(value.trim())){
+					this.recordSearch.push(value.trim());
+					uni.setStorage({key: "record", data: this.recordSearch});
+				}
 			},
 			onSearch(value){
 				this.$refs.reSearch.replaceSearch(value);
@@ -78,11 +86,15 @@
 		},
 		created(){
 			this.getHotSearch();
+		},
+		components: {
+			searchResult
 		}
 	}
 </script>
 
 <style lang="scss"  scoped>
+.search-container{
 	.searchPage {
 		height: 92vh;
 		color: #666;
@@ -120,4 +132,5 @@
 			}
 		}
 	}
+}
 </style>

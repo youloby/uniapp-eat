@@ -8,7 +8,9 @@
     "pages/user/user",
     "pages/goodsphere/goodsphere",
     "pages/shopnote/shopnote",
-    "pages/details/goodsDetails/goodsDetails"
+    "pages/details/goodsDetails/goodsDetails",
+    "pages/grid/gift/gift",
+    "pages/list/searchResult/searchResult"
   ],
   "subPackages": [],
   "window": {
@@ -100,5 +102,5 @@
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index"
   },
-  "sitemapLocation": "sitemap51.json"
+  "sitemapLocation": "sitemap49.json"
 }
