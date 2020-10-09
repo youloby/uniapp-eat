@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.shopnote_container.data-v-c79688f4 {
+.shopnote_container {
   background-color: #f9f9f9;
 }
-.shopnote_container #sticky .top.data-v-c79688f4 {
+.shopnote_container #sticky .top {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -41,7 +41,7 @@
   height: 128rpx;
   background-color: #FFFFFF;
 }
-.shopnote_container #sticky .top .left.data-v-c79688f4 {
+.shopnote_container #sticky .top .left {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -49,20 +49,20 @@
   font-weight: 600;
   margin-left: 24rpx;
 }
-.shopnote_container #sticky .top .left .logo_img.data-v-c79688f4 {
+.shopnote_container #sticky .top .left .logo_img {
   width: 96rpx;
   height: 96rpx;
 }
-.shopnote_container #sticky .top .left .three_img.data-v-c79688f4 {
+.shopnote_container #sticky .top .left .three_img {
   margin-top: 24rpx;
   width: 152rpx;
   height: 32rpx;
 }
-.shopnote_container #sticky .top .left image.data-v-c79688f4 {
+.shopnote_container #sticky .top .left image {
   width: 100%;
   height: 100%;
 }
-.shopnote_container #sticky .top .right.data-v-c79688f4 {
+.shopnote_container #sticky .top .right {
   width: 144rpx;
   height: 54rpx;
   border: 1px solid #FF0000;
@@ -71,7 +71,7 @@
   border-radius: 42rpx;
   margin-right: 24rpx;
 }
-.shopnote_container .info.data-v-c79688f4 {
+.shopnote_container .info {
   width: 700rpx;
   margin: 20rpx;
   padding: 10rpx;
@@ -80,21 +80,21 @@
   margin-top: 10rpx;
   margin-bottom: 20rpx;
 }
-.shopnote_container .info .day.data-v-c79688f4 {
+.shopnote_container .info .day {
   font-size: 24rpx;
   color: #CCCCCC;
   margin-bottom: 20rpx;
 }
-.shopnote_container .info .title.data-v-c79688f4 {
+.shopnote_container .info .title {
   font-weight: 600;
   margin-bottom: 20rpx;
 }
-.shopnote_container .info .shopkeeper.data-v-c79688f4 {
+.shopnote_container .info .shopkeeper {
   color: #ff4444;
   font-size: 22rpx;
   margin-bottom: 20rpx;
 }
-.shopnote_container .info .imgList.data-v-c79688f4 {
+.shopnote_container .info .imgList {
   width: 800rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -102,22 +102,22 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.shopnote_container .info .imgList .img.data-v-c79688f4 {
+.shopnote_container .info .imgList .img {
   margin-bottom: 16rpx;
   margin-right: 16rpx;
   width: 220rpx;
   height: 240rpx;
 }
-.shopnote_container .info .imgList image.data-v-c79688f4 {
+.shopnote_container .info .imgList image {
   width: 100%;
   height: 100%;
 }
-.base.data-v-c79688f4 {
+.base {
   text-align: center;
   color: #CCCCCC;
   font-size: 24rpx;
 }
-.loading.data-v-c79688f4 {
+.loading {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -129,15 +129,15 @@
           justify-content: center;
   font-size: 24rpx;
 }
-.loading .img.data-v-c79688f4 {
+.loading .img {
   width: 30rpx;
   height: 30rpx;
 }
-.loading .img image.data-v-c79688f4 {
+.loading .img image {
   width: 100%;
   height: 100%;
 }
-.wxMenuFix.data-v-c79688f4 {
+.wxMenuFix {
   position: fixed;
   width: 100%;
   z-index: 999;

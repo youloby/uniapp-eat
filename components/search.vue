@@ -5,9 +5,7 @@
 			 @confirm="confirm" @onFocus="searchPage(true)" @cancel="searchPage(false)" ref="reSearch"/>
 		</view>
 		
-		<search-result v-show="isResult" ref="result"></search-result>
-		
-		<view class="searchPage" v-show="isSearch && !isResult">
+		<view class="searchPage" v-show="isSearch">
 			<view class="title">热门搜索</view>
 			<view class="content">
 				<text v-for="(item, index) in hotSeatch" :key="index" class="item" @click="onSearch(item)">
@@ -30,12 +28,10 @@
 
 <script>
 	import { getHotSearch, getSearchData } from '../api/index.js';
-	import searchResult from './search-result.vue';
 	export default {
 		data() {
 			return {
 				isSearch: false,
-				isResult: false,
 				keyword: "",
 				hotSeatch: [],
 				recordSearch: []
@@ -57,12 +53,6 @@
 			searchPage(value){
 				this.isSearch = value;
 				this.$emit('updateIsSearch', value);
-				if(value){
-					uni.hideTabBar();
-				}else {
-					this.isResult = false;
-					uni.showTabBar();
-				}
 			},
 			confirm({value}){
 				if(!value.trim()){
@@ -73,9 +63,10 @@
 					this.recordSearch.push(value.trim());
 					uni.setStorage({key: "record", data: this.recordSearch});
 				}
-				this.isResult = true;
-				uni.showTabBar();
-				this.$refs.result.getSearchResult(value);
+				this.searchPage(false);
+				uni.navigateTo({
+					url: `../list/searchResult/searchResult?keyword=${value}`
+				});
 			},
 			onSearch(value){
 				this.$refs.reSearch.replaceSearch(value);
@@ -91,9 +82,6 @@
 		},
 		created(){
 			this.getHotSearch();
-		},
-		components: {
-			searchResult
 		}
 	}
 </script>

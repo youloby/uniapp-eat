@@ -1,0 +1,1 @@
+<view class="lazyload-container" id="{{uid}}"><block wx:if="{{isShow}}"><image class="lazy-img" src="{{imgUrl}}" mode="widthFix"></image></block></view>

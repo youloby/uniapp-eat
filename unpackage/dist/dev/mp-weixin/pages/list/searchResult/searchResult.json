@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "uni-search-bar": "/components/uni-search-bar/uni-search-bar"
+    "uni-search-bar": "/components/uni-search-bar/uni-search-bar",
+    "lazyload": "/components/lazyload/lazyload",
+    "tabbar": "/components/tabbar/tabbar"
   }
 }

@@ -24,20 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.searchPage.data-v-039252a3 {
+.search-container .searchPage.data-v-039252a3 {
   height: 92vh;
   color: #666;
   font-size: 24rpx;
   background-color: #fff;
 }
-.searchPage .title.data-v-039252a3 {
+.search-container .searchPage .title.data-v-039252a3 {
   padding: 30rpx;
   color: #999;
 }
-.searchPage .content.data-v-039252a3 {
+.search-container .searchPage .content.data-v-039252a3 {
   padding: 0 20rpx;
 }
-.searchPage .content .item.data-v-039252a3 {
+.search-container .searchPage .content .item.data-v-039252a3 {
   display: inline-block;
   padding: 0 20rpx;
   height: 64rpx;
@@ -46,7 +46,7 @@
   text-align: center;
   background-color: #f6f6f6;
 }
-.searchPage .del.data-v-039252a3 {
+.search-container .searchPage .del.data-v-039252a3 {
   width: 276rpx;
   height: 60rpx;
   line-height: 60rpx;
@@ -56,7 +56,7 @@
   margin-top: 20rpx;
   text-align: center;
 }
-.searchPage .del .del-icon.data-v-039252a3 {
+.search-container .searchPage .del .del-icon.data-v-039252a3 {
   vertical-align: middle;
   width: 32rpx;
   margin-right: 10rpx;

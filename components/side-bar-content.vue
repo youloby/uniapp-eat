@@ -12,8 +12,7 @@
 		<view class="goods-list" v-else>
 			<view class="goods" v-for="item in goodsList" :key="item.id" @click="goGoodsDetails(item.id)" >
 				<view class="goods-img">
-					<easy-loadimage :image-src="item.imageUrl" :scroll-top="scrollTop"
-					:view-height="1000" mode="widthFix" class="img"></easy-loadimage>
+					<lazyload :img-url="item.imageUrl" :scroll-top="scrollTop" class="img"></lazyload>
 				</view>
 				<view class="info">
 					<view class="title">

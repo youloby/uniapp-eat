@@ -1,11 +1,10 @@
 <template>
-	<view class="goods-block">
+	<view class="goods-block" :id="gid">
 		<image :src="bar" mode="widthFix" class="bar"></image>
 		
-		<view class="goods-list">
+		<view class="goods-list" v-if="isShow">
 			<view class="goods" v-for="item in goodsList" :key="item.id" @click="goGoodsDetails(item.goodsId)">
-				<easy-loadimage :image-src="item.img_url" :scroll-top="scrollTop"
-				:view-height="1000" mode="widthFix" class="img"></easy-loadimage>
+				<lazyload :img-url="item.img_url" :scroll-top="scrollTop" class="img"></lazyload>
 				<view class="text">
 					<view class="title">
 						{{ item.title }}
@@ -30,8 +29,15 @@
 		props:['bar', 'code', 'scrollTop'],
 		data() {
 			return {
+				gid: '',
+				isShow: false,
 				goodsList: []
 			};
+		},
+		watch: {
+			scrollTop(val){
+				this.onScroll();
+			}
 		},
 		methods: {
 			async getGoodsList(){
@@ -44,9 +50,19 @@
 				uni.navigateTo({
 					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
 				})
+			},
+			onScroll(scrollTop){
+				const query = uni.createSelectorQuery().in(this);
+				query.select('#'+this.gid).boundingClientRect(data => {
+				    if(!data) return;
+					if(data.top < 1400){
+						this.isShow = true;
+					}
+				}).exec()
 			}
 		},
 		created() {
+			this.gid = 'gid'+Math.floor(Math.random()*10);
 			this.getGoodsList();
 		},
 		components:{
@@ -71,6 +87,7 @@
 				box-shadow: 0 2px 4px rgba(0,0,0,.06);
 				.img {
 					width: 100%;
+					height: 224rpx;
 				}
 				.text {
 					padding: 0 16rpx 4rpx 16rpx;

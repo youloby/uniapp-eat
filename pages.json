@@ -57,6 +57,10 @@
             "path" : "pages/grid/wine/wine",
             "style" : {}
         }
+		,{
+		    "path" : "pages/list/searchResult/searchResult",
+		    "style" : {}
+		}
     ],
 	"globalStyle": {
 		"app-plus": {"titleNView": false},
@@ -65,6 +69,7 @@
 		"navigationBarBackgroundColor": "#fff",
 		"usingComponents": {
 			"tabbar": "/components/tabbar/tabbar",
+			"lazyload": "/components/lazyload/lazyload",
 			"demo-block": "/wxcomponents/vant/demo-block/index",
 			"van-action-sheet": "/wxcomponents/vant/action-sheet/index",
 			"van-area": "/wxcomponents/vant/area/index",

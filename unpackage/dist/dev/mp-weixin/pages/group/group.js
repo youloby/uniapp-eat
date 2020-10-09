@@ -92,7 +92,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
+var components = {
+  tabbar: function() {
+    return __webpack_require__.e(/*! import() | components/tabbar/tabbar */ "components/tabbar/tabbar").then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 159))
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -130,7 +134,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../components/shop-info.vue */ 150));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/logo.vue */ 157));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../components/shop-info.vue */ 180));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../components/logo.vue */ 187));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
 
 
 
