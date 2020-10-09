@@ -1,8 +1,8 @@
 <template>
-	<view class="snacks_container">
+	<view class="wine_container">
 		
 		<view class="img">
-			<image src="../../../static/grid/零食.webp" mode=""></image>
+			<image src="../../../static/grid/酒水.webp" mode=""></image>
 		</view>
 		
 		<view id="sticky" :class="{wxMenuFix:isWxMenuFix}">
@@ -112,7 +112,7 @@
 </script>
 
 <style lang="scss" scoped>
-.snacks_container {
+.wine_container {
 		.img {
 			width: 100%;
 			height: 200rpx;

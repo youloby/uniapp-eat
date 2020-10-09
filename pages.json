@@ -49,6 +49,14 @@
             "path" : "pages/grid/snacks/snacks",
             "style" : {}
         }
+        ,{
+            "path" : "pages/grid/coffee/coffee",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/grid/wine/wine",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"app-plus": {"titleNView": false},

@@ -72,7 +72,6 @@
 					title.push({name:item.title, sole:item.alias})
 				})
 				this.classifyData = title
-				console.log(title)
 				if(this.classifyData !== null){
 					this.isData = true
 				}else{
@@ -84,7 +83,6 @@
 			async getClassifyGoodsData(index){
 				var {data}= await getClassifyGoods(this.classifyData[index].sole)
 				this.classifyGoodsData = data
-				console.log(this.classifyGoodsData)
 			},
 
 			tabChange(index) {
@@ -94,7 +92,6 @@
 		},
 		async onLoad(option) {
 			await this.getClassifyData(option.index)
-			console.log(this.classifyData)
 			
 		},
 		onReady() {

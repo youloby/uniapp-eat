@@ -44,12 +44,9 @@
 		},
 		methods:{
 			async getGiftListData(){
-				console.log("1111")
 				var {status, data} = await getGiftList(this.page);
 				
-				console.log(data)
 				this.giftData = data
-				console.log(this.giftData)
 			}
 		},
 		async onReachBottom() {
@@ -63,10 +60,7 @@
 		},
 		onLoad() {
 			this.getGiftListData()
-			console.log("11")
-			uni.showTabBar({
-				
-			})
+		
 		}
 	}
 </script>
