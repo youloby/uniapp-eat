@@ -1,8 +1,8 @@
 <template>
 	<view class="tabbar-container">
-		<view class="page" v-for="item in list" :key="item.pagePath">
+		<view class="page" v-for="(item, index) in list" :key="index">
 			<navigator :url="item.pagePath">
-				
+				<image :src="index === current ?item.selectedIconPath :item.iconPath" mode="widthFix" class="icon"></image>
 			</navigator>
 		</view>
 	</view>
@@ -10,19 +10,21 @@
 
 <script>
 	export default {
+		props:['current'],
 		data() {
 			return {
-				"list": [
-					{"pagePath": "pages/home/home", "text": "主页", 
-					"iconPath":"static/icon/home.png", "selectedIconPath":"static/icon/selected_home.png"},
-					{"pagePath": "pages/goods/goods", "text": "全部商品",
-					"iconPath":"static/icon/goods.png", "selectedIconPath":"static/icon/selected-goods.png"},
-					{"pagePath": "pages/cart/cart", "text": "购物车",
-					"iconPath":"static/icon/cart.png", "selectedIconPath":"static/icon/selected_cart.png"},
-					{"pagePath": "pages/group/group", "text": "吃货交流群",
-					"iconPath":"static/icon/group.png", "selectedIconPath":"static/icon/selected_group.png"},
-					{"pagePath": "pages/user/user", "text": "我的",
-					"iconPath":"static/icon/user.png", "selectedIconPath":"static/icon/selected_user.png"}
+				active: 0,
+				list: [
+					{"pagePath": "/pages/home/home", 
+					"iconPath":"/static/icon/home.webp", "selectedIconPath":"/static/icon/selected_home.webp"},
+					{"pagePath": "/pages/goods/goods",
+					"iconPath":"/static/icon/goods.webp", "selectedIconPath":"/static/icon/selected_goods.webp"},
+					{"pagePath": "/pages/cart/cart",
+					"iconPath":"/static/icon/cart.webp", "selectedIconPath":"/static/icon/selected_cart.png"},
+					{"pagePath": "/pages/group/group",
+					"iconPath":"/static/icon/group.webp", "selectedIconPath":"/static/icon/selected_group.webp"},
+					{"pagePath": "/pages/user/user",
+					"iconPath":"/static/icon/user.webp", "selectedIconPath":"/static/icon/selected_user.webp"}
 				]
 			};
 		}
@@ -35,5 +37,18 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	
+	.page {
+		flex: 1;
+		text-align: center;
+		font-size: 28rpx;
+		color: #8c8c8c;
+		.icon {
+			width: 150rpx;
+		}
+	}
 }
 </style>

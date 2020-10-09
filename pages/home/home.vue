@@ -100,7 +100,7 @@
 			<shop-info></shop-info>
 			<logo></logo>
 		</view>
-		<tabbar></tabbar>
+		<tabbar :current="0"></tabbar>
 	</view>
 </template>
 
@@ -111,7 +111,6 @@
 	import shopInfo from '../../components/shop-info.vue';
 	import logo from '../../components/logo.vue';
 	import search from '../../components/search.vue';
-	import tabbar from '../../components/tabbar/tabbar.vue';
 	export default {
 		name: "home",
 		data() {
@@ -180,8 +179,7 @@
 			divider,
 			shopInfo,
 			logo,
-			search,
-			tabbar
+			search
 		}
 	}
 </script>

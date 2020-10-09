@@ -19,6 +19,7 @@
 		</view>
 		<shop-info id="bottom"></shop-info>
 		<logo></logo>
+		<tabbar :current="1"></tabbar>
 	</view>
 </template>
 

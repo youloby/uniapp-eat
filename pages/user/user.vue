@@ -89,6 +89,7 @@
 		<!-- #endif -->
 		
 		<logo class="logo" />
+		<tabbar :current="4"></tabbar>
 	</view>
 </template>
 

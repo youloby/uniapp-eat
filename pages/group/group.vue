@@ -70,6 +70,7 @@
 		</view>
 		<shop-info></shop-info>
 		<logo></logo>
+		<tabbar :current="3"></tabbar>
 	</view>
 </template>
 

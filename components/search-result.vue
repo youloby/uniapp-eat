@@ -34,10 +34,11 @@
 </template>
 
 <script>
+	import { getSearchData } from '../api/index.js';
 	export default {
+		props: ['isResult', 'keyword'],
 		data() {
 			return {
-				keyword: "",
 				action: 0,
 				data: [],
 				tab:["综合", "价格", "上新"]

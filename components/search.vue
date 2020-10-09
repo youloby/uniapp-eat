@@ -5,7 +5,7 @@
 			 @confirm="confirm" @onFocus="searchPage(true)" @cancel="searchPage(false)" ref="reSearch"/>
 		</view>
 		
-		<search-result v-show="isResult"></search-result>
+		<search-result v-show="isResult" ref="result"></search-result>
 		
 		<view class="searchPage" v-show="isSearch && !isResult">
 			<view class="title">热门搜索</view>
@@ -36,6 +36,7 @@
 			return {
 				isSearch: false,
 				isResult: false,
+				keyword: "",
 				hotSeatch: [],
 				recordSearch: []
 			};
@@ -59,6 +60,7 @@
 				if(value){
 					uni.hideTabBar();
 				}else {
+					this.isResult = false;
 					uni.showTabBar();
 				}
 			},
@@ -71,6 +73,9 @@
 					this.recordSearch.push(value.trim());
 					uni.setStorage({key: "record", data: this.recordSearch});
 				}
+				this.isResult = true;
+				uni.showTabBar();
+				this.$refs.result.getSearchResult(value);
 			},
 			onSearch(value){
 				this.$refs.reSearch.replaceSearch(value);
