@@ -155,7 +155,7 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
  .shopnote_container{
 	 background-color: #f9f9f9;
 	 #sticky{

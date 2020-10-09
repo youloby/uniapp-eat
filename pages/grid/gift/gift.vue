@@ -54,7 +54,6 @@
 			this.page++;
 			var {status, data} = await getGiftList(this.page);
 			this.giftData = this.giftData.concat(data)
-			console.log("11")
 		},
 		components: {
 			shopInfo,
@@ -62,6 +61,10 @@
 		},
 		onLoad() {
 			this.getGiftListData()
+			console.log("11")
+			uni.showTabBar({
+				
+			})
 		}
 	}
 </script>

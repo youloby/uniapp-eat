@@ -41,6 +41,14 @@
             "path" : "pages/grid/gift/gift",
             "style" : {}
         }
+        ,{
+            "path" : "pages/grid/fresh/fresh",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/grid/snacks/snacks",
+            "style" : {}
+        }
     ],
 	"tabBar":{
 		"color":"#8c8c8c",
