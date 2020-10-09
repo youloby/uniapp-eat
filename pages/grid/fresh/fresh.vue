@@ -4,7 +4,8 @@
 		<view class="img">
 			<image src="../../../static/grid/果蔬.webp" mode=""></image>
 		</view>
-		<view class="">
+		
+		<view id="sticky" :class="{wxMenuFix:isWxMenuFix}">
 			<wuc-tab :tab-list="classifyData" :tabCur.sync="TabCur" :textFlex="true" tab-class="cu-bar" select-class="text-orange" @change="tabChange"></wuc-tab>
 		</view>
 		
@@ -52,7 +53,7 @@
 				classifyData: [],
 				isData:false,
 				classifyGoodsData:[],
-				
+				isWxMenuFix: false
 			}
 		},
 		components: { 
@@ -95,7 +96,21 @@
 			await this.getClassifyData(option.index)
 			console.log(this.classifyData)
 			
-		}
+		},
+		onReady() {
+			const query = uni.createSelectorQuery();
+			query.select('#sticky').boundingClientRect(data=>{
+				this.menuTop = data.top
+			}).exec();
+		},
+		onPageScroll(e) {
+			var { scrollTop } = e;
+			if(scrollTop > this.menuTop){
+				this.isWxMenuFix = true;
+			}else{
+				this.isWxMenuFix = false;
+			}
+		},
 	}
 </script>
 
@@ -196,5 +211,13 @@
 }
 .cu-bar{
     font-size: 24rpx;
+}
+.wxMenuFix {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	background-color: #fff;
 }
 </style>
