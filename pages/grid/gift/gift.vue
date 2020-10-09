@@ -26,6 +26,8 @@
 		
 		<shop-info />
 		<logo />
+		
+		<tabbar :current="-1"></tabbar>
 	</view>
 </template>
 

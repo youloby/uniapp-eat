@@ -82,7 +82,7 @@
 		},
 		methods:{
 			gethome(){
-				uni.switchTab({
+				uni.navigateTo({
 					url: "/pages/home/home",
 				})
 			},

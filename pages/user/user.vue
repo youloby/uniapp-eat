@@ -49,9 +49,9 @@
 		</view>
 
 		<van-cell-group class="van_cell">
-			<van-cell icon="shopping-cart-o" title="购物车" is-link link-type="switchTab" />
+			<van-cell icon="shopping-cart-o" title="购物车" is-link link-type="navigateTo" />
 			<!-- #ifdef H5 -->
-			<van-cell icon="user-o" title="吃货分销员中心" is-link link-type="switchTab" />
+			<van-cell icon="user-o" title="吃货分销员中心" is-link link-type="navigateTo" />
 			<!-- #endif -->
 			<van-cell icon="chat-o" title="客服聊天" is-link link-type="navigateTo" />
 		</van-cell-group>
@@ -73,7 +73,7 @@
 			<image src="../../static/user/卖家.webp" mode=""></image>
 			
 		</view>
-		<van-cell icon="shop-o" title="吃货研究所店铺" is-link link-type="switchTab" url="/pages/home/home" />
+		<van-cell icon="shop-o" title="吃货研究所店铺" is-link link-type="navigateTo" url="/pages/home/home" />
 		<divider title="更多精选商品"></divider>
 		<view class="goodslist">
 			<view v-for="item in goodsData" :key="item.id" class="book_item">

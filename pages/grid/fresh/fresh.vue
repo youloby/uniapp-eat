@@ -28,10 +28,10 @@
 				</view>
 			</view>
 		</view>
-
-	
-
-
+		
+		<shopInfo />
+		<logo />
+		<tabbar :current="-1"></tabbar>
 
 
 	</view>
@@ -43,6 +43,8 @@
 		getClassifyGoods
 	} from '../../../api/index.js'
 	import WucTab from '@/components/wuc-tab/wuc-tab.vue';
+	import shopInfo from '../../../components/shop-info.vue';
+	import logo from '../../../components/logo.vue';
 	export default {
 		data() {
 			return {
@@ -53,7 +55,11 @@
 				
 			}
 		},
-		components: { WucTab },
+		components: { 
+			WucTab,
+			shopInfo,
+			logo 
+		},
 		methods: {
 			async getClassifyData(index) {
 				var {
@@ -188,8 +194,7 @@
 .text-orange{
   color:#FF0000
 }
-.cu-bar .action:first-child {
-    margin-left: 30upx;
-    font-size: 30upx;
+.cu-bar{
+    font-size: 24rpx;
 }
 </style>

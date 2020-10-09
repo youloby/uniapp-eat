@@ -54,9 +54,8 @@
 		methods: {
 			// 返回首页
 			getIndex() {
-				uni.switchTab({
+				uni.navigateTo({
 					url: "/pages/home/home",
-		
 				})
 			},
 			getGoodsSphere() {
