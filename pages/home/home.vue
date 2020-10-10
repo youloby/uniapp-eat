@@ -117,7 +117,7 @@
 
 <style lang="scss" scoped>
 .home-container {
-	
+	margin-bottom: 120rpx;
 	.swiper {
 		height: 352rpx;
 		.item .img {

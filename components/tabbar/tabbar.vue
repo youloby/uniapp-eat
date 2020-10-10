@@ -17,15 +17,15 @@
 				active: 0,
 				list: [
 					{"pagePath": "/pages/home/home", 
-					"iconPath":"/static/icon/home.webp", "selectedIconPath":"/static/icon/selected_home.webp"},
+					"iconPath":"/static/icon/home.png", "selectedIconPath":"/static/icon/selected_home.png"},
 					{"pagePath": "/pages/goods/goods",
-					"iconPath":"/static/icon/goods.webp", "selectedIconPath":"/static/icon/selected_goods.webp"},
+					"iconPath":"/static/icon/goods.png", "selectedIconPath":"/static/icon/selected_goods.png"},
 					{"pagePath": "/pages/cart/cart",
-					"iconPath":"/static/icon/cart.webp", "selectedIconPath":"/static/icon/selected_cart.png"},
+					"iconPath":"/static/icon/cart.png", "selectedIconPath":"/static/icon/selected_cart.png"},
 					{"pagePath": "/pages/group/group",
-					"iconPath":"/static/icon/group.webp", "selectedIconPath":"/static/icon/selected_group.webp"},
+					"iconPath":"/static/icon/group.png", "selectedIconPath":"/static/icon/selected_group.png"},
 					{"pagePath": "/pages/user/user",
-					"iconPath":"/static/icon/user.webp", "selectedIconPath":"/static/icon/selected_user.webp"}
+					"iconPath":"/static/icon/user.png", "selectedIconPath":"/static/icon/selected_user.png"}
 				]
 			};
 		}

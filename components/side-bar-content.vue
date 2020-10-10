@@ -1,9 +1,9 @@
 <template>
-	<view class="side-bar-content">
+	<view class="side-bar-content" :id="sbcid">
 		<view class="class-title">
 			{{ data.title }}
 		</view>
-		<view class="loading" v-if="isShow()">
+		<view class="loading" v-if="!isShow">
 			加载中...
 		</view>
 		<view class="empty" v-else-if="goodsList.length == 0">
@@ -26,7 +26,7 @@
 							<text class="tag">&yen;</text>
 							{{ Number(item.price) }}
 						</view>
-						<image class="icon" src="../static/icon/cart-circle-o.png" mode="widthFix"></image>
+						<view class="icon" style="background-image: url(../static/icon/cart-circle-o.png);background-size: cover;"></view>
 					</view>
 				</view>
 			</view>
@@ -38,12 +38,19 @@
 	import { getAllGoods } from '../api/index.js';
 	import easyLoadimage from './easy-loadimage/easy-loadimage.vue';
 	export default {
-		props:['data', 'scrollTop', 'active'],
+		props:['data', 'scrollTop', 'index'],
 		data() {
 			return {
+				sbcid: '',
 				isInitialize: false,
+				isShow: false,
 				goodsList: []
 			};
+		},
+		watch: {
+			scrollTop(val){
+				this.onScroll(val);
+			}
 		},
 		methods:{
 			async getGoodsData(){
@@ -52,20 +59,28 @@
 					this.goodsList = data;
 				}
 			},
-			isShow(){
-				if(!this.isInitialize && this.data.index >= this.active-1 && this.data.index <= this.active+1){
-					this.isInitialize = true;
-				}
-				return !(this.isInitialize || this.data.index === this.active);
-			},
 			goGoodsDetails(goodsId){
 				uni.navigateTo({
 					url: `../details/goodsDetails/goodsDetails?classify=${this.data.classify}&goodsId=${goodsId}`
 				})
+			},
+			onScroll(scrollTop){
+				const query = uni.createSelectorQuery().in(this);
+				query.select('#'+this.sbcid).boundingClientRect(data => {
+					if(!data) return;
+					if(data.top >1200 || data.top < -200) return;
+					this.getGoodsData();
+					if(!this.isShow)this.isShow = true;
+					if(data.top > 200) this.$emit("leap", this.index-1);
+					if(data.top <300) this.$emit("leap", this.index);
+				}).exec();
 			}
 		},
 		created(){
-			this.getGoodsData();
+			this.sbcid = 'sbc'+ this.index;
+			this.$nextTick(function(){
+				this.onScroll();
+			});
 		},
 		components: {
 			easyLoadimage
@@ -90,6 +105,7 @@
 					width: 176rpx;
 					.img {
 						width: 100%;
+						height: 176rpx;
 					}
 				}
 				.info {
@@ -133,6 +149,7 @@
 						}
 						.icon {
 							width: 48rpx;
+							height: 48rpx;
 						}
 					}
 				}

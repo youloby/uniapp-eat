@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<scroll-view>
+		<scroll-view v-if="show !== 'swiper'">
 			<swiper :indicator-dots="true" :autoplay="true"
 			:circular="true" class="swiper" indicator-active-color="#FF4444">
 				<swiper-item v-for="item in swiperList" :key="item.id" class="item">
@@ -9,7 +9,7 @@
 			</swiper>
 		</scroll-view>
 		
-		<view v-show="show !== 'none'">
+		<view v-if="show !== 'info'">
 			<!-- #ifdef H5 -->
 			<view class="info">
 				<text class="item">店铺主页</text>
@@ -72,7 +72,7 @@
 		justify-content: center;
 		margin: 60rpx 0 0 20rpx;
 		.item {
-			padding: 0 12rpx;
+			padding: 0 16rpx;
 			border-right: 2rpx solid #e5e5e5;
 			color: #646566;
 			font-size: 24rpx;

@@ -8771,14 +8771,14 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!**********************************!*\
-  !*** D:/uniapp-eat/api/index.js ***!
-  \**********************************/
+/*!**********************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/index.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getHomeImg = getHomeImg;exports.getGoods = getGoods;exports.getNote = getNote;exports.getSpecialImg = getSpecialImg;exports.getAllGoods = getAllGoods;exports.getHotSearch = getHotSearch;exports.getShopNote = getShopNote;exports.getGoodsDetails = getGoodsDetails;exports.getGoodsDetails2 = getGoodsDetails2;exports.getGiftList = getGiftList;exports.getClassify = getClassify;exports.getClassifyGoods = getClassifyGoods;exports.getSearchData = getSearchData;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+Object.defineProperty(exports, "__esModule", { value: true });exports.getHomeImg = getHomeImg;exports.getGoods = getGoods;exports.getNote = getNote;exports.getSpecialImg = getSpecialImg;exports.getAllGoods = getAllGoods;exports.getHotSearch = getHotSearch;exports.getShopNote = getShopNote;exports.getGoodsDetails = getGoodsDetails;exports.getGoodsDetails2 = getGoodsDetails2;exports.getGiftList = getGiftList;exports.getClassify = getClassify;exports.getClassifyGoods = getClassifyGoods;exports.getSearchData = getSearchData;exports.getRecommend = getRecommend;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 
 //获取首页图片
 function getHomeImg() {return _getHomeImg.apply(this, arguments);}
@@ -8839,15 +8839,20 @@ function _getClassify() {_getClassify = _asyncToGenerator( /*#__PURE__*/_regener
 
 
 //获取搜索结果
-function _getClassifyGoods() {_getClassifyGoods = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12(alias) {return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:_context12.next = 2;return _config.default.get("/getClassifyGoods?alias=".concat(alias));case 2:return _context12.abrupt("return", _context12.sent);case 3:case "end":return _context12.stop();}}}, _callee12);}));return _getClassifyGoods.apply(this, arguments);}function getSearchData(_x12) {return _getSearchData.apply(this, arguments);}function _getSearchData() {_getSearchData = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13(keyword) {return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:_context13.next = 2;return (
-              _config.default.get("/getSearchData?keyword=".concat(keyword)));case 2:return _context13.abrupt("return", _context13.sent);case 3:case "end":return _context13.stop();}}}, _callee13);}));return _getSearchData.apply(this, arguments);}
+function _getClassifyGoods() {_getClassifyGoods = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12(alias) {return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:_context12.next = 2;return _config.default.get("/getClassifyGoods?alias=".concat(alias));case 2:return _context12.abrupt("return", _context12.sent);case 3:case "end":return _context12.stop();}}}, _callee12);}));return _getClassifyGoods.apply(this, arguments);}function getSearchData(_x12, _x13) {return _getSearchData.apply(this, arguments);}
+
+
+
+//获取更多精选商品
+function _getSearchData() {_getSearchData = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13(keyword, page) {var pageSize,_args13 = arguments;return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:pageSize = _args13.length > 2 && _args13[2] !== undefined ? _args13[2] : 10;_context13.next = 3;return _config.default.get("/getSearchData?page=".concat(page, "&pageSize=").concat(pageSize, "&keyword=").concat(keyword));case 3:return _context13.abrupt("return", _context13.sent);case 4:case "end":return _context13.stop();}}}, _callee13);}));return _getSearchData.apply(this, arguments);}function getRecommend() {return _getRecommend.apply(this, arguments);}function _getRecommend() {_getRecommend = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee14() {return _regenerator.default.wrap(function _callee14$(_context14) {while (1) {switch (_context14.prev = _context14.next) {case 0:_context14.next = 2;return (
+              _config.default.get('/getRecommend'));case 2:return _context14.abrupt("return", _context14.sent);case 3:case "end":return _context14.stop();}}}, _callee14);}));return _getRecommend.apply(this, arguments);}
 
 /***/ }),
 
 /***/ 21:
-/*!***********************************!*\
-  !*** D:/uniapp-eat/api/config.js ***!
-  \***********************************/
+/*!***********************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/config.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8882,9 +8887,9 @@ http;exports.default = _default;
 /***/ }),
 
 /***/ 22:
-/*!***********************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/luch-request.js ***!
-  \***********************************************************************/
+/*!***********************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/luch-request.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8895,9 +8900,9 @@ _Request.default;exports.default = _default;
 /***/ }),
 
 /***/ 23:
-/*!***********************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/Request.js ***!
-  \***********************************************************************/
+/*!***********************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/Request.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9105,9 +9110,9 @@ Request = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 24:
-/*!*******************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
-  \*******************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9122,9 +9127,9 @@ function _default(config) {
 /***/ }),
 
 /***/ 25:
-/*!*************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/adapters/index.js ***!
-  \*************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/adapters/index.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9222,9 +9227,9 @@ function _default(config) {
 /***/ }),
 
 /***/ 26:
-/*!***************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
-  \***************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9301,152 +9306,10 @@ function buildURL(url, params) {
 
 /***/ }),
 
-/***/ 264:
-/*!***************************************************!*\
-  !*** D:/uniapp-eat/components/uni-icons/icons.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  "pulldown": "\uE588",
-  "refreshempty": "\uE461",
-  "back": "\uE471",
-  "forward": "\uE470",
-  "more": "\uE507",
-  "more-filled": "\uE537",
-  "scan": "\uE612",
-  "qq": "\uE264",
-  "weibo": "\uE260",
-  "weixin": "\uE261",
-  "pengyouquan": "\uE262",
-  "loop": "\uE565",
-  "refresh": "\uE407",
-  "refresh-filled": "\uE437",
-  "arrowthindown": "\uE585",
-  "arrowthinleft": "\uE586",
-  "arrowthinright": "\uE587",
-  "arrowthinup": "\uE584",
-  "undo-filled": "\uE7D6",
-  "undo": "\uE406",
-  "redo": "\uE405",
-  "redo-filled": "\uE7D9",
-  "bars": "\uE563",
-  "chatboxes": "\uE203",
-  "camera": "\uE301",
-  "chatboxes-filled": "\uE233",
-  "camera-filled": "\uE7EF",
-  "cart-filled": "\uE7F4",
-  "cart": "\uE7F5",
-  "checkbox-filled": "\uE442",
-  "checkbox": "\uE7FA",
-  "arrowleft": "\uE582",
-  "arrowdown": "\uE581",
-  "arrowright": "\uE583",
-  "smallcircle-filled": "\uE801",
-  "arrowup": "\uE580",
-  "circle": "\uE411",
-  "eye-filled": "\uE568",
-  "eye-slash-filled": "\uE822",
-  "eye-slash": "\uE823",
-  "eye": "\uE824",
-  "flag-filled": "\uE825",
-  "flag": "\uE508",
-  "gear-filled": "\uE532",
-  "reload": "\uE462",
-  "gear": "\uE502",
-  "hand-thumbsdown-filled": "\uE83B",
-  "hand-thumbsdown": "\uE83C",
-  "hand-thumbsup-filled": "\uE83D",
-  "heart-filled": "\uE83E",
-  "hand-thumbsup": "\uE83F",
-  "heart": "\uE840",
-  "home": "\uE500",
-  "info": "\uE504",
-  "home-filled": "\uE530",
-  "info-filled": "\uE534",
-  "circle-filled": "\uE441",
-  "chat-filled": "\uE847",
-  "chat": "\uE263",
-  "mail-open-filled": "\uE84D",
-  "email-filled": "\uE231",
-  "mail-open": "\uE84E",
-  "email": "\uE201",
-  "checkmarkempty": "\uE472",
-  "list": "\uE562",
-  "locked-filled": "\uE856",
-  "locked": "\uE506",
-  "map-filled": "\uE85C",
-  "map-pin": "\uE85E",
-  "map-pin-ellipse": "\uE864",
-  "map": "\uE364",
-  "minus-filled": "\uE440",
-  "mic-filled": "\uE332",
-  "minus": "\uE410",
-  "micoff": "\uE360",
-  "mic": "\uE302",
-  "clear": "\uE434",
-  "smallcircle": "\uE868",
-  "close": "\uE404",
-  "closeempty": "\uE460",
-  "paperclip": "\uE567",
-  "paperplane": "\uE503",
-  "paperplane-filled": "\uE86E",
-  "person-filled": "\uE131",
-  "contact-filled": "\uE130",
-  "person": "\uE101",
-  "contact": "\uE100",
-  "images-filled": "\uE87A",
-  "phone": "\uE200",
-  "images": "\uE87B",
-  "image": "\uE363",
-  "image-filled": "\uE877",
-  "location-filled": "\uE333",
-  "location": "\uE303",
-  "plus-filled": "\uE439",
-  "plus": "\uE409",
-  "plusempty": "\uE468",
-  "help-filled": "\uE535",
-  "help": "\uE505",
-  "navigate-filled": "\uE884",
-  "navigate": "\uE501",
-  "mic-slash-filled": "\uE892",
-  "search": "\uE466",
-  "settings": "\uE560",
-  "sound": "\uE590",
-  "sound-filled": "\uE8A1",
-  "spinner-cycle": "\uE465",
-  "download-filled": "\uE8A4",
-  "personadd-filled": "\uE132",
-  "videocam-filled": "\uE8AF",
-  "personadd": "\uE102",
-  "upload": "\uE402",
-  "upload-filled": "\uE8B1",
-  "starhalf": "\uE463",
-  "star-filled": "\uE438",
-  "star": "\uE408",
-  "trash": "\uE401",
-  "phone-filled": "\uE230",
-  "compose": "\uE400",
-  "videocam": "\uE300",
-  "trash-filled": "\uE8DC",
-  "download": "\uE403",
-  "chatbubble-filled": "\uE232",
-  "chatbubble": "\uE202",
-  "cloud-download": "\uE8E4",
-  "cloud-upload-filled": "\uE8E5",
-  "cloud-upload": "\uE8E6",
-  "cloud-download-filled": "\uE8E9",
-  "headphones": "\uE8BF",
-  "shop": "\uE609" };exports.default = _default;
-
-/***/ }),
-
 /***/ 27:
-/*!****************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/utils.js ***!
-  \****************************************************************/
+/*!****************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/utils.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9585,10 +9448,152 @@ function deepMerge() /* obj1, obj2, obj3, ... */{
 
 /***/ }),
 
+/***/ 271:
+/*!***************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/components/uni-icons/icons.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  "pulldown": "\uE588",
+  "refreshempty": "\uE461",
+  "back": "\uE471",
+  "forward": "\uE470",
+  "more": "\uE507",
+  "more-filled": "\uE537",
+  "scan": "\uE612",
+  "qq": "\uE264",
+  "weibo": "\uE260",
+  "weixin": "\uE261",
+  "pengyouquan": "\uE262",
+  "loop": "\uE565",
+  "refresh": "\uE407",
+  "refresh-filled": "\uE437",
+  "arrowthindown": "\uE585",
+  "arrowthinleft": "\uE586",
+  "arrowthinright": "\uE587",
+  "arrowthinup": "\uE584",
+  "undo-filled": "\uE7D6",
+  "undo": "\uE406",
+  "redo": "\uE405",
+  "redo-filled": "\uE7D9",
+  "bars": "\uE563",
+  "chatboxes": "\uE203",
+  "camera": "\uE301",
+  "chatboxes-filled": "\uE233",
+  "camera-filled": "\uE7EF",
+  "cart-filled": "\uE7F4",
+  "cart": "\uE7F5",
+  "checkbox-filled": "\uE442",
+  "checkbox": "\uE7FA",
+  "arrowleft": "\uE582",
+  "arrowdown": "\uE581",
+  "arrowright": "\uE583",
+  "smallcircle-filled": "\uE801",
+  "arrowup": "\uE580",
+  "circle": "\uE411",
+  "eye-filled": "\uE568",
+  "eye-slash-filled": "\uE822",
+  "eye-slash": "\uE823",
+  "eye": "\uE824",
+  "flag-filled": "\uE825",
+  "flag": "\uE508",
+  "gear-filled": "\uE532",
+  "reload": "\uE462",
+  "gear": "\uE502",
+  "hand-thumbsdown-filled": "\uE83B",
+  "hand-thumbsdown": "\uE83C",
+  "hand-thumbsup-filled": "\uE83D",
+  "heart-filled": "\uE83E",
+  "hand-thumbsup": "\uE83F",
+  "heart": "\uE840",
+  "home": "\uE500",
+  "info": "\uE504",
+  "home-filled": "\uE530",
+  "info-filled": "\uE534",
+  "circle-filled": "\uE441",
+  "chat-filled": "\uE847",
+  "chat": "\uE263",
+  "mail-open-filled": "\uE84D",
+  "email-filled": "\uE231",
+  "mail-open": "\uE84E",
+  "email": "\uE201",
+  "checkmarkempty": "\uE472",
+  "list": "\uE562",
+  "locked-filled": "\uE856",
+  "locked": "\uE506",
+  "map-filled": "\uE85C",
+  "map-pin": "\uE85E",
+  "map-pin-ellipse": "\uE864",
+  "map": "\uE364",
+  "minus-filled": "\uE440",
+  "mic-filled": "\uE332",
+  "minus": "\uE410",
+  "micoff": "\uE360",
+  "mic": "\uE302",
+  "clear": "\uE434",
+  "smallcircle": "\uE868",
+  "close": "\uE404",
+  "closeempty": "\uE460",
+  "paperclip": "\uE567",
+  "paperplane": "\uE503",
+  "paperplane-filled": "\uE86E",
+  "person-filled": "\uE131",
+  "contact-filled": "\uE130",
+  "person": "\uE101",
+  "contact": "\uE100",
+  "images-filled": "\uE87A",
+  "phone": "\uE200",
+  "images": "\uE87B",
+  "image": "\uE363",
+  "image-filled": "\uE877",
+  "location-filled": "\uE333",
+  "location": "\uE303",
+  "plus-filled": "\uE439",
+  "plus": "\uE409",
+  "plusempty": "\uE468",
+  "help-filled": "\uE535",
+  "help": "\uE505",
+  "navigate-filled": "\uE884",
+  "navigate": "\uE501",
+  "mic-slash-filled": "\uE892",
+  "search": "\uE466",
+  "settings": "\uE560",
+  "sound": "\uE590",
+  "sound-filled": "\uE8A1",
+  "spinner-cycle": "\uE465",
+  "download-filled": "\uE8A4",
+  "personadd-filled": "\uE132",
+  "videocam-filled": "\uE8AF",
+  "personadd": "\uE102",
+  "upload": "\uE402",
+  "upload-filled": "\uE8B1",
+  "starhalf": "\uE463",
+  "star-filled": "\uE438",
+  "star": "\uE408",
+  "trash": "\uE401",
+  "phone-filled": "\uE230",
+  "compose": "\uE400",
+  "videocam": "\uE300",
+  "trash-filled": "\uE8DC",
+  "download": "\uE403",
+  "chatbubble-filled": "\uE232",
+  "chatbubble": "\uE202",
+  "cloud-download": "\uE8E4",
+  "cloud-upload-filled": "\uE8E5",
+  "cloud-upload": "\uE8E6",
+  "cloud-download-filled": "\uE8E9",
+  "headphones": "\uE8BF",
+  "shop": "\uE609" };exports.default = _default;
+
+/***/ }),
+
 /***/ 28:
-/*!*****************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
-  \*****************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9617,9 +9622,9 @@ function buildFullPath(baseURL, requestedURL) {
 /***/ }),
 
 /***/ 29:
-/*!********************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
-  \********************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9673,9 +9678,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 30:
-/*!******************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
-  \******************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9698,9 +9703,9 @@ function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ 31:
-/*!**********************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/settle.js ***!
-  \**********************************************************************/
+/*!**********************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/settle.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9725,9 +9730,9 @@ function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ 32:
-/*!**********************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
-  \**********************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9787,9 +9792,9 @@ InterceptorManager;exports.default = _default;
 /***/ }),
 
 /***/ 33:
-/*!***************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
-  \***************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9887,9 +9892,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 /***/ }),
 
 /***/ 34:
-/*!************************************************************************!*\
-  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/defaults.js ***!
-  \************************************************************************/
+/*!************************************************************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/defaults.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9927,9 +9932,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!********************************!*\
-  !*** D:/uniapp-eat/pages.json ***!
-  \********************************/
+/*!********************************************************!*\
+  !*** F:/Users/lenovo/HBuilderX/foodie-test/pages.json ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

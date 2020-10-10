@@ -11,9 +11,9 @@
 				</view>
 			</scroll-view>
 			<scroll-view scroll-y="true" class="content">
-				<view class="item" v-for="(item, index) in classList" :key="index" :id="'sel'+index">
-					<side-bar-content :data="item" :active="active"
-					:scrollTop="scrollTop"></side-bar-content>
+				<view class="item" v-for="(item, index) in classList" :key="index">
+					<side-bar-content :data="item" :id="'sbc'+index" :index="index"
+					:scrollTop="scrollTop" @leap="leap"></side-bar-content>
 				</view>
 			</scroll-view>
 		</view>
@@ -36,86 +36,63 @@
 				lastTime: 0,
 				classTops: [],
 				classList: [
-					{title:'店铺热销', classify:'hot', index:0},
-					{title:'网红咸蛋黄', classify:'egg', index:1},
-					{title:'榴莲控', classify:'durian', index:2},
-					{title:'抹茶控', classify:'matcha', index:3},
-					{title:'咖啡', classify:'coffee', index:4},
-					{title:'新鲜水果', classify:'fruits', index:5},
-					{title:'卤味零食', classify:'meat', index:6},
-					{title:'巧克力', classify:'chocolate', index:7},
-					{title:'洋酒', classify:'foreignWines', index:8},
-					{title:'方便速食', classify:'conveniency', index:9},
-					{title:'快手菜', classify:'easyFood', index:10},
-					{title:'糕点', classify:'cake', index:11},
-					{title:'饼干', classify:'biscuits', index:12},
-					{title:'新鲜蛋糕', classify:'torta', index:13}
+					{title:'店铺热销', classify:'hot'},
+					{title:'网红咸蛋黄', classify:'egg'},
+					{title:'榴莲控', classify:'durian'},
+					{title:'抹茶控', classify:'matcha'},
+					{title:'咖啡', classify:'coffee'},
+					{title:'新鲜水果', classify:'fruits'},
+					{title:'卤味零食', classify:'meat'},
+					{title:'巧克力', classify:'chocolate'},
+					{title:'洋酒', classify:'foreignWines'},
+					{title:'方便速食', classify:'conveniency'},
+					{title:'快手菜', classify:'easyFood'},
+					{title:'糕点', classify:'cake'},
+					{title:'饼干', classify:'biscuits'},
+					{title:'新鲜蛋糕', classify:'torta'}
 				]
+			}
+		},
+		watch: {
+			scrollTop(val){
+				this.sideBarAbs();
 			}
 		},
 		methods: {
 			selectedClass(index){
 				this.active = index;
 				// #ifdef H5
-				this.getOperateByTop(`#sel${index}`, (data) => {
+				const query = uni.createSelectorQuery().in(this);
+				query.select(`#sbc${index}`).boundingClientRect(data => {
+					if(!data) return;
 					uni.pageScrollTo({
 						scrollTop: this.scrollTop+data.top,
 						duration: 0
 					});
-				});
+				}).exec();
 				// #endif
 				
 				// #ifdef MP-WEIXIN
 				uni.pageScrollTo({
-					selector: `#sel${index}`,
+					selector: `#sbc${index}`,
 					duration: 0
 				});
 				// #endif
 				
 			},
-			getOperateByTop(id, fun){
+			sideBarAbs(){
 				const query = uni.createSelectorQuery().in(this);
-				query.select(id).boundingClientRect(data => {
-					fun(data);
+				query.select('#bottom').boundingClientRect(data => {
+					if(data.top < 700) this.side = "abs-bar";
+					if(data.top > 600) this.side = "";
 				}).exec();
 			},
-			control(){
-				this.getOperateByTop('#bottom', (data) => {
-					console.log(data.top);
-					if(data.top < 700){
-						this.side = "abs-bar"
-					}else {
-						this.side = ""
-					}
-				});
-				
-				this.getOperateByTop(`#sel${this.active}`, (data) => {
-					if(data.top > 50){
-						this.active --;
-					}
-				});
-				
-				if(this.active === this.classList.length-1){
-					return;
-				}
-				this.getOperateByTop(`#sel${this.active+1}`, (data) => {
-					if(data.top < 600){
-						this.active ++;
-					}
-				});
+			leap(index){
+				this.active = index;
 			}
 		},
 		onPageScroll({scrollTop}) {
-
-			// 记录当前函数触发的时间
-			var nowTime = Date.now();
-			if (nowTime - this.lastTime > 600) {
-				// 传入scrollTop值并触发所有easy-loadimage组件下的滚动监听事件
-				this.scrollTop = scrollTop;
-				
-				this.control();
-				this.lastTime = nowTime;
-			}
+			this.scrollTop = scrollTop;
 		},
 		components: {
 			sideBarContent,
@@ -127,6 +104,7 @@
 
 <style lang="scss" scoped>
 .goods-container {
+	margin-bottom: 120rpx;
 	.goods-content {
 		position: relative;
 		.flex-bar {

@@ -9,8 +9,8 @@
 			@click="selected(index)">
 				{{ item }}
 				<view class="filter" v-if="index == 1">
-					<view class="rank ascend"></view>
-					<view class="rank descend"></view>
+					<view :class="['rank', 'ascend', sel=='asc' ?'sel':'']"></view>
+					<view :class="['rank', 'descend', sel=='desc' ?'sel':'']"></view>
 				</view>
 			</view>
 		</view>
@@ -32,33 +32,78 @@
 					</view>
 				</view>
 			</view>
+			<view class="empty" v-show="data.length === 0">
+				<image src="../../../static/image/empty.png" mode="widthFix" class="empty-img"></image>
+				<view class="info">
+					<view class="text">没有找到你想要的商品</view>
+					<view class="text">换个搜索词试试</view>
+				</view>
+			</view>
+			<view class="no-more" v-show="!isMore">
+				没有更多了
+			</view>
 		</view>
+		
+		<recommend id="rec"></recommend>
+		
+		<shop-info show="swiper"></shop-info>
+		<logo></logo>
+		
 		<tabbar></tabbar>
+		
 	</view>
 </template>
 
 <script>
+	import recommend from '../../../components/recommend/recommend.vue';
+	import shopInfo from '../../../components/shop-info.vue';
+	import logo from '../../../components/logo.vue';
 	import { getSearchData } from '../../../api/index.js';
 	export default {
 		data() {
 			return {
+				page: 1,
 				keyword: "",
 				action: 0,
 				scrollTop: 0,
-				isAscend: true,
+				sel: "",
+				isAscend: false,
+				isMore: true,
 				data: [],
 				tab:["综合", "价格", "上新"]
 			};
 		},
+		watch: {
+			scrollTop(val){
+				this.onScroll(val);
+			}
+		},
 		methods: {
-			async getSearchResult(keyword){
-				let { status, data } = await getSearchData(keyword);
-				if(!status){
+			
+			async getSearchResult(keyword, isLoadMore){
+				if(isLoadMore && !this.isMore){
+					return;
+				}
+				let { status, data } = await getSearchData(keyword, this.page);
+				if(status) return;
+				if(isLoadMore && data.length === 0){
+					this.isMore = false;
+				}
+				if(isLoadMore){
+					this.data = this.data.concat(data);
+				}else {
 					this.data = data;
 				}
 			},
-			selected(index){
-				this.action = index;
+			selected(index, isSearch){
+				this.page = 1;
+				this.isMore = true;
+				if( !isSearch && (this.action === index && index !== 1) ) return;
+				if( !isSearch && index === 1 ){
+					this.sel === 'asc' ?this.sel='desc' :this.sel='asc';
+				}else {
+					this.sel = "";
+				};
 				switch (index){
 					case 0:
 						this.getSearchResult(this.keyword);
@@ -72,10 +117,21 @@
 						this.getSearchResult(this.keyword+'%26order_by=createdTime');
 						break;
 				}
+				this.action = index;
 			},
 			search({value}){
 				this.keyword = value;
-				this.getSearchResult(value);
+				this.selected(this.action, true);
+			},
+			onScroll(scrollTop){
+				const query = uni.createSelectorQuery().in(this);
+				query.select('#rec').boundingClientRect(data => {
+				    if(!data) return;
+					if(data.top < 1400){
+						this.page ++;
+						this.getSearchResult(this.keyword, true);
+					}
+				}).exec()
 			}
 		},
 		onPageScroll({scrollTop}){
@@ -84,12 +140,21 @@
 		onLoad(option) {
 			this.keyword = option.keyword;
 			this.getSearchResult(option.keyword);
+			this.$nextTick(function(){
+				this.onScroll();
+			});
+		},
+		components: {
+			recommend,
+			shopInfo,
+			logo
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 .result-container {
+	margin-bottom: 120rpx;
 	.tab {
 		display: flex;
 		justify-content: space-between;
@@ -120,6 +185,9 @@
 					bottom: 0rpx;
 					border-right: 2rpx solid #bbb;
 					border-bottom: 2rpx solid #bbb;
+				}
+				.sel {
+					border-color: #f44;
 				}
 			}
 		}
@@ -174,6 +242,27 @@
 					}
 				}
 			}
+		}
+		.empty {
+			padding: 64rpx;
+			text-align: center;
+			.empty-img {
+				width: 320rpx;
+			}
+			.info {
+				margin-top: 32rpx;
+				.text {
+					color: #969799;
+					font-size: 28rpx;
+				}
+			}
+		}
+		.no-more {
+			height: 120rpx;
+			line-height: 120rpx;
+			text-align: center;
+			color: #999;
+			font-size: 26rpx;
 		}
 	}
 }

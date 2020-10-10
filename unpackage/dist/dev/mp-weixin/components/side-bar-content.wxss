@@ -44,6 +44,7 @@
 }
 .side-bar-content .goods-list .goods .goods-img .img {
   width: 100%;
+  height: 176rpx;
 }
 .side-bar-content .goods-list .goods .info {
   -webkit-box-flex: 1;
@@ -99,6 +100,7 @@
 }
 .side-bar-content .goods-list .goods .info .buy .icon {
   width: 48rpx;
+  height: 48rpx;
 }
 .side-bar-content .loading {
   height: 100rpx;

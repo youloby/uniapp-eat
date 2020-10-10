@@ -24,6 +24,9 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.result-container.data-v-2a2b5757 {
+  margin-bottom: 120rpx;
+}
 .result-container .tab.data-v-2a2b5757 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,6 +67,9 @@
   bottom: 0rpx;
   border-right: 2rpx solid #bbb;
   border-bottom: 2rpx solid #bbb;
+}
+.result-container .tab .option .filter .sel.data-v-2a2b5757 {
+  border-color: #f44;
 }
 .result-container .tab .action.data-v-2a2b5757 {
   color: #f44;
@@ -139,5 +145,26 @@
 .result-container .list .goods .info .buy .cart-icon.data-v-2a2b5757 {
   width: 48rpx;
   height: 48rpx;
+}
+.result-container .list .empty.data-v-2a2b5757 {
+  padding: 64rpx;
+  text-align: center;
+}
+.result-container .list .empty .empty-img.data-v-2a2b5757 {
+  width: 320rpx;
+}
+.result-container .list .empty .info.data-v-2a2b5757 {
+  margin-top: 32rpx;
+}
+.result-container .list .empty .info .text.data-v-2a2b5757 {
+  color: #969799;
+  font-size: 28rpx;
+}
+.result-container .list .no-more.data-v-2a2b5757 {
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #999;
+  font-size: 26rpx;
 }
 

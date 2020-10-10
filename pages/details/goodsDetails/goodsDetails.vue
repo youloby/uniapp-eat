@@ -100,7 +100,7 @@
 				</view>
 			</view>
 		</view>
-		<shop-info show="none" class="shop-info"></shop-info>
+		<shop-info show="info" class="shop-info"></shop-info>
 		
 		<uni-goods-nav class="goods-nav" :fill="true"  :options="options" :buttonGroup="buttonGroup"  @click="onClick" @buttonClick="buttonClick" />
 	</view>

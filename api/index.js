@@ -59,6 +59,11 @@ export async function getClassifyGoods(alias){
 }
 
 //获取搜索结果
-export async function getSearchData(keyword){
-	return await instance.get(`/getSearchData?keyword=${keyword}`);
+export async function getSearchData(keyword, page, pageSize=10){
+	return await instance.get(`/getSearchData?page=${page}&pageSize=${pageSize}&keyword=${keyword}`);
+}
+
+//获取更多精选商品
+export async function getRecommend(){
+	return await instance.get('/getRecommend');
 }

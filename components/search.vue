@@ -27,7 +27,7 @@
 </template>
 
 <script>
-	import { getHotSearch, getSearchData } from '../api/index.js';
+	import { getHotSearch } from '../api/index.js';
 	export default {
 		data() {
 			return {
