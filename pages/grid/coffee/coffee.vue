@@ -17,7 +17,7 @@
 				<view class="gift_title">
 					<view class="title_name">{{ item.title }}</view>
 					<view class="title_info">
-						{{ item.sell_point}}
+						{{ item.sellPoint}}
 					</view>
 					<view class="info_price">
 						<span class="price">￥{{item.price}}</span>

@@ -1,92 +1,120 @@
-
-._div,
-scroll-view,
-swiper {
-    box-sizing: border-box;
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.snacks_container .img.data-v-7bccb77f {
+  width: 100%;
+  height: 200rpx;
 }
-._div {
-  font-size: 28rpx;
-  background-color: #f1f1f1;
+.snacks_container .img image.data-v-7bccb77f {
+  width: 100%;
+  height: 100%;
 }
-.swiper {
-    height: 140rpx;
+.snacks_container .giftlist.data-v-7bccb77f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20rpx;
 }
-.cu-bar {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    position: relative;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-            align-items: center;
-    min-height: 100rpx;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
+.snacks_container .giftlist .gift_item.data-v-7bccb77f {
+  width: 47%;
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 10rpx;
 }
-.cu-bar .action {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-            align-items: center;
-    height: 100%;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-            justify-content: center;
-    max-width: 100%;
-  background-color: #ffffff;
+.snacks_container .giftlist .gift_item .img.data-v-7bccb77f {
+  width: 354rpx;
+  height: 360rpx;
 }
-.cu-bar .action:first-child {
-    margin-left: 30rpx;
-    font-size: 30rpx;
+.snacks_container .giftlist .gift_item .img image.data-v-7bccb77f {
+  width: 100%;
+  height: 100%;
 }
-.solid,
-.solid-bottom {
-    position: relative;
+.snacks_container .giftlist .gift_item .gift_title.data-v-7bccb77f {
+  padding: 20rpx;
 }
-.solid::after,
-.solid-bottom::after{
-    content: " ";
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: inherit;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-    pointer-events: none;
-    box-sizing: border-box;
+.snacks_container .giftlist .gift_item .gift_title .title_name.data-v-7bccb77f {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* 指定显示文本的行数 */
+  overflow: hidden;
+  /* 超出隐藏 */
+  text-overflow: ellipsis;
+  /* 超出部分显示省略号 */
 }
-.solid::after {
-    border: 1rpx solid rgba(0, 0, 0, 0.1);
+.snacks_container .giftlist .gift_item .gift_title .title_info.data-v-7bccb77f {
+  font-size: 12px;
+  color: #CCCCCC;
 }
-.solid-bottom::after {
-    border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+.snacks_container .giftlist .gift_item .gift_title .info_price.data-v-7bccb77f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin-top: 10px;
 }
-.text-orange{
-  color:#f37b1d
+.snacks_container .giftlist .gift_item .gift_title .info_price .price.data-v-7bccb77f {
+  color: #FF4444;
+  font-size: 14px;
+  font-weight: 600;
 }
-.text-black{
-  color:#333333;
+.snacks_container .giftlist .gift_item .gift_title .info_price .img.data-v-7bccb77f {
+  width: 48rpx;
+  height: 48rpx;
 }
-.bg-white{
-    background-color: #ffffff;
+.snacks_container .giftlist .gift_item .gift_title .info_price .img image.data-v-7bccb77f {
+  width: 100%;
+  height: 100%;
 }
-.padding {
-    padding: 30rpx;
+.text-orange.data-v-7bccb77f {
+  color: #FF0000;
 }
-.margin {
-    margin: 30rpx;
+.cu-bar.data-v-7bccb77f {
+  font-size: 24rpx;
 }
-.margin-top {
-    margin-top: 30rpx;
-}
-.text-center {
-    text-align: center;
+.wxMenuFix.data-v-7bccb77f {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 }
 

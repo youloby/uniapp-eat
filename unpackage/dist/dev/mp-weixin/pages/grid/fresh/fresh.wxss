@@ -106,8 +106,15 @@
 .text-orange.data-v-51547386 {
   color: #FF0000;
 }
-.cu-bar .action.data-v-51547386:first-child {
-  margin-left: 30rpx;
-  font-size: 30rpx;
+.cu-bar.data-v-51547386 {
+  font-size: 24rpx;
+}
+.wxMenuFix.data-v-51547386 {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 }
 

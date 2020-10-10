@@ -190,7 +190,7 @@
 			justify-content: center;
 			align-items: center;
 			/* #ifdef H5 */
-			background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)), url(../../static/user/背景图.png);
+			background-image:  url(../../static/user/背景图.png);
 			/* #endif */
 			/* #ifdef MP-WEIXIN */
 			background-image: url(../../static/user/背景图.png);

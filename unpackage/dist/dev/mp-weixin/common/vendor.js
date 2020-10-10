@@ -904,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8250,7 +8250,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8271,14 +8271,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8363,7 +8363,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8771,9 +8771,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!**********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/index.js ***!
-  \**********************************************************/
+/*!**********************************!*\
+  !*** D:/uniapp-eat/api/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8845,9 +8845,9 @@ function _getClassifyGoods() {_getClassifyGoods = _asyncToGenerator( /*#__PURE__
 /***/ }),
 
 /***/ 21:
-/*!***********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/config.js ***!
-  \***********************************************************/
+/*!***********************************!*\
+  !*** D:/uniapp-eat/api/config.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8882,9 +8882,9 @@ http;exports.default = _default;
 /***/ }),
 
 /***/ 22:
-/*!***********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/luch-request.js ***!
-  \***********************************************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/luch-request.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8895,9 +8895,9 @@ _Request.default;exports.default = _default;
 /***/ }),
 
 /***/ 23:
-/*!***********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/Request.js ***!
-  \***********************************************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/Request.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9105,9 +9105,9 @@ Request = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 24:
-/*!*******************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
-  \*******************************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9121,10 +9121,190 @@ function _default(config) {
 
 /***/ }),
 
-/***/ 248:
+/***/ 25:
+/*!*************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/adapters/index.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _buildURL = _interopRequireDefault(__webpack_require__(/*! ../helpers/buildURL */ 26));
+var _buildFullPath = _interopRequireDefault(__webpack_require__(/*! ../core/buildFullPath */ 28));
+var _settle = _interopRequireDefault(__webpack_require__(/*! ../core/settle */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * 返回可选值存在的配置
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Array} keys - 可选值数组
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Object} config2 - 配置
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @return {{}} - 存在的配置项
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
+var mergeKeys = function mergeKeys(keys, config2) {
+  var config = {};
+  keys.forEach(function (prop) {
+    if (typeof config2[prop] !== 'undefined') {
+      config[prop] = config2[prop];
+    }
+  });
+  return config;
+};var _default =
+function _default(config) {
+  return new Promise(function (resolve, reject) {
+    var _config = {
+      url: (0, _buildURL.default)((0, _buildFullPath.default)(config.baseURL, config.url), config.params),
+      header: config.header,
+      complete: function complete(response) {
+        response.config = config;
+        try {
+          // 对可能字符串不是json 的情况容错
+          if (typeof response.data === 'string') {
+            response.data = JSON.parse(response.data);
+          }
+          // eslint-disable-next-line no-empty
+        } catch (e) {
+        }
+        (0, _settle.default)(resolve, reject, response);
+      } };
+
+    var requestTask;
+    if (config.method === 'UPLOAD') {
+      delete _config.header['content-type'];
+      delete _config.header['Content-Type'];
+      var otherConfig = {
+
+
+
+        filePath: config.filePath,
+        name: config.name };
+
+      var optionalKeys = [
+
+
+
+
+
+
+      'formData'];
+
+      requestTask = uni.uploadFile(_objectSpread(_objectSpread(_objectSpread({}, _config), otherConfig), mergeKeys(optionalKeys, config)));
+    } else if (config.method === 'DOWNLOAD') {
+      requestTask = uni.downloadFile(_config);
+    } else {
+      var _optionalKeys = [
+      'data',
+      'method',
+
+      'timeout',
+
+      'dataType',
+
+      'responseType'];
+
+
+
+
+
+
+
+
+
+
+
+      requestTask = uni.request(_objectSpread(_objectSpread({}, _config), mergeKeys(_optionalKeys, config)));
+    }
+    if (config.getTask) {
+      config.getTask(requestTask, config);
+    }
+  });
+};exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 26:
 /*!***************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/components/uni-icons/icons.js ***!
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
   \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = buildURL;
+
+var utils = _interopRequireWildcard(__webpack_require__(/*! ./../utils */ 27));function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function encode(val) {
+  return encodeURIComponent(val).
+  replace(/%40/gi, '@').
+  replace(/%3A/gi, ':').
+  replace(/%24/g, '$').
+  replace(/%2C/gi, ',').
+  replace(/%20/g, '+').
+  replace(/%5B/gi, '[').
+  replace(/%5D/gi, ']');
+}
+
+/**
+   * Build a URL by appending params to the end
+   *
+   * @param {string} url The base of the url (e.g., http://www.google.com)
+   * @param {object} [params] The params to be appended
+   * @returns {string} The formatted url
+   */
+function buildURL(url, params) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      } else {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    var hashmarkIndex = url.indexOf('#');
+    if (hashmarkIndex !== -1) {
+      url = url.slice(0, hashmarkIndex);
+    }
+
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+}
+
+/***/ }),
+
+/***/ 264:
+/*!***************************************************!*\
+  !*** D:/uniapp-eat/components/uni-icons/icons.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9263,190 +9443,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 25:
-/*!*************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/adapters/index.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _buildURL = _interopRequireDefault(__webpack_require__(/*! ../helpers/buildURL */ 26));
-var _buildFullPath = _interopRequireDefault(__webpack_require__(/*! ../core/buildFullPath */ 28));
-var _settle = _interopRequireDefault(__webpack_require__(/*! ../core/settle */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-
-/**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * 返回可选值存在的配置
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Array} keys - 可选值数组
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Object} config2 - 配置
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @return {{}} - 存在的配置项
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
-var mergeKeys = function mergeKeys(keys, config2) {
-  var config = {};
-  keys.forEach(function (prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    }
-  });
-  return config;
-};var _default =
-function _default(config) {
-  return new Promise(function (resolve, reject) {
-    var _config = {
-      url: (0, _buildURL.default)((0, _buildFullPath.default)(config.baseURL, config.url), config.params),
-      header: config.header,
-      complete: function complete(response) {
-        response.config = config;
-        try {
-          // 对可能字符串不是json 的情况容错
-          if (typeof response.data === 'string') {
-            response.data = JSON.parse(response.data);
-          }
-          // eslint-disable-next-line no-empty
-        } catch (e) {
-        }
-        (0, _settle.default)(resolve, reject, response);
-      } };
-
-    var requestTask;
-    if (config.method === 'UPLOAD') {
-      delete _config.header['content-type'];
-      delete _config.header['Content-Type'];
-      var otherConfig = {
-
-
-
-        filePath: config.filePath,
-        name: config.name };
-
-      var optionalKeys = [
-
-
-
-
-
-
-      'formData'];
-
-      requestTask = uni.uploadFile(_objectSpread(_objectSpread(_objectSpread({}, _config), otherConfig), mergeKeys(optionalKeys, config)));
-    } else if (config.method === 'DOWNLOAD') {
-      requestTask = uni.downloadFile(_config);
-    } else {
-      var _optionalKeys = [
-      'data',
-      'method',
-
-      'timeout',
-
-      'dataType',
-
-      'responseType'];
-
-
-
-
-
-
-
-
-
-
-
-      requestTask = uni.request(_objectSpread(_objectSpread({}, _config), mergeKeys(_optionalKeys, config)));
-    }
-    if (config.getTask) {
-      config.getTask(requestTask, config);
-    }
-  });
-};exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 26:
-/*!***************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = buildURL;
-
-var utils = _interopRequireWildcard(__webpack_require__(/*! ./../utils */ 27));function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
-
-function encode(val) {
-  return encodeURIComponent(val).
-  replace(/%40/gi, '@').
-  replace(/%3A/gi, ':').
-  replace(/%24/g, '$').
-  replace(/%2C/gi, ',').
-  replace(/%20/g, '+').
-  replace(/%5B/gi, '[').
-  replace(/%5D/gi, ']');
-}
-
-/**
-   * Build a URL by appending params to the end
-   *
-   * @param {string} url The base of the url (e.g., http://www.google.com)
-   * @param {object} [params] The params to be appended
-   * @returns {string} The formatted url
-   */
-function buildURL(url, params) {
-  /*eslint no-param-reassign:0*/
-  if (!params) {
-    return url;
-  }
-
-  var serializedParams;
-  if (utils.isURLSearchParams(params)) {
-    serializedParams = params.toString();
-  } else {
-    var parts = [];
-
-    utils.forEach(params, function serialize(val, key) {
-      if (val === null || typeof val === 'undefined') {
-        return;
-      }
-
-      if (utils.isArray(val)) {
-        key = key + '[]';
-      } else {
-        val = [val];
-      }
-
-      utils.forEach(val, function parseValue(v) {
-        if (utils.isDate(v)) {
-          v = v.toISOString();
-        } else if (utils.isObject(v)) {
-          v = JSON.stringify(v);
-        }
-        parts.push(encode(key) + '=' + encode(v));
-      });
-    });
-
-    serializedParams = parts.join('&');
-  }
-
-  if (serializedParams) {
-    var hashmarkIndex = url.indexOf('#');
-    if (hashmarkIndex !== -1) {
-      url = url.slice(0, hashmarkIndex);
-    }
-
-    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
-  }
-
-  return url;
-}
-
-/***/ }),
-
 /***/ 27:
-/*!****************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/utils.js ***!
-  \****************************************************************************************/
+/*!****************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/utils.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9586,9 +9586,9 @@ function deepMerge() /* obj1, obj2, obj3, ... */{
 /***/ }),
 
 /***/ 28:
-/*!*****************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
-  \*****************************************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9617,9 +9617,9 @@ function buildFullPath(baseURL, requestedURL) {
 /***/ }),
 
 /***/ 29:
-/*!********************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
-  \********************************************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9673,9 +9673,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 30:
-/*!******************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
-  \******************************************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9698,9 +9698,9 @@ function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ 31:
-/*!**********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/settle.js ***!
-  \**********************************************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/settle.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9725,9 +9725,9 @@ function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ 32:
-/*!**********************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
-  \**********************************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9787,9 +9787,9 @@ InterceptorManager;exports.default = _default;
 /***/ }),
 
 /***/ 33:
-/*!***************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
-  \***************************************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9887,9 +9887,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 /***/ }),
 
 /***/ 34:
-/*!************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/defaults.js ***!
-  \************************************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/defaults.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9927,9 +9927,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/pages.json ***!
-  \********************************************************/
+/*!********************************!*\
+  !*** D:/uniapp-eat/pages.json ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

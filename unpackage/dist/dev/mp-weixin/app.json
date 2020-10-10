@@ -12,6 +12,8 @@
     "pages/grid/gift/gift",
     "pages/grid/fresh/fresh",
     "pages/grid/snacks/snacks",
+    "pages/grid/coffee/coffee",
+    "pages/grid/wine/wine",
     "pages/list/searchResult/searchResult"
   ],
   "subPackages": [],
@@ -69,6 +71,5 @@
     "van-collapse": "/wxcomponents/vant/collapse/index",
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index"
-  },
-  "sitemapLocation": "sitemap52.json"
+  }
 }

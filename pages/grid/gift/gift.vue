@@ -4,7 +4,7 @@
 			<image src="../../../static/grid/gift.webp" mode=""></image>
 		</view>
 		<view class="giftlist">
-			<view v-for="item in giftData" :key="item.id" class="gift_item">
+			<view v-for="item in giftData" :key="item.id" @click="goGoodsDetails(item.id)" class="gift_item">
 				<view class="img">
 					<image :src="item.image_url" mode=""></image>
 				</view>
@@ -47,7 +47,12 @@
 				var {status, data} = await getGiftList(this.page);
 				
 				this.giftData = data
-			}
+			},
+			goGoodsDetails(goodsId){
+				uni.navigateTo({
+					url: `../../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
+				});
+			},
 		},
 		async onReachBottom() {
 			this.page++;
@@ -60,8 +65,9 @@
 		},
 		onLoad() {
 			this.getGiftListData()
+			console.log(this.giftData)
+		},
 		
-		}
 	}
 </script>
 

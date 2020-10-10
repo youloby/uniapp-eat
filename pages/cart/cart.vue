@@ -25,7 +25,7 @@
 		<divider title="更多精选商品"></divider>
 		<!-- 更多商品 -->
 		<view class="goodslist">
-			<view v-for="item in goodsData" :key="item.id" class="book_item">
+			<view v-for="item in goodsData" :key="item.id" @click="goGoodsDetails(item.id)" class="book_item">
 				<view class="img">
 					<image :src="item.image_url" mode=""></image>
 				</view>
@@ -62,6 +62,11 @@
 				uni.navigateTo({
 					url: "/pages/goodsphere/goodsphere",
 				})
+			},
+			goGoodsDetails(goodsId){
+				uni.navigateTo({
+					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
+				});
 			},
 			async getGoodsList(){
 				var {status, data}  = await getAllGoods("recommend");
