@@ -1,1 +1,1 @@
-<view class="lazyload-container" id="{{uid}}"><block wx:if="{{isShow}}"><image class="lazy-img" src="{{imgUrl}}" mode="widthFix"></image></block></view>
+<view class="lazyload-container" id="{{uid}}"><block wx:if="{{isArise}}"><image hidden="{{!(isShow)}}" class="{{[classArr]}}" src="{{imgUrl}}" mode="widthFix" data-event-opts="{{[['load',[['load',['$event']]]]]}}" bindload="__e"></image></block><image hidden="{{!(!isShow)}}" class="lazy-img" src="/static/easy-loadimage/loadfail.png" mode="widthFix"></image></view>

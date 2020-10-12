@@ -1,1 +1,0 @@
-<view class="logo-container"><view class="logo"><image class="logo-img" src="{{logo.img_url}}" mode="widthFix"></image><view class="text"><image class="icon" src="../static/icon/praise.png" mode="widthFix"></image>有赞提供技术支持</view></view></view>

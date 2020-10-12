@@ -24,6 +24,38 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.goods-container .head.data-v-fc39dd0e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 6rpx 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #646566;
+  font-size: 28rpx;
+  background-color: #fff;
+}
+.goods-container .head .shop-inlet.data-v-fc39dd0e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.goods-container .head .shop-inlet .logo.data-v-fc39dd0e {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 16rpx;
+}
+.goods-container .head .user.data-v-fc39dd0e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.goods-container .head .user .icon.data-v-fc39dd0e {
+  margin-right: 28rpx;
+}
 .goods-container .scroll-img.data-v-fc39dd0e {
   position: relative;
 }

@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "wuc-tab": "/components/wuc-tab/wuc-tab",
-    "tabbar": "/components/tabbar/tabbar",
-    "shop-info": "/components/shop-info",
-    "logo": "/components/logo"
-  }
-}

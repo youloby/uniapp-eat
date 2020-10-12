@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "lazyload": "/components/lazyload/lazyload"
-  },
-  "component": true
-}

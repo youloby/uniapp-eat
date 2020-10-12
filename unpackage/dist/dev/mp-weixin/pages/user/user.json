@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "tabbar": "/components/tabbar/tabbar",
-    "logo": "/components/logo",
-    "divider": "/components/divider"
-  }
-}

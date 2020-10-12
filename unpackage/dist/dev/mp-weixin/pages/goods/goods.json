@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "tabbar": "/components/tabbar/tabbar",
-    "side-bar-content": "/components/side-bar-content",
-    "shop-info": "/components/shop-info",
-    "logo": "/components/logo"
-  }
-}
