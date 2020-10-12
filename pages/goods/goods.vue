@@ -1,7 +1,6 @@
 <template>
 	<view class="goods-container">
 		<view class="goods-content">
-			
 			<scroll-view scroll-y="true" :class="['flex-bar', side]">
 				<view :class="['title-item', active === index ?'selected' :'']"
 					v-for="(item, index) in classList" :key="index"
@@ -24,6 +23,7 @@
 </template>
 
 <script>
+	import { getClassify } from '../../api/index.js';
 	import sideBarContent from '../../components/side-bar-content.vue';
 	import shopInfo from '../../components/shop-info.vue';
 	import logo from '../../components/logo.vue';
@@ -33,24 +33,7 @@
 				scrollTop: 0,
 				active: 0,
 				side: "",
-				lastTime: 0,
-				classTops: [],
-				classList: [
-					{title:'店铺热销', classify:'hot'},
-					{title:'网红咸蛋黄', classify:'egg'},
-					{title:'榴莲控', classify:'durian'},
-					{title:'抹茶控', classify:'matcha'},
-					{title:'咖啡', classify:'coffee'},
-					{title:'新鲜水果', classify:'fruits'},
-					{title:'卤味零食', classify:'meat'},
-					{title:'巧克力', classify:'chocolate'},
-					{title:'洋酒', classify:'foreignWines'},
-					{title:'方便速食', classify:'conveniency'},
-					{title:'快手菜', classify:'easyFood'},
-					{title:'糕点', classify:'cake'},
-					{title:'饼干', classify:'biscuits'},
-					{title:'新鲜蛋糕', classify:'torta'}
-				]
+				classList: []
 			}
 		},
 		watch: {
@@ -59,6 +42,13 @@
 			}
 		},
 		methods: {
+			async getAllGoodsClass(){
+				let { status, data } = await getClassify(-1);
+				
+				if(!status){
+					this.classList = data;
+				}
+			},
 			selectedClass(index){
 				this.active = index;
 				// #ifdef H5
@@ -98,6 +88,9 @@
 			sideBarContent,
 			shopInfo,
 			logo
+		},
+		onShow() {
+			this.getAllGoodsClass();
 		}
 	}
 </script>

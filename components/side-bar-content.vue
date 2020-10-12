@@ -35,7 +35,7 @@
 </template>
 
 <script>
-	import { getAllGoods } from '../api/index.js';
+	import { getClassifyGoods } from '../api/index.js';
 	import easyLoadimage from './easy-loadimage/easy-loadimage.vue';
 	export default {
 		props:['data', 'scrollTop', 'index'],
@@ -54,14 +54,15 @@
 		},
 		methods:{
 			async getGoodsData(){
-				let { status, data } = await getAllGoods(this.data.classify);
+				let { status, data } = await getClassifyGoods(this.data.alias, 100);
 				if(!status){
 					this.goodsList = data;
 				}
+				if(!this.isShow)this.isShow = true;
 			},
 			goGoodsDetails(goodsId){
 				uni.navigateTo({
-					url: `../details/goodsDetails/goodsDetails?classify=${this.data.classify}&goodsId=${goodsId}`
+					url: `../details/goodsDetails/goodsDetails?alias=${this.data.alias}&goodsId=${goodsId}`
 				})
 			},
 			onScroll(scrollTop){
@@ -70,7 +71,6 @@
 					if(!data) return;
 					if(data.top >1200 || data.top < -200) return;
 					this.getGoodsData();
-					if(!this.isShow)this.isShow = true;
 					if(data.top > 200) this.$emit("leap", this.index-1);
 					if(data.top <300) this.$emit("leap", this.index);
 				}).exec();

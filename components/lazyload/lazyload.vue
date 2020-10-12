@@ -1,6 +1,7 @@
 <template>
 	<view class="lazyload-container" :id="uid">
-		<image :src="imgUrl" mode="widthFix" v-if="isShow" class="lazy-img"></image>
+		<image :src="imgUrl" mode="widthFix" @load="load" v-if="isArise" v-show="isShow" :class="classArr"></image>
+		<image src="/static/easy-loadimage/loadfail.png" mode="widthFix" class="lazy-img" v-show="!isShow"></image>
 	</view>
 </template>
 
@@ -16,7 +17,9 @@
 		data() {
 			return {
 				uid: '',
-				isShow: false
+				isShow: false,
+				isArise: false,
+				classArr: ['lazy-img', 'luce']
 			};
 		},
 		watch: {
@@ -35,9 +38,13 @@
 				query.select('#'+id).boundingClientRect(data => {
 				    if(!data) return;
 				    if(data.top < 1600){
-				        this.isShow = true;
+				        this.isArise = true;
 				    }
 				}).exec();
+			},
+			load(){
+				this.isShow = true;
+				this.classArr.push('tran');
 			}
 		},
 		mounted() {
@@ -50,6 +57,14 @@
 .lazyload-container {
 	.lazy-img {
 		width: 100%;
+		height: 100%;
+	}
+	.luce {
+		opacity: 0;
+	}
+	.tran {
+		opacity: 1;
+		transition: all 0.3s;
 	}
 }
 </style>

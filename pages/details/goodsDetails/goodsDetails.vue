@@ -1,5 +1,19 @@
 <template>
 	<view class="goods-container">
+		<view class="head">
+			<navigator url="/pages/home/home" class="shop-inlet">
+				<view class="logo" style="background-image: url(../../../static/image/logo.webp);background-size: cover;"></view>
+				<view class="name">
+					吃货研究所店铺
+				</view>
+			</navigator>
+			<navigator url="/pages/user/user" class="user">
+				<uni-icons type="search" class="icon"></uni-icons>
+				<view class="text">
+					我的记录
+				</view>
+			</navigator>
+		</view>
 		<scroll-view class="scroll-img">
 			<swiper :autoplay="true"
 			:circular="true" class="swiper"
@@ -49,7 +63,7 @@
 			<view class="val">
 				{{ details.postage == 0 ?'免运费':details.postage }}
 			</view>
-			<text>剩余 {{details.surplus_num}}</text>
+			<text>剩余 {{details.total_sold_num}}</text>
 		</view>
 		<van-cell-group>
 			<van-cell title="服务" is-link value="收货后结算 - 快递发货" title-class="title" value-class="value" @click="show=true" />
@@ -89,9 +103,9 @@
 					<view class="shop-btn">
 						关注店铺
 					</view>
-					<view class="shop-enter">
-						进店逛逛
-					</view>
+					<navigator url="/pages/home/home">
+						<view class="shop-enter">进店逛逛</view>
+					</navigator>
 				</view>
 				<view class="shop-tags">
 					<view class="tag-official" style="background: url(https://img.yzcdn.cn/public_files/cf75189501624ce4bf364525bfc9ab64.png);background-size:cover;">
@@ -150,8 +164,8 @@
 					this.imgs = data.imgs;
 				}
 			},
-			async getGoodsDetails2(classify, goodsId){
-				let { status, data } = await getGoodsDetails2(classify, goodsId);
+			async getGoodsDetails2(alias, goodsId){
+				let { status, data } = await getGoodsDetails2(alias, goodsId);
 				console.log(data);
 				if(!status){
 					this.details = data;
@@ -174,12 +188,12 @@
 			}
 		},
 		onLoad: function (option) {
-			let { classify, goodsId } = option;
-			console.log(classify, goodsId);
-			if(!classify){
+			let { alias, goodsId } = option;
+			console.log(goodsId, alias);
+			if(!alias){
 				this.getGoodsDetails(goodsId);
 			}else {
-				this.getGoodsDetails2(classify, goodsId);
+				this.getGoodsDetails2(alias, goodsId);
 			}
 		},
 		components: {
@@ -190,6 +204,31 @@
 
 <style lang="scss" scoped>
 	.goods-container {
+		
+		.head {
+			display: flex;
+			justify-content: space-between;
+			padding: 6rpx 30rpx;
+			height: 60rpx;
+			line-height: 60rpx;
+			color: #646566;
+			font-size: 28rpx;
+			background-color: #fff;
+			.shop-inlet {
+				display: flex;
+				.logo {
+					width: 52rpx;
+					height: 52rpx;
+					margin-right: 16rpx;
+				}
+			}
+			.user {
+				display: flex;
+				.icon {
+					margin-right: 28rpx;
+				}
+			}
+		}
 		.scroll-img {
 			position: relative;
 			.swiper {

@@ -12,7 +12,9 @@
 		<view v-if="show !== 'info'">
 			<!-- #ifdef H5 -->
 			<view class="info">
-				<text class="item">店铺主页</text>
+				<navigator url="/pages/home/home" open-type="navigate">
+					<text class="item">店铺主页</text>
+				</navigator>
 				<text class="item" @click="goUser()">个人中心</text>
 				<text class="item">关注我们</text>
 				<text class="item">店铺信息</text>
