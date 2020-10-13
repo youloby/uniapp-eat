@@ -1,6 +1,6 @@
 <template>
 	<view class="rec-container">
-		<view class="rec-title">
+		<view class="rec-title" v-show="isShow">
 			更多精选商品
 		</view>
 		<view class="rec-list">
@@ -22,7 +22,7 @@
 <script>
 	import { getRecommend } from '../../api/index.js';
 	export default {
-		props:['scrollTop'],
+		props:['scrollTop', 'isShow'],
 		data() {
 			return {
 				recData: []

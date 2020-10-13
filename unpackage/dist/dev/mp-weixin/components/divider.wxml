@@ -1,0 +1,1 @@
+<view><block wx:if="{{title}}"><view class="insert"><view class="line"></view><view class="title">{{''+title+''}}</view><view class="line"></view></view></block><block wx:else><view class="divider"></view></block></view>

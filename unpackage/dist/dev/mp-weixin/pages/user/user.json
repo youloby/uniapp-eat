@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tabbar": "/components/tabbar/tabbar",
+    "logo": "/components/logo",
+    "divider": "/components/divider",
+    "recommend": "/components/recommend/recommend",
+    "info": "/components/shop-info"
+  }
+}

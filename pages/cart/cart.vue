@@ -2,7 +2,7 @@
 	<view class="cart-container">
 	
 		<!-- 空状态购物车 -->
-		<view class="empty_goodscar">
+		<view class="empty_goodscar" >
 			<view class="item">
 				<view>
 					<image class="img" src="../../static/car/空购物车.png" mode=""></image>
@@ -24,19 +24,7 @@
 		</view>
 		<divider title="更多精选商品"></divider>
 		<!-- 更多商品 -->
-		<view class="goodslist">
-			<view v-for="item in goodsData" :key="item.id" @click="goGoodsDetails(item.id)" class="book_item">
-				<view class="img">
-					<image :src="item.image_url" mode=""></image>
-				</view>
-				<view class="book_title">
-					<view class="title_name">{{ item.title}}</view>
-					<span class="price">￥{{item.price}}</span>
-				</view>
-			</view>
-		</view>
-	
-		
+		<recommend :isShow="false" />
 		<logo />
 	</view>
 </template>
@@ -44,11 +32,11 @@
 <script>
 	import logo from "../../components/logo.vue"
 	import divider from "../../components/divider.vue"
-	import { getAllGoods } from "../../api/index.js"
+	import recommend from "../../components/recommend/recommend.vue"
 	export default {
 		data() {
 			return {
-				goodsData: {}
+				
 			};
 		},
 		methods: {
@@ -68,20 +56,14 @@
 					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
 				});
 			},
-			async getGoodsList(){
-				var {status, data}  = await getAllGoods("recommend");
-				this.goodsData = data
-				console.log(data)
-				
-			}
+			
 		},
 		components:{
 			logo,
-			divider
+			divider,
+			recommend
 		},
-		onLoad() {
-			this.getGoodsList()
-		}
+		
 	}
 </script>
 
@@ -128,53 +110,6 @@
 					width: 32rpx;
 					height: 30rpx;
 				}
-			}
-		}
-	}
-	.goodslist {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		width: 100%;
-		
-		margin-top: 20rpx;
-		.book_item {
-			// display: flex;
-			width: 47%;
-			margin-bottom: 20rpx;
-			background: #fff;
-			padding: 10rpx;
-			overflow: hidden;
-			border-radius: 60rpx;
-			.img {
-				width: 354rpx;
-				height: 360rpx;
-				// overflow: hidden;
-				image {
-					width: 100%;
-					height: 100%;
-				}
-	
-				
-			}
-			.book_title {
-				padding: 20rpx;
-				
-				.title_name{
-					font-weight: 700;
-					font-size: 12px;
-					margin-bottom: 10rpx;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 2; /* 指定显示文本的行数 */
-					overflow: hidden; /* 超出隐藏 */
-					text-overflow: ellipsis; /* 超出部分显示省略号 */
-				}
-				.price{
-					color: #FF4444;
-					font-size: 12px;
-				}
-				
 			}
 		}
 	}

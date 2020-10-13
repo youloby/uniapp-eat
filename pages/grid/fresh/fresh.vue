@@ -6,7 +6,7 @@
 		</view>
 		
 		<view id="sticky" :class="{wxMenuFix:isWxMenuFix}">
-			<wuc-tab :tab-list="classifyData" :tabCur.sync="TabCur" :textFlex="true" tab-class="cu-bar" select-class="text-orange" @change="tabChange"></wuc-tab>
+			<wuc-tab :tab-list="classifyData" :tabCur.sync="TabCur" :textFlex="true" tab-class="text-center text-black cu-bar" select-class="text-orange" @change="tabChange"></wuc-tab>
 		</view>
 		
 		<view class="giftlist">

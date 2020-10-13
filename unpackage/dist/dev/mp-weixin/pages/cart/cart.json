@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "recommend": "/components/recommend/recommend",
+    "logo": "/components/logo",
+    "divider": "/components/divider"
+  }
+}

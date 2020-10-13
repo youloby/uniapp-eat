@@ -69,6 +69,7 @@
             "path" : "pages/grid/signin/signin",
             "style" : {}
         }
+        
     ],
 	"globalStyle": {
 		"app-plus": {"titleNView": false},

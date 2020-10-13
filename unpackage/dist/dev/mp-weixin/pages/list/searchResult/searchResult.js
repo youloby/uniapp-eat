@@ -94,13 +94,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uniSearchBar: function() {
-    return __webpack_require__.e(/*! import() | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then(__webpack_require__.bind(null, /*! @/components/uni-search-bar/uni-search-bar.vue */ 238))
+    return __webpack_require__.e(/*! import() | components/uni-search-bar/uni-search-bar */ "components/uni-search-bar/uni-search-bar").then(__webpack_require__.bind(null, /*! @/components/uni-search-bar/uni-search-bar.vue */ 262))
   },
   lazyload: function() {
-    return __webpack_require__.e(/*! import() | components/lazyload/lazyload */ "components/lazyload/lazyload").then(__webpack_require__.bind(null, /*! @/components/lazyload/lazyload.vue */ 245))
+    return __webpack_require__.e(/*! import() | components/lazyload/lazyload */ "components/lazyload/lazyload").then(__webpack_require__.bind(null, /*! @/components/lazyload/lazyload.vue */ 269))
+  },
+  recommend: function() {
+    return Promise.all(/*! import() | components/recommend/recommend */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/recommend/recommend")]).then(__webpack_require__.bind(null, /*! @/components/recommend/recommend.vue */ 276))
   },
   tabbar: function() {
-    return __webpack_require__.e(/*! import() | components/tabbar/tabbar */ "components/tabbar/tabbar").then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 175))
+    return __webpack_require__.e(/*! import() | components/tabbar/tabbar */ "components/tabbar/tabbar").then(__webpack_require__.bind(null, /*! @/components/tabbar/tabbar.vue */ 191))
   }
 }
 var render = function() {
@@ -200,7 +203,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _index = __webpack_require__(/*! ../../../api/index.js */ 20);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | components/recommend/recommend */ "components/recommend/recommend").then((function () {return resolve(__webpack_require__(/*! ../../../components/recommend/recommend.vue */ 325));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../../components/shop-info.vue */ 196));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../../components/logo.vue */ 203));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _index = __webpack_require__(/*! ../../../api/index.js */ 20);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var recommend = function recommend() {Promise.all(/*! require.ensure | components/recommend/recommend */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/recommend/recommend")]).then((function () {return resolve(__webpack_require__(/*! ../../../components/recommend/recommend.vue */ 276));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var shopInfo = function shopInfo() {Promise.all(/*! require.ensure | components/shop-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/shop-info")]).then((function () {return resolve(__webpack_require__(/*! ../../../components/shop-info.vue */ 212));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var logo = function logo() {Promise.all(/*! require.ensure | components/logo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/logo")]).then((function () {return resolve(__webpack_require__(/*! ../../../components/logo.vue */ 219));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {

@@ -75,28 +75,19 @@
 		</view>
 		<van-cell icon="shop-o" title="吃货研究所店铺" is-link value="进入店铺" link-type="navigateTo" url="/pages/home/home" />
 		<divider title="更多精选商品"></divider>
-		<view class="goodslist">
-			<view v-for="item in goodsData" :key="item.id" class="book_item">
-				<view class="img">
-					<image :src="item.image_url" mode=""></image>
-				</view>
-				<view class="book_title">
-					<view class="title_name">{{ item.title}}</view>
-					<span class="price">￥{{item.price}}</span>
-				</view>
-			</view>
-		</view>
+		<recommend :isShow="false" />
 		<!-- #endif -->
-		
+		<info show="swiper" />
 		<logo class="logo" />
 		<tabbar :current="4"></tabbar>
 	</view>
 </template>
 
 <script>
+	import info from "../../components/shop-info.vue"
 	import logo from "../../components/logo.vue"
 	import divider from "../../components/divider.vue"
-	import { getAllGoods } from "../../api/index.js"
+	import recommend from "../../components/recommend/recommend.vue"
 	export default {
 		data() {
 			return {
@@ -168,7 +159,9 @@
 		},
 		components:{
 			logo,
-			divider
+			divider,
+			recommend,
+			info
 		}
 	}
 </script>

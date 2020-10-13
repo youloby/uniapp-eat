@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "lazyload": "/components/lazyload/lazyload",
+    "easy-loadimage": "/components/easy-loadimage/easy-loadimage"
+  }
+}

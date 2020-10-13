@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "uni-goods-nav": "/components/uni-goods-nav/uni-goods-nav",
+    "shop-info": "/components/shop-info"
+  }
+}

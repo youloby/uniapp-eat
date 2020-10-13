@@ -8771,14 +8771,14 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!**********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/index.js ***!
-  \**********************************************************/
+/*!**********************************!*\
+  !*** D:/uniapp-eat/api/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getHomeImg = getHomeImg;exports.getGoods = getGoods;exports.getNote = getNote;exports.getSpecialImg = getSpecialImg;exports.getAllGoods = getAllGoods;exports.getHotSearch = getHotSearch;exports.getShopNote = getShopNote;exports.getGoodsDetails = getGoodsDetails;exports.getGoodsDetails2 = getGoodsDetails2;exports.getGiftList = getGiftList;exports.getClassify = getClassify;exports.getClassifyGoods = getClassifyGoods;exports.getSearchData = getSearchData;exports.getRecommend = getRecommend;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+Object.defineProperty(exports, "__esModule", { value: true });exports.getHomeImg = getHomeImg;exports.getGoods = getGoods;exports.getNote = getNote;exports.getSpecialImg = getSpecialImg;exports.getHotSearch = getHotSearch;exports.getShopNote = getShopNote;exports.getGoodsDetails = getGoodsDetails;exports.getGoodsDetails2 = getGoodsDetails2;exports.getGiftList = getGiftList;exports.getClassify = getClassify;exports.getClassifyGoods = getClassifyGoods;exports.getSearchData = getSearchData;exports.getRecommend = getRecommend;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 
 //获取首页图片
 function getHomeImg() {return _getHomeImg.apply(this, arguments);}
@@ -8799,60 +8799,55 @@ getSpecialImg(_x3) {return _getSpecialImg.apply(this, arguments);}
 
 
 
-//获取全部商品
-function _getSpecialImg() {_getSpecialImg = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(type) {return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return _config.default.get("/getSpecialImg?type=".concat(type));case 2:return _context4.abrupt("return", _context4.sent);case 3:case "end":return _context4.stop();}}}, _callee4);}));return _getSpecialImg.apply(this, arguments);}function getAllGoods(_x4) {return _getAllGoods.apply(this, arguments);}
-
-
-
 //获取热门搜索
-function _getAllGoods() {_getAllGoods = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5(classify) {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:_context5.next = 2;return _config.default.get("/getAllGoods?classify=".concat(classify));case 2:return _context5.abrupt("return", _context5.sent);case 3:case "end":return _context5.stop();}}}, _callee5);}));return _getAllGoods.apply(this, arguments);}function getHotSearch() {return _getHotSearch.apply(this, arguments);}
+function _getSpecialImg() {_getSpecialImg = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(type) {return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return _config.default.get("/getSpecialImg?type=".concat(type));case 2:return _context4.abrupt("return", _context4.sent);case 3:case "end":return _context4.stop();}}}, _callee4);}));return _getSpecialImg.apply(this, arguments);}function getHotSearch() {return _getHotSearch.apply(this, arguments);}
 
 
 
 //种草笔记
-function _getHotSearch() {_getHotSearch = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:_context6.next = 2;return _config.default.get('/searchHot');case 2:return _context6.abrupt("return", _context6.sent);case 3:case "end":return _context6.stop();}}}, _callee6);}));return _getHotSearch.apply(this, arguments);}function getShopNote(_x5) {return _getShopNote.apply(this, arguments);}
+function _getHotSearch() {_getHotSearch = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:_context5.next = 2;return _config.default.get('/searchHot');case 2:return _context5.abrupt("return", _context5.sent);case 3:case "end":return _context5.stop();}}}, _callee5);}));return _getHotSearch.apply(this, arguments);}function getShopNote(_x4) {return _getShopNote.apply(this, arguments);}
 
 
 
 //获取商品详情
-function _getShopNote() {_getShopNote = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(page) {var pageSize,_args7 = arguments;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:pageSize = _args7.length > 1 && _args7[1] !== undefined ? _args7[1] : 5;_context7.next = 3;return _config.default.get("/getMoreNote?page=".concat(page, "&pageSize=").concat(pageSize));case 3:return _context7.abrupt("return", _context7.sent);case 4:case "end":return _context7.stop();}}}, _callee7);}));return _getShopNote.apply(this, arguments);}function getGoodsDetails(_x6) {return _getGoodsDetails.apply(this, arguments);}
+function _getShopNote() {_getShopNote = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6(page) {var pageSize,_args6 = arguments;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:pageSize = _args6.length > 1 && _args6[1] !== undefined ? _args6[1] : 5;_context6.next = 3;return _config.default.get("/getMoreNote?page=".concat(page, "&pageSize=").concat(pageSize));case 3:return _context6.abrupt("return", _context6.sent);case 4:case "end":return _context6.stop();}}}, _callee6);}));return _getShopNote.apply(this, arguments);}function getGoodsDetails(_x5) {return _getGoodsDetails.apply(this, arguments);}
 
 
 //获取商品详情2
-function _getGoodsDetails() {_getGoodsDetails = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8(goodsId) {return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:_context8.next = 2;return _config.default.get("/getGoodsDetails?goodsId=".concat(goodsId));case 2:return _context8.abrupt("return", _context8.sent);case 3:case "end":return _context8.stop();}}}, _callee8);}));return _getGoodsDetails.apply(this, arguments);}function getGoodsDetails2(_x7, _x8) {return _getGoodsDetails2.apply(this, arguments);}
+function _getGoodsDetails() {_getGoodsDetails = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(goodsId) {return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:_context7.next = 2;return _config.default.get("/getGoodsDetails?goodsId=".concat(goodsId));case 2:return _context7.abrupt("return", _context7.sent);case 3:case "end":return _context7.stop();}}}, _callee7);}));return _getGoodsDetails.apply(this, arguments);}function getGoodsDetails2(_x6, _x7) {return _getGoodsDetails2.apply(this, arguments);}
 
 
 
 //获取礼物列表
-function _getGoodsDetails2() {_getGoodsDetails2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9(classify, goodsId) {return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:_context9.next = 2;return _config.default.get("/getGoodsDetails2?classify=".concat(classify, "&goodsId=").concat(goodsId));case 2:return _context9.abrupt("return", _context9.sent);case 3:case "end":return _context9.stop();}}}, _callee9);}));return _getGoodsDetails2.apply(this, arguments);}function getGiftList(_x9) {return _getGiftList.apply(this, arguments);}
+function _getGoodsDetails2() {_getGoodsDetails2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8(alias, goodsId) {return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:_context8.next = 2;return _config.default.get("/getGoodsDetails2?alias=".concat(alias, "&goodsId=").concat(goodsId));case 2:return _context8.abrupt("return", _context8.sent);case 3:case "end":return _context8.stop();}}}, _callee8);}));return _getGoodsDetails2.apply(this, arguments);}function getGiftList(_x8) {return _getGiftList.apply(this, arguments);}
 
 
 
 //获取分类信息
-function _getGiftList() {_getGiftList = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10(page) {var pageSize,_args10 = arguments;return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:pageSize = _args10.length > 1 && _args10[1] !== undefined ? _args10[1] : 10;_context10.next = 3;return _config.default.get("/getGiftList?page=".concat(page, "&pageSize=").concat(pageSize));case 3:return _context10.abrupt("return", _context10.sent);case 4:case "end":return _context10.stop();}}}, _callee10);}));return _getGiftList.apply(this, arguments);}function getClassify(_x10) {return _getClassify.apply(this, arguments);}
+function _getGiftList() {_getGiftList = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9(page) {var pageSize,_args9 = arguments;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:pageSize = _args9.length > 1 && _args9[1] !== undefined ? _args9[1] : 10;_context9.next = 3;return _config.default.get("/getGiftList?page=".concat(page, "&pageSize=").concat(pageSize));case 3:return _context9.abrupt("return", _context9.sent);case 4:case "end":return _context9.stop();}}}, _callee9);}));return _getGiftList.apply(this, arguments);}function getClassify(_x9) {return _getClassify.apply(this, arguments);}
 
 
 
 //获取分类商品
-function _getClassify() {_getClassify = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee11(index) {return _regenerator.default.wrap(function _callee11$(_context11) {while (1) {switch (_context11.prev = _context11.next) {case 0:_context11.next = 2;return _config.default.get("/getClassify?classify=".concat(index + 1));case 2:return _context11.abrupt("return", _context11.sent);case 3:case "end":return _context11.stop();}}}, _callee11);}));return _getClassify.apply(this, arguments);}function getClassifyGoods(_x11) {return _getClassifyGoods.apply(this, arguments);}
+function _getClassify() {_getClassify = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10(index) {return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:_context10.next = 2;return _config.default.get("/getClassify?classify=".concat(index + 1));case 2:return _context10.abrupt("return", _context10.sent);case 3:case "end":return _context10.stop();}}}, _callee10);}));return _getClassify.apply(this, arguments);}function getClassifyGoods(_x10) {return _getClassifyGoods.apply(this, arguments);}
 
 
 
 //获取搜索结果
-function _getClassifyGoods() {_getClassifyGoods = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12(alias) {return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:_context12.next = 2;return _config.default.get("/getClassifyGoods?alias=".concat(alias));case 2:return _context12.abrupt("return", _context12.sent);case 3:case "end":return _context12.stop();}}}, _callee12);}));return _getClassifyGoods.apply(this, arguments);}function getSearchData(_x12, _x13) {return _getSearchData.apply(this, arguments);}
+function _getClassifyGoods() {_getClassifyGoods = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee11(alias) {var pageSize,page,_args11 = arguments;return _regenerator.default.wrap(function _callee11$(_context11) {while (1) {switch (_context11.prev = _context11.next) {case 0:pageSize = _args11.length > 1 && _args11[1] !== undefined ? _args11[1] : 10;page = _args11.length > 2 && _args11[2] !== undefined ? _args11[2] : 1;_context11.next = 4;return _config.default.get("/getClassifyGoods?alias=".concat(alias, "&page=").concat(page, "&pageSize=").concat(pageSize));case 4:return _context11.abrupt("return", _context11.sent);case 5:case "end":return _context11.stop();}}}, _callee11);}));return _getClassifyGoods.apply(this, arguments);}function getSearchData(_x11, _x12) {return _getSearchData.apply(this, arguments);}
 
 
 
 //获取更多精选商品
-function _getSearchData() {_getSearchData = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13(keyword, page) {var pageSize,_args13 = arguments;return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:pageSize = _args13.length > 2 && _args13[2] !== undefined ? _args13[2] : 10;_context13.next = 3;return _config.default.get("/getSearchData?page=".concat(page, "&pageSize=").concat(pageSize, "&keyword=").concat(keyword));case 3:return _context13.abrupt("return", _context13.sent);case 4:case "end":return _context13.stop();}}}, _callee13);}));return _getSearchData.apply(this, arguments);}function getRecommend() {return _getRecommend.apply(this, arguments);}function _getRecommend() {_getRecommend = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee14() {return _regenerator.default.wrap(function _callee14$(_context14) {while (1) {switch (_context14.prev = _context14.next) {case 0:_context14.next = 2;return (
-              _config.default.get('/getRecommend'));case 2:return _context14.abrupt("return", _context14.sent);case 3:case "end":return _context14.stop();}}}, _callee14);}));return _getRecommend.apply(this, arguments);}
+function _getSearchData() {_getSearchData = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12(keyword, page) {var pageSize,_args12 = arguments;return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:pageSize = _args12.length > 2 && _args12[2] !== undefined ? _args12[2] : 10;_context12.next = 3;return _config.default.get("/getSearchData?page=".concat(page, "&pageSize=").concat(pageSize, "&keyword=").concat(keyword));case 3:return _context12.abrupt("return", _context12.sent);case 4:case "end":return _context12.stop();}}}, _callee12);}));return _getSearchData.apply(this, arguments);}function getRecommend() {return _getRecommend.apply(this, arguments);}function _getRecommend() {_getRecommend = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13() {return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:_context13.next = 2;return (
+              _config.default.get('/getRecommend'));case 2:return _context13.abrupt("return", _context13.sent);case 3:case "end":return _context13.stop();}}}, _callee13);}));return _getRecommend.apply(this, arguments);}
 
 /***/ }),
 
 /***/ 21:
-/*!***********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/api/config.js ***!
-  \***********************************************************/
+/*!***********************************!*\
+  !*** D:/uniapp-eat/api/config.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8887,9 +8882,9 @@ http;exports.default = _default;
 /***/ }),
 
 /***/ 22:
-/*!***********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/luch-request.js ***!
-  \***********************************************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/luch-request.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8900,9 +8895,9 @@ _Request.default;exports.default = _default;
 /***/ }),
 
 /***/ 23:
-/*!***********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/Request.js ***!
-  \***********************************************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/Request.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9110,9 +9105,9 @@ Request = /*#__PURE__*/function () {
 /***/ }),
 
 /***/ 24:
-/*!*******************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
-  \*******************************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/dispatchRequest.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9126,332 +9121,10 @@ function _default(config) {
 
 /***/ }),
 
-/***/ 25:
-/*!*************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/adapters/index.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _buildURL = _interopRequireDefault(__webpack_require__(/*! ../helpers/buildURL */ 26));
-var _buildFullPath = _interopRequireDefault(__webpack_require__(/*! ../core/buildFullPath */ 28));
-var _settle = _interopRequireDefault(__webpack_require__(/*! ../core/settle */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-
-/**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * 返回可选值存在的配置
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Array} keys - 可选值数组
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Object} config2 - 配置
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @return {{}} - 存在的配置项
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
-var mergeKeys = function mergeKeys(keys, config2) {
-  var config = {};
-  keys.forEach(function (prop) {
-    if (typeof config2[prop] !== 'undefined') {
-      config[prop] = config2[prop];
-    }
-  });
-  return config;
-};var _default =
-function _default(config) {
-  return new Promise(function (resolve, reject) {
-    var _config = {
-      url: (0, _buildURL.default)((0, _buildFullPath.default)(config.baseURL, config.url), config.params),
-      header: config.header,
-      complete: function complete(response) {
-        response.config = config;
-        try {
-          // 对可能字符串不是json 的情况容错
-          if (typeof response.data === 'string') {
-            response.data = JSON.parse(response.data);
-          }
-          // eslint-disable-next-line no-empty
-        } catch (e) {
-        }
-        (0, _settle.default)(resolve, reject, response);
-      } };
-
-    var requestTask;
-    if (config.method === 'UPLOAD') {
-      delete _config.header['content-type'];
-      delete _config.header['Content-Type'];
-      var otherConfig = {
-
-
-
-        filePath: config.filePath,
-        name: config.name };
-
-      var optionalKeys = [
-
-
-
-
-
-
-      'formData'];
-
-      requestTask = uni.uploadFile(_objectSpread(_objectSpread(_objectSpread({}, _config), otherConfig), mergeKeys(optionalKeys, config)));
-    } else if (config.method === 'DOWNLOAD') {
-      requestTask = uni.downloadFile(_config);
-    } else {
-      var _optionalKeys = [
-      'data',
-      'method',
-
-      'timeout',
-
-      'dataType',
-
-      'responseType'];
-
-
-
-
-
-
-
-
-
-
-
-      requestTask = uni.request(_objectSpread(_objectSpread({}, _config), mergeKeys(_optionalKeys, config)));
-    }
-    if (config.getTask) {
-      config.getTask(requestTask, config);
-    }
-  });
-};exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 26:
-/*!***************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = buildURL;
-
-var utils = _interopRequireWildcard(__webpack_require__(/*! ./../utils */ 27));function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
-
-function encode(val) {
-  return encodeURIComponent(val).
-  replace(/%40/gi, '@').
-  replace(/%3A/gi, ':').
-  replace(/%24/g, '$').
-  replace(/%2C/gi, ',').
-  replace(/%20/g, '+').
-  replace(/%5B/gi, '[').
-  replace(/%5D/gi, ']');
-}
-
-/**
-   * Build a URL by appending params to the end
-   *
-   * @param {string} url The base of the url (e.g., http://www.google.com)
-   * @param {object} [params] The params to be appended
-   * @returns {string} The formatted url
-   */
-function buildURL(url, params) {
-  /*eslint no-param-reassign:0*/
-  if (!params) {
-    return url;
-  }
-
-  var serializedParams;
-  if (utils.isURLSearchParams(params)) {
-    serializedParams = params.toString();
-  } else {
-    var parts = [];
-
-    utils.forEach(params, function serialize(val, key) {
-      if (val === null || typeof val === 'undefined') {
-        return;
-      }
-
-      if (utils.isArray(val)) {
-        key = key + '[]';
-      } else {
-        val = [val];
-      }
-
-      utils.forEach(val, function parseValue(v) {
-        if (utils.isDate(v)) {
-          v = v.toISOString();
-        } else if (utils.isObject(v)) {
-          v = JSON.stringify(v);
-        }
-        parts.push(encode(key) + '=' + encode(v));
-      });
-    });
-
-    serializedParams = parts.join('&');
-  }
-
-  if (serializedParams) {
-    var hashmarkIndex = url.indexOf('#');
-    if (hashmarkIndex !== -1) {
-      url = url.slice(0, hashmarkIndex);
-    }
-
-    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
-  }
-
-  return url;
-}
-
-/***/ }),
-
-/***/ 27:
-/*!****************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/utils.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// utils is a library of generic helper functions non-specific to axios
-Object.defineProperty(exports, "__esModule", { value: true });exports.isArray = isArray;exports.isObject = isObject;exports.isDate = isDate;exports.isURLSearchParams = isURLSearchParams;exports.forEach = forEach;exports.isBoolean = isBoolean;exports.isPlainObject = isPlainObject;exports.deepMerge = deepMerge;
-var toString = Object.prototype.toString;
-
-/**
-                                           * Determine if a value is an Array
-                                           *
-                                           * @param {Object} val The value to test
-                                           * @returns {boolean} True if value is an Array, otherwise false
-                                           */
-function isArray(val) {
-  return toString.call(val) === '[object Array]';
-}
-
-
-/**
-   * Determine if a value is an Object
-   *
-   * @param {Object} val The value to test
-   * @returns {boolean} True if value is an Object, otherwise false
-   */
-function isObject(val) {
-  return val !== null && typeof val === 'object';
-}
-
-/**
-   * Determine if a value is a Date
-   *
-   * @param {Object} val The value to test
-   * @returns {boolean} True if value is a Date, otherwise false
-   */
-function isDate(val) {
-  return toString.call(val) === '[object Date]';
-}
-
-/**
-   * Determine if a value is a URLSearchParams object
-   *
-   * @param {Object} val The value to test
-   * @returns {boolean} True if value is a URLSearchParams object, otherwise false
-   */
-function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
-}
-
-
-/**
-   * Iterate over an Array or an Object invoking a function for each item.
-   *
-   * If `obj` is an Array callback will be called passing
-   * the value, index, and complete array for each item.
-   *
-   * If 'obj' is an Object callback will be called passing
-   * the value, key, and complete object for each property.
-   *
-   * @param {Object|Array} obj The object to iterate
-   * @param {Function} fn The callback to invoke for each item
-   */
-function forEach(obj, fn) {
-  // Don't bother if no value provided
-  if (obj === null || typeof obj === 'undefined') {
-    return;
-  }
-
-  // Force an array if not already something iterable
-  if (typeof obj !== 'object') {
-    /*eslint no-param-reassign:0*/
-    obj = [obj];
-  }
-
-  if (isArray(obj)) {
-    // Iterate over array values
-    for (var i = 0, l = obj.length; i < l; i++) {
-      fn.call(null, obj[i], i, obj);
-    }
-  } else {
-    // Iterate over object keys
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        fn.call(null, obj[key], key, obj);
-      }
-    }
-  }
-}
-
-/**
-   * 是否为boolean 值
-   * @param val
-   * @returns {boolean}
-   */
-function isBoolean(val) {
-  return typeof val === 'boolean';
-}
-
-/**
-   * 是否为真正的对象{} new Object
-   * @param {any} obj - 检测的对象
-   * @returns {boolean}
-   */
-function isPlainObject(obj) {
-  return Object.prototype.toString.call(obj) === '[object Object]';
-}
-
-
-
-/**
-   * Function equal to merge with the difference being that no reference
-   * to original objects is kept.
-   *
-   * @see merge
-   * @param {Object} obj1 Object to merge
-   * @returns {Object} Result of all merge properties
-   */
-function deepMerge() /* obj1, obj2, obj3, ... */{
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = deepMerge(result[key], val);
-    } else if (typeof val === 'object') {
-      result[key] = deepMerge({}, val);
-    } else {
-      result[key] = val;
-    }
-  }
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/***/ }),
-
-/***/ 271:
-/*!***************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/components/uni-icons/icons.js ***!
-  \***************************************************************************/
+/***/ 245:
+/*!***************************************************!*\
+  !*** D:/uniapp-eat/components/uni-icons/icons.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9590,10 +9263,332 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
+/***/ 25:
+/*!*************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/adapters/index.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _buildURL = _interopRequireDefault(__webpack_require__(/*! ../helpers/buildURL */ 26));
+var _buildFullPath = _interopRequireDefault(__webpack_require__(/*! ../core/buildFullPath */ 28));
+var _settle = _interopRequireDefault(__webpack_require__(/*! ../core/settle */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * 返回可选值存在的配置
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Array} keys - 可选值数组
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @param {Object} config2 - 配置
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          * @return {{}} - 存在的配置项
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
+var mergeKeys = function mergeKeys(keys, config2) {
+  var config = {};
+  keys.forEach(function (prop) {
+    if (typeof config2[prop] !== 'undefined') {
+      config[prop] = config2[prop];
+    }
+  });
+  return config;
+};var _default =
+function _default(config) {
+  return new Promise(function (resolve, reject) {
+    var _config = {
+      url: (0, _buildURL.default)((0, _buildFullPath.default)(config.baseURL, config.url), config.params),
+      header: config.header,
+      complete: function complete(response) {
+        response.config = config;
+        try {
+          // 对可能字符串不是json 的情况容错
+          if (typeof response.data === 'string') {
+            response.data = JSON.parse(response.data);
+          }
+          // eslint-disable-next-line no-empty
+        } catch (e) {
+        }
+        (0, _settle.default)(resolve, reject, response);
+      } };
+
+    var requestTask;
+    if (config.method === 'UPLOAD') {
+      delete _config.header['content-type'];
+      delete _config.header['Content-Type'];
+      var otherConfig = {
+
+
+
+        filePath: config.filePath,
+        name: config.name };
+
+      var optionalKeys = [
+
+
+
+
+
+
+      'formData'];
+
+      requestTask = uni.uploadFile(_objectSpread(_objectSpread(_objectSpread({}, _config), otherConfig), mergeKeys(optionalKeys, config)));
+    } else if (config.method === 'DOWNLOAD') {
+      requestTask = uni.downloadFile(_config);
+    } else {
+      var _optionalKeys = [
+      'data',
+      'method',
+
+      'timeout',
+
+      'dataType',
+
+      'responseType'];
+
+
+
+
+
+
+
+
+
+
+
+      requestTask = uni.request(_objectSpread(_objectSpread({}, _config), mergeKeys(_optionalKeys, config)));
+    }
+    if (config.getTask) {
+      config.getTask(requestTask, config);
+    }
+  });
+};exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 26:
+/*!***************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/buildURL.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = buildURL;
+
+var utils = _interopRequireWildcard(__webpack_require__(/*! ./../utils */ 27));function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function encode(val) {
+  return encodeURIComponent(val).
+  replace(/%40/gi, '@').
+  replace(/%3A/gi, ':').
+  replace(/%24/g, '$').
+  replace(/%2C/gi, ',').
+  replace(/%20/g, '+').
+  replace(/%5B/gi, '[').
+  replace(/%5D/gi, ']');
+}
+
+/**
+   * Build a URL by appending params to the end
+   *
+   * @param {string} url The base of the url (e.g., http://www.google.com)
+   * @param {object} [params] The params to be appended
+   * @returns {string} The formatted url
+   */
+function buildURL(url, params) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      } else {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    var hashmarkIndex = url.indexOf('#');
+    if (hashmarkIndex !== -1) {
+      url = url.slice(0, hashmarkIndex);
+    }
+
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+}
+
+/***/ }),
+
+/***/ 27:
+/*!****************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/utils.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// utils is a library of generic helper functions non-specific to axios
+Object.defineProperty(exports, "__esModule", { value: true });exports.isArray = isArray;exports.isObject = isObject;exports.isDate = isDate;exports.isURLSearchParams = isURLSearchParams;exports.forEach = forEach;exports.isBoolean = isBoolean;exports.isPlainObject = isPlainObject;exports.deepMerge = deepMerge;
+var toString = Object.prototype.toString;
+
+/**
+                                           * Determine if a value is an Array
+                                           *
+                                           * @param {Object} val The value to test
+                                           * @returns {boolean} True if value is an Array, otherwise false
+                                           */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+
+/**
+   * Determine if a value is an Object
+   *
+   * @param {Object} val The value to test
+   * @returns {boolean} True if value is an Object, otherwise false
+   */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+   * Determine if a value is a Date
+   *
+   * @param {Object} val The value to test
+   * @returns {boolean} True if value is a Date, otherwise false
+   */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+   * Determine if a value is a URLSearchParams object
+   *
+   * @param {Object} val The value to test
+   * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+   */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+
+/**
+   * Iterate over an Array or an Object invoking a function for each item.
+   *
+   * If `obj` is an Array callback will be called passing
+   * the value, index, and complete array for each item.
+   *
+   * If 'obj' is an Object callback will be called passing
+   * the value, key, and complete object for each property.
+   *
+   * @param {Object|Array} obj The object to iterate
+   * @param {Function} fn The callback to invoke for each item
+   */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+   * 是否为boolean 值
+   * @param val
+   * @returns {boolean}
+   */
+function isBoolean(val) {
+  return typeof val === 'boolean';
+}
+
+/**
+   * 是否为真正的对象{} new Object
+   * @param {any} obj - 检测的对象
+   * @returns {boolean}
+   */
+function isPlainObject(obj) {
+  return Object.prototype.toString.call(obj) === '[object Object]';
+}
+
+
+
+/**
+   * Function equal to merge with the difference being that no reference
+   * to original objects is kept.
+   *
+   * @see merge
+   * @param {Object} obj1 Object to merge
+   * @returns {Object} Result of all merge properties
+   */
+function deepMerge() /* obj1, obj2, obj3, ... */{
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = deepMerge(result[key], val);
+    } else if (typeof val === 'object') {
+      result[key] = deepMerge({}, val);
+    } else {
+      result[key] = val;
+    }
+  }
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/***/ }),
+
 /***/ 28:
-/*!*****************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
-  \*****************************************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/buildFullPath.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9622,9 +9617,9 @@ function buildFullPath(baseURL, requestedURL) {
 /***/ }),
 
 /***/ 29:
-/*!********************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
-  \********************************************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/isAbsoluteURL.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9678,9 +9673,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 30:
-/*!******************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
-  \******************************************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/helpers/combineURLs.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9703,9 +9698,9 @@ function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ 31:
-/*!**********************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/settle.js ***!
-  \**********************************************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/settle.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9730,9 +9725,9 @@ function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ 32:
-/*!**********************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
-  \**********************************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/InterceptorManager.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9792,9 +9787,9 @@ InterceptorManager;exports.default = _default;
 /***/ }),
 
 /***/ 33:
-/*!***************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
-  \***************************************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/mergeConfig.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9892,9 +9887,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 /***/ }),
 
 /***/ 34:
-/*!************************************************************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/node_modules/luch-request/src/lib/core/defaults.js ***!
-  \************************************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/uniapp-eat/node_modules/luch-request/src/lib/core/defaults.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9932,9 +9927,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!********************************************************!*\
-  !*** F:/Users/lenovo/HBuilderX/foodie-test/pages.json ***!
-  \********************************************************/
+/*!********************************!*\
+  !*** D:/uniapp-eat/pages.json ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
