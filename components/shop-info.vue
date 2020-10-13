@@ -3,7 +3,7 @@
 		<scroll-view v-if="show !== 'swiper'">
 			<swiper :indicator-dots="true" :autoplay="true"
 			:circular="true" class="swiper" indicator-active-color="#FF4444">
-				<swiper-item v-for="item in swiperList" :key="item.id" class="item">
+				<swiper-item v-for="item in swiperList" :key="item.id" class="scr">
 					<image :src="item.img_url" class="img" mode="widthFix"></image>
 				</swiper-item>
 			</swiper>
@@ -12,10 +12,12 @@
 		<view v-if="show !== 'info'">
 			<!-- #ifdef H5 -->
 			<view class="info">
-				<navigator url="/pages/home/home" open-type="navigate">
-					<text class="item">店铺主页</text>
+				<navigator class="item" url="/pages/home/home" open-type="navigate">
+					店铺主页
 				</navigator>
-				<text class="item" @click="goUser()">个人中心</text>
+				<navigator class="item" url="/pages/user/user" open-type="navigate">
+					个人中心
+				</navigator>
 				<text class="item">关注我们</text>
 				<text class="item">店铺信息</text>
 			</view>
@@ -44,11 +46,6 @@
 				if(!status){
 					this.swiperList = data;
 				}
-			},
-			goUser(){
-				uni.switchTab({
-				    url: '/pages/user/user'
-				});
 			}
 		},
 		created(){
@@ -63,7 +60,7 @@
 <style lang="scss">
 	.swiper {
 		height: 352rpx;
-		.item .img {
+		.scr .img {
 			width: 100%;
 		}
 	}

@@ -1,10 +1,10 @@
 <template>
 	<view class="goods-block" :id="gid">
-		<image :src="bar" mode="widthFix" class="bar"></image>
+		<image :src="data.img_url" mode="widthFix" class="bar"></image>
 		
 		<view class="goods-list" v-if="isShow">
-			<view class="goods" v-for="item in goodsList" :key="item.id" @click="goGoodsDetails(item.goodsId)">
-				<lazyload :img-url="item.img_url" :scroll-top="scrollTop" class="img"></lazyload>
+			<view class="goods" v-for="item in goodsList" :key="item.id" @click="goGoodsDetails(item.id)">
+				<lazyload :img-url="item.image_url" :scroll-top="scrollTop" class="img"></lazyload>
 				<view class="text">
 					<view class="title">
 						{{ item.title }}
@@ -23,10 +23,10 @@
 </template>
 
 <script>
-	import { getGoods } from '../api/index.js';
+	import { getHomeGoods } from '../api/index.js';
 	import easyLoadimage from './easy-loadimage/easy-loadimage.vue';
 	export default {
-		props:['bar', 'code', 'scrollTop'],
+		props:['data', 'scrollTop'],
 		data() {
 			return {
 				gid: '',
@@ -41,14 +41,14 @@
 		},
 		methods: {
 			async getGoodsList(){
-				let { status, data } = await getGoods(this.code);
+				let { status, data } = await getHomeGoods(this.data.url);
 				if(!status){
 					this.goodsList = data;
 				}
 			},
-			goGoodsDetails(goodsId){
+			goGoodsDetails(id){
 				uni.navigateTo({
-					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
+					url: `../details/goodsDetails/goodsDetails?goodsId=${id}`
 				})
 			},
 			onScroll(scrollTop){
@@ -56,6 +56,7 @@
 				query.select('#'+this.gid).boundingClientRect(data => {
 				    if(!data) return;
 					if(data.top < 1400){
+						if(this.goodsList.length == 0)this.getGoodsList();
 						this.isShow = true;
 					}
 				}).exec()
@@ -63,7 +64,6 @@
 		},
 		created() {
 			this.gid = 'gid'+Math.floor(Math.random()*10);
-			this.getGoodsList();
 		},
 		components:{
 			easyLoadimage

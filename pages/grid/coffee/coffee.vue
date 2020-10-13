@@ -11,22 +11,25 @@
 		
 		<view class="giftlist">
 			<view v-for="item in classifyGoodsData" :key="item.id" class="gift_item">
-				<view class="img">
-					<image :src="item.imageUrl" mode=""></image>
-				</view>
-				<view class="gift_title">
-					<view class="title_name">{{ item.title }}</view>
-					<view class="title_info">
-						{{ item.sellPoint}}
+				<navigator :url="'../../details/goodsDetails/goodsDetails'+item.id">
+					<view class="image">
+						<lazyload :img-url="item.imageUrl" :scroll-top="scrollTop" class="img"></lazyload>
+						<!-- <lazyload :src="item.imageUrl" mode=""></lazyload> -->
 					</view>
-					<view class="info_price">
-						<span class="price">￥{{item.price}}</span>
-						
-						<view class="img">
-							<image src="../../../static/icon/cart-circle-o.png" mode=""></image>
+					<view class="gift_title">
+						<view class="title_name">{{ item.title }}</view>
+						<view class="title_info">
+							{{ item.sellPoint}}
+						</view>
+						<view class="info_price">
+							<span class="price">￥{{item.price}}</span>
+							
+							<view class="img">
+								<image src="../../../static/icon/cart-circle-o.png" mode=""></image>
+							</view>
 						</view>
 					</view>
-				</view>
+				</navigator>
 			</view>
 		</view>
 		
@@ -52,6 +55,7 @@
 				TabCur: 0,
 				classifyData: [],
 				isData:false,
+				scrollTop: 0,
 				classifyGoodsData:[],
 				isWxMenuFix: false
 			}
@@ -100,8 +104,8 @@
 				this.menuTop = data.top
 			}).exec();
 		},
-		onPageScroll(e) {
-			var { scrollTop } = e;
+		onPageScroll({ scrollTop }) {
+			this.scrollTop = scrollTop;
 			if(scrollTop > this.menuTop){
 				this.isWxMenuFix = true;
 			}else{
@@ -113,6 +117,7 @@
 
 <style lang="scss" scoped>
 .coffee_container {
+	margin-bottom: 100rpx;
 		.img {
 			width: 100%;
 			height: 200rpx;
@@ -139,12 +144,12 @@
 				background: #fff;
 				padding: 10rpx;
 
-				.img {
+				.image {
 					width: 354rpx;
 					height: 360rpx;
 
 					// overflow: hidden;
-					image {
+					.img {
 						width: 100%;
 						height: 100%;
 					}

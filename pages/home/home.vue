@@ -30,20 +30,10 @@
 			
 			<note :scrollTop="scrollTop"></note>
 			
-			<divider></divider>
-			<goods-block :bar="goodsBars['送Ta礼物'].img_url" code="1002" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
-			
-			<divider></divider>
-			<goods-block :bar="goodsBars['各种零食'].img_url" code="1003" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
-			
-			<divider></divider>
-			<goods-block :bar="goodsBars['果蔬生鲜'].img_url" code="1004" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
-			
-			<divider></divider>
-			<goods-block :bar="goodsBars['咖啡茶饮'].img_url" code="1005" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
-			
-			<divider></divider>
-			<goods-block :bar="goodsBars['各种酒水'].img_url" code="1006" v-if="isUrl()" :scrollTop="scrollTop"></goods-block>
+			<view v-for="item in goodsBars" :key="item.id">
+				<divider></divider>
+				<goods-block :data="item" :scrollTop="scrollTop"></goods-block>
+			</view>
 			
 			<divider></divider>
 			<view class="status">
@@ -59,7 +49,7 @@
 </template>
 
 <script>
-	import { getHomeImg, getHotSearch } from '../../api/index.js';
+	import { getHomeData, getHotSearch } from '../../api/index.js';
 	import goodsBlock from '../../components/goods-block.vue';
 	import newProduct from '../../components/new-product/new-product.vue';
 	import note from '../../components/note/note.vue'
@@ -82,16 +72,13 @@
 		},
 		methods: {
 			async initialize(){
-				let { status, data } = await getHomeImg();
+				let { status, data } = await getHomeData();
 				if(!status){
 					this.swiperList = data.swiper;
 					this.gridList = data.grid;
 					this.peddleList = data.peddle;
 					this.goodsBars = data.goodsBar;
 				}
-			},
-			isUrl(){
-				return Object.keys(this.goodsBars).length !== 0;
 			},
 			updateIsSearch(value){
 				this.isSearch = value;

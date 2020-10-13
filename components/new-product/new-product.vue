@@ -5,10 +5,10 @@
 		</view>
 		
 		<scroll-view scroll-x="true" class="new">
-			<view class="item" v-for="item in newGoods" :key="item.id" @click="goGoodsDetails(item.goodsId)">
+			<view class="item" v-for="item in newGoods" :key="item.id" @click="goGoodsDetails(item.id)">
 				<image src="../../static/icon/New-Tag 2.png" mode="widthFix" class="new-tag"></image>
 				<view class="goods">
-					<lazyload :img-url="item.img_url" :scroll-top="scrollTop" class="img"></lazyload>
+					<lazyload :img-url="item.image_url" :scroll-top="scrollTop" class="img"></lazyload>
 					<view class="text">
 						<view class="title">
 							{{ item.title }}
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-	import { getGoods } from '../../api/index.js';
+	import { getNewGoods } from '../../api/index.js';
 	export default {
 		props: ["scrollTop"],
 		data() {
@@ -51,7 +51,7 @@
 		},
 		methods: {
 			async getNewGoods(){
-				let { status, data } = await getGoods('1001');
+				let { status, data } = await getNewGoods(1, 6);
 				if(!status){
 					this.newGoods = data;
 				}

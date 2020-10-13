@@ -1,1 +1,0 @@
-<view class="tabbar-container"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="page"><navigator url="{{item.pagePath}}"><image class="icon" src="{{index===current?item.selectedIconPath:item.iconPath}}" mode="widthFix"></image></navigator></view></block></view>

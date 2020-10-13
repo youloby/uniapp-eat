@@ -65,7 +65,6 @@
 		},
 		onLoad() {
 			this.getGiftListData()
-			console.log(this.giftData)
 		},
 		
 	}

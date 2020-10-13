@@ -40,6 +40,7 @@
 	bottom: 0;
 	display: flex;
 	justify-content: space-between;
+	z-index: 999;
 	background-color: #fff;
 	
 	.page {

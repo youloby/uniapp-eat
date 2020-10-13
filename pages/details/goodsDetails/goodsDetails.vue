@@ -1,5 +1,38 @@
 <template>
 	<view class="goods-container">
+		<!-- #ifdef H5 -->
+		<view class="photo-info" v-show="isReveal">
+			<view class="photos" @click="isReveal=false">
+				<view class="count">
+					{{current}}/{{imgs.length}}
+					<uni-icons class="icon" type="clear" size="22" color="#C8C9CC"></uni-icons>
+				</view>
+				<scroll-view class="scroll-img">
+					<swiper class="swiper" @change="countDot" :circular="true">
+						<swiper-item v-for="item in imgs" :key="item.id" class="item">
+							{{item.id}}
+							<image :src="item.url" class="img" mode="widthFix"></image>
+						</swiper-item>
+					</swiper>
+				</scroll-view>
+			</view>
+			<view class="buy-goods">
+				<view class="name">
+					{{ details.title }}
+				</view>
+				<view class="buy-nav">
+					<view class="price">
+						<text class="icon">&yen;</text>{{ details.price }}
+					</view>
+					<view class="add_buy">
+						<view class="btn add">加入购物车</view>
+						<view class="btn buy">立即购买</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- #endif -->
+		
 		<view class="head">
 			<navigator url="/pages/home/home" class="shop-inlet">
 				<view class="logo" style="background-image: url(../../../static/image/logo.webp);background-size: cover;"></view>
@@ -18,7 +51,7 @@
 			<swiper :autoplay="true"
 			:circular="true" class="swiper"
 			@change="countDot">
-				<swiper-item v-for="item in imgs" :key="item.id" class="item">
+				<swiper-item v-for="item in imgs" :key="item.id" class="item" @click="isReveal=true">
 					<image :src="item.url" class="img" mode="widthFix"></image>
 				</swiper-item>
 			</swiper>
@@ -66,9 +99,9 @@
 			<text>剩余 {{details.total_sold_num}}</text>
 		</view>
 		<van-cell-group>
-			<van-cell title="服务" is-link value="收货后结算 - 快递发货" title-class="title" value-class="value" @click="show=true" />
+			<van-cell title="服务" is-link value="收货后结算 - 快递发货" title-class="title" value-class="value" @click="isShow=true" />
 			<van-cell title="选择" is-link value="规格" title-class="title" value-class="value" />
-			<van-action-sheet :show="show" @click-overlay="show=false">
+			<van-action-sheet :show="isShow" @click-overlay="isShow=false">
 				<view class="content">
 					<view class="serve">
 						<view class="item">
@@ -88,7 +121,7 @@
 							</view>
 						</view>
 					</view>
-					<view :class="['btn', !show ?'click-btn':'']" @click="show=false">我知道了</view>
+					<view :class="['btn', !isShow ?'click-btn':'']" @click="isShow=false">我知道了</view>
 				</view>
 			</van-action-sheet>
 		</van-cell-group>
@@ -121,15 +154,17 @@
 </template>
 
 <script>
-	import { getGoodsDetails, getGoodsDetails2 } from '../../../api/index.js';
+	import { getGoodsDetails } from '../../../api/index.js';
 	import shopInfo from '../../../components/shop-info.vue';
 	export default {
 		data() {
 			return {
 				current: 1,
+				tempCurrent: 1,
 				details: {},
 				imgs: [],
-				show: false,
+				isReveal: false,
+				isShow: false,
 				options: [{
 					icon: 'chat',
 					text: '在线客服'
@@ -157,16 +192,17 @@
 		},
 		methods: {
 			async getGoodsDetails(goodsId){
+				console.log(goodsId);
 				let { status, data } = await getGoodsDetails(goodsId);
 				if(!status){
-					this.details = data.details[0];
+					this.details = data;
 					this.details.price = Number(this.details.price).toFixed(2);
-					this.imgs = data.imgs;
+					this.imgs = data.picture;
 				}
 			},
-			async getGoodsDetails2(alias, goodsId){
-				let { status, data } = await getGoodsDetails2(alias, goodsId);
-				console.log(data);
+			async getGoodsDetails2(alias, id, goodsIds){
+				let { status, data } = await getGoodsDetails2({alias, goodsIds, id});
+				console.log('111',data);
 				if(!status){
 					this.details = data;
 					this.details.price = Number(this.details.price).toFixed(2);
@@ -188,13 +224,8 @@
 			}
 		},
 		onLoad: function (option) {
-			let { alias, goodsId } = option;
-			console.log(goodsId, alias);
-			if(!alias){
-				this.getGoodsDetails(goodsId);
-			}else {
-				this.getGoodsDetails2(alias, goodsId);
-			}
+			let { goodsId } = option;
+			this.getGoodsDetails(goodsId);
 		},
 		components: {
 			shopInfo
@@ -204,6 +235,82 @@
 
 <style lang="scss" scoped>
 	.goods-container {
+		
+		.photo-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #000;
+			z-index: 999;
+			.photos {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				.count {
+					position: relative;
+					text-align: center;
+					font-size: 28rpx;
+					color: #fff;
+					padding: 32rpx 0;
+					
+					.icon {
+						position: absolute;
+						right: 32rpx;
+					}
+				}
+			}
+			.buy-goods {
+				padding: 32rpx;
+				margin-top: 100rpx;
+				color: #fff;
+				.name {
+					padding: 4rpx 0 16rpx;
+					font-size: 32rpx;
+					
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+				.buy-nav {
+					display: flex;
+					justify-content: space-between;
+					.price {
+						font-size: 44rpx;
+						font-weight: 700;
+						.icon {
+							font-size: 32rpx;
+							margin-right: 4rpx;
+						}
+					}
+					.add_buy {
+						display: flex;
+						.btn {
+							width: 176rpx;
+							height: 64rpx;
+							margin-left: 24rpx;
+							line-height: 54rpx;
+							border-radius: 999rpx;
+							text-align: center;
+							font-size: 28rpx;
+						}
+						.add {
+							border: 2rpx solid #E6E6E6;
+							color: #E6E6E6;
+						}
+						.buy {
+							color: #000;
+							background-color: #E6E6E6;
+						}
+					}
+				}
+			}
+		}
 		
 		.head {
 			display: flex;

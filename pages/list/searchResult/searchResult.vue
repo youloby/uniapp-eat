@@ -17,20 +17,22 @@
 		
 		<view class="list">
 			<view class="goods" v-for="item in data" :key="item.id">
-				<view class="image">
-					<lazyload :img-url="item.image_url" :scroll-top="scrollTop" class="img"></lazyload>
-				</view>
-				<view class="info">
-					<view class="title">
-						{{ item.title }}
+				<navigator :url="'../../details/goodsDetails/goodsDetails?goodsId='+item.id">
+					<view class="image">
+						<lazyload :img-url="item.image_url" :scroll-top="scrollTop" class="img"></lazyload>
 					</view>
-					<view class="buy">
-						<view class="price">
-							<view class="icon">&yen;</view>{{ item.price }}
+					<view class="info">
+						<view class="title">
+							{{ item.title }}
 						</view>
-						<view class="cart-icon" style="background-image: url(../../../static/icon/cart-circle-o.png);background-size: cover;"></view>
+						<view class="buy">
+							<view class="price">
+								<view class="icon">&yen;</view>{{ item.price }}
+							</view>
+							<view class="cart-icon" style="background-image: url(../../../static/icon/cart-circle-o.png);background-size: cover;"></view>
+						</view>
 					</view>
-				</view>
+				</navigator>
 			</view>
 			<view class="empty" v-show="data.length === 0">
 				<image src="../../../static/image/empty.png" mode="widthFix" class="empty-img"></image>

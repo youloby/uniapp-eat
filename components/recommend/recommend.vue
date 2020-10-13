@@ -1,28 +1,30 @@
 <template>
 	<view class="rec-container">
-		<view class="rec-title" v-show="isShow">
+		<view class="rec-title">
 			更多精选商品
 		</view>
 		<view class="rec-list">
 			<view class="rec-goods" v-for="item in recData" :key="item.id">
-				<lazyload :img-url="item.image_url" :scroll-top="scrollTop" class="img"></lazyload>
-				<view class="rec-info">
-					<view class="title">
-						{{ item.title }}
+				<navigator :url="'/pages/details/goodsDetails/goodsDetails?goodsId='+item.id" open-type="navigate">
+					<lazyload :img-url="item.image_url" :scroll-top="scrollTop" class="img"></lazyload>
+					<view class="rec-info">
+						<view class="title">
+							{{ item.title }}
+						</view>
+						<view class="price">
+							<view class="icon">&yen;</view>{{ item.price }}
+						</view>
 					</view>
-					<view class="price">
-						<view class="icon">&yen;</view>{{ item.price }}
-					</view>
-				</view>
+				</navigator>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import { getRecommend } from '../../api/index.js';
+	import { getRecommend } from '@/api/index.js';
 	export default {
-		props:['scrollTop', 'isShow'],
+		props:['scrollTop'],
 		data() {
 			return {
 				recData: []

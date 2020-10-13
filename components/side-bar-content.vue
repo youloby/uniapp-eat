@@ -54,7 +54,8 @@
 		},
 		methods:{
 			async getGoodsData(){
-				let { status, data } = await getClassifyGoods(this.data.alias, 100);
+				let pageSize = this.data.alias === 'ggq4kkam' ?10 :100;
+				let { status, data } = await getClassifyGoods(this.data.alias, pageSize);
 				if(!status){
 					this.goodsList = data;
 				}
@@ -62,7 +63,7 @@
 			},
 			goGoodsDetails(goodsId){
 				uni.navigateTo({
-					url: `../details/goodsDetails/goodsDetails?alias=${this.data.alias}&goodsId=${goodsId}`
+					url: `../details/goodsDetails/goodsDetails?goodsId=${goodsId}`
 				})
 			},
 			onScroll(scrollTop){
